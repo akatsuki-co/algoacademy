@@ -1,0 +1,18 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    135deg,
+    #f9f7ff 0%,
+    #fff 50%,
+    #f6f3ff 100%
+  );
+}
+
+@media only screen and (max-width: 768px) {
+  #search-form {
+    display: none !important;
+  }
+}
