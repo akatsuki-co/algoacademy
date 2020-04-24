@@ -3,10 +3,10 @@ import Nav from "react-bootstrap/Nav"
 import NavItem from "react-bootstrap/NavItem"
 import NavLink from "react-bootstrap/NavLink"
 import { withRouter, useHistory } from "react-router-dom"
-import slugify from '../utils/slugify'
-import shortid from 'shortid'
+import slugify from "../utils/slugify"
+import shortid from "shortid"
 
-const NavigationItem = ({ menu, subMenu }) => {
+const NavigationItem = ({ menu, subMenu, language }) => {
   let history = useHistory()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -15,11 +15,11 @@ const NavigationItem = ({ menu, subMenu }) => {
   }
 
   const handleClick = (event) => {
-    history.push(`/python/${slugify(event.target.innerHTML)}`)
+    history.push(`/${language}/${slugify(event.target.innerHTML)}`)
   }
 
   const navLinks = subMenu.map((subMenuItem) => (
-    <NavLink key={shortid.generate()} >
+    <NavLink key={shortid.generate()}>
       <li onClick={handleClick}>{subMenuItem}</li>
     </NavLink>
   ))
