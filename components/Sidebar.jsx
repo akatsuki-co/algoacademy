@@ -4,8 +4,9 @@ import Col from "react-bootstrap/Col"
 import NavigationItem from "./NavigationItem"
 
 const Sidebar = ({ data }) => {
-  const navigationItems = data.map((el) => (
+  const navigationItems = data.sidebar.map((el) => (
     <NavigationItem
+      language={data.language}
       key={shortid.generate()}
       menu={el.menu}
       subMenu={el.subMenu}
