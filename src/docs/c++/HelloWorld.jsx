@@ -9,8 +9,8 @@ const markdown = `
 
 Quick facts about C++:\n
 - Statically typed
-- No garbage collection
 - Compiled
+- No garbage collection
 - Supports object-oriented programming
 
 ---
