@@ -9,25 +9,37 @@ const Golang = () => {
   const tableOfContents = {
     language: "golang",
     sidebar: [
-      {
-        menu: "Getting Started",
-        subMenu: [
-          "Hello World",
-          "Data Types",
-          "Basic Syntax",
-          "Constants",
-        ],
-      },
-      {
-        menu: "Intermediate",
-        subMenu: ["Builtins", "Data Structures", "Basic Algorithms"],
-      },
-      {
-        menu: "Advanced",
-        subMenu: ["Sorting", "Advanced Data Structures", "Big O"],
-      },
-    ],
-  }
+        {
+          menu: "Basics",
+          subMenu: [
+            "Hello World",
+            "Data Types",
+            "Arrays",
+            "Slices",
+            "Maps",
+            "Structs",
+            "Interfaces",
+            "Goroutines and Channels",
+          ],
+        },
+        {
+          menu: "Data Structures",
+          subMenu: [
+            "Linked Lists",
+            "Stacks and Queues",
+            "Hash Tables",
+            "Sets",
+            "Trees",
+            "Heaps",
+            "Graphs",
+          ],
+        },
+        {
+          menu: "Algorithms",
+          subMenu: ["Sorting", "Searching", "Recursion", "DFS/BFS"],
+        },
+      ],
+    }
   return (
     <section className='py-3'>
       <Container>

@@ -10,22 +10,32 @@ const Python = () => {
     language: "python",
     sidebar: [
       {
-        menu: "Getting Started",
+        menu: "Basics",
         subMenu: [
           "Hello World",
           "Data Types",
-          "Basic Syntax",
-          "Constants",
-          "Example",
+          "Lists",
+          "Dictionaries",
+          "Functions",
+          "Comprehensions"
         ],
       },
       {
-        menu: "Intermediate",
-        subMenu: ["Builtins", "Data Structures", "Basic Algorithms"],
+        menu: "Data Structures",
+        subMenu: [
+          "Collections",
+          "Linked Lists",
+          "Stacks and Queues",
+          "Hash Tables",
+          "Sets",
+          "Trees",
+          "Heaps",
+          "Graphs",
+        ],
       },
       {
-        menu: "Advanced",
-        subMenu: ["Sorting", "Advanced Data Structures", "Big O"],
+        menu: "Algorithms",
+        subMenu: ["Sorting", "Searching", "Recursion", "DFS/BFS"],
       },
     ],
   }
