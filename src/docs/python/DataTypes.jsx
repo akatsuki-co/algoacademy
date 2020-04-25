@@ -2,7 +2,9 @@ import React from "react"
 import HighlightedMarkdown from '../../components/HighlightedMarkdown'
 
 const markdown = `\
-# Data Types
+## Data Types
+
+---
 
 \`\`\`python
 i = 0
