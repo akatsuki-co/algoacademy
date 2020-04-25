@@ -73,8 +73,32 @@ a:hover {
   border-radius: 5px;
 }
 
+.social a {
+  margin: 0 7px;
+}
+
 @media only screen and (max-width: 768px) {
   #search-form {
     display: none !important;
+  }
+
+  #content {
+    padding-left: 15px !important;
+    border-left: none !important;
+  }
+}
+
+@media only screen and (max-width: 844px) {
+  .card {
+    margin: 15px 15px;
+  }
+
+  .social,
+  .card-language {
+    display: none;
+  }
+
+  .header-text {
+    margin: 0px 10px;
   }
 }
