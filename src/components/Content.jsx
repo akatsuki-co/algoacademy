@@ -1,3 +1,4 @@
+import React from 'react'
 import Col from "react-bootstrap/Col"
 import { Switch, Route } from "react-router-dom"
 import shortid from 'shortid'
