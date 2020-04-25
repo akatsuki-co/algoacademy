@@ -1,4 +1,5 @@
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
+import React from "react"
+import HighlightedMarkdown from '../../components/HighlightedMarkdown'
 
 const markdown = `\
 # Big Header

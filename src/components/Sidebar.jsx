@@ -1,11 +1,13 @@
+import React from 'react'
+
 import shortid from "shortid"
 import Nav from "react-bootstrap/Nav"
 import Col from "react-bootstrap/Col"
-import NavigationItem from "./NavigationItem"
+import SidebarItem from "./SidebarItem"
 
 const Sidebar = ({ data }) => {
-  const navigationItems = data.sidebar.map((el) => (
-    <NavigationItem
+  const sidebarItems = data.sidebar.map((el) => (
+    <SidebarItem
       language={data.language}
       key={shortid.generate()}
       menu={el.menu}
@@ -15,7 +17,7 @@ const Sidebar = ({ data }) => {
   return (
     <Col md='4' xl='3' className='py-3'>
       <Nav defaultActiveKey='/' className='flex-column'>
-        {navigationItems}
+        {sidebarItems}
       </Nav>
     </Col>
   )

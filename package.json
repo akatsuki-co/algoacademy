@@ -1,36 +1,42 @@
 {
   "name": "studybuddy",
-  "version": "1.0.0",
-  "description": "a study companion",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akatsuki-co/studybuddy.git"
-  },
-  "author": "tu vo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/akatsuki-co/studybuddy/issues"
-  },
-  "homepage": "https://github.com/akatsuki-co/studybuddy#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "@zeit/next-css": "^1.0.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
     "highlight.js": "^10.0.0",
     "markdown-to-jsx": "^6.11.1",
-    "next": "^9.3.5",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "shortid": "^2.2.15",
-    "swr": "^0.2.0"
+    "react-scripts": "3.4.1",
+    "shortid": "^2.2.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
