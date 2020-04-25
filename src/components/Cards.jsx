@@ -8,7 +8,7 @@ import shortid from 'shortid'
 const Cards = () => {
   const languages = ["python", "c", "javascript", "c++", "golang", "java"]
   return (
-    <section id="cards">
+    <section id="cards" class="py-3">
       <Container>
         <Row className='text-center py-3'>
           {languages.slice(0, 3).map((language) => (
