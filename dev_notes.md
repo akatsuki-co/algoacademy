@@ -1,39 +1,35 @@
 # Dev Notes
 
+4/25/20 - Tu
+I've the decision to migrate from nextJS to create-react-app. In the little time I spent with nextJS, I was unable to get the app working as a SPA. Because it is rendered server side, using react-router was causing a lot of problems. Also, I feel not using a framework will be better for a learning environment since our team is relatively new to react. We can spend more time focusing on hooks and writing good react code than trying to optimize for speed within the bounds of a framework.
+
 ### Init
 
 `npm install`
 
 ### Run dev server
 
-`npm run dev`
+`npm start`
 
 ### Dependencies
 
 - react/react-dom - for React
-- next - for Next framework
-- react-bootstrap - CSS framework for React
+- react-bootstrap - for CSS
 - shortid - for generating unique keys
-- swr (stale while revalidate) - for fetching data from apis, checks cache first
 - react-router-dom - for routing
-- @fortawesome/* - for font awesome icons
-- @zeit/next-css - for custom css
+- @fortawesome/* - for social media icons
 - highlight.js - for embedding code snippets
 - markdown-to-jsx - for converting markdown to jsx
 
 ### Folder Structure
 
-- pages - where React page components go
-  - index.js is root, e.g. "localhost:3000/"
-  - python.js is "localhost:3000/python/"
-  - api - internal api directory
-    - python
-      - index.js - where api calls to "localhost:3000/api/python/ goes to
-- components - where React UI components go
-- public - where static assets go
-- utils - where utility functions to be shared across files go
-- docs - where React markdown components go
-- styles.css - global styles
+- public - static assets
+- src/app.js - app entry point
+- src/pages - page components
+- src/components - ui components
+- utils - utility functions shared across files
+- docs - markdown components
+
 
 ### Bootstrap classes
 
