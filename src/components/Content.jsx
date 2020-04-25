@@ -14,7 +14,7 @@ const Content = ({routes}) => {
     )
   })
   return (
-    <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left'>
+    <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left' id="content">
       <Switch>
         {allRoutes}
       </Switch>

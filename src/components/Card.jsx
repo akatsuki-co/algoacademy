@@ -14,7 +14,7 @@ const Card = ({ language }) => (
           height='100'
           src={`/${language}.png`}
           alt='language-logo'></img>
-        <h4 className='my-4'>{capitalize(language)}</h4>
+        <h4 className='my-4 card-language'>{capitalize(language)}</h4>
       </div>
     </Link>
   </Col>

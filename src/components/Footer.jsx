@@ -26,8 +26,8 @@ const Footer = () => (
             </p>
           </div>
         </Col>
-        <Col md='1'>
-          <div className='d-flex justify-content-between'>
+        <Col md='1' className="social">
+          <div className='d-flex justify-content-around'>
             <a href='https://twitter.com/'>
               <FontAwesomeIcon icon={["fab", "twitter"]} color='gray' />
             </a>

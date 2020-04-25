@@ -8,7 +8,7 @@ const Header = () => (
     <header className='gradient py-5'>
       <Container>
         <Row className='align-items-center'>
-          <Col lg="6">
+          <Col lg="6" className="header-text">
             <h1>Welcome to Study Buddy!</h1>
             <p className='lead my-5'>
               Are you preparing for an technical interview? Do you want to learn
