@@ -18,7 +18,7 @@ const SidebarItem = ({ menu, subMenu, language }) => {
     history.push(`/${language}/${slugify(event.target.innerHTML)}`)
   }
 
-  const navLinks = subMenu.map((subMenuItem) => (
+  const subMenuLinks = subMenu.map((subMenuItem) => (
     <NavLink key={shortid.generate()}>
       <li onClick={handleClick}>{subMenuItem}</li>
     </NavLink>
@@ -43,7 +43,7 @@ const SidebarItem = ({ menu, subMenu, language }) => {
           className={
             "flex-column pt-3 pb-1 " + (isOpen ? "active" : "inactive")
           }>
-          <ul>{navLinks}</ul>
+          <ul>{subMenuLinks}</ul>
         </Nav>
       </NavItem>
     </>

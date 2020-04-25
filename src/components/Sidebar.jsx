@@ -15,7 +15,7 @@ const Sidebar = ({ data }) => {
     />
   ))
   return (
-    <Col md='4' xl='3' className='py-3'>
+    <Col md='4' xl='3' className='py-3' id="sidebar">
       <Nav defaultActiveKey='/' className='flex-column'>
         {sidebarItems}
       </Nav>
