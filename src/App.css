@@ -11,6 +11,30 @@ a {
   color: black;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-icon {
+  opacity: 0.5;
+}
+
+.nav-item:last-child {
+  border-bottom: none !important;
+}
+
 .menuItem:hover {
   cursor: pointer;
 }
