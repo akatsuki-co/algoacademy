@@ -2,7 +2,17 @@ import React from "react"
 import HighlightedMarkdown from '../../components/HighlightedMarkdown'
 
 const markdown = `\
-# Data Types
+
+## Hello World!
+
+---
+
+Quick facts about Golang:\n
+- Statically typed
+- Compiled
+- Automatic garbage collection
+
+---
 
 \`\`\`golang
 package main
@@ -10,11 +20,14 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Println("hello eorld")
+  fmt.Println("Hello World!")
 }
 
-\\\\ Hello World
+\\\\ Hello World!
 \`\`\`
+
+---
+
 `
 
 const DataTypes = () => {

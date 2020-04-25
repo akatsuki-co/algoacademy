@@ -3,14 +3,27 @@ import HighlightedMarkdown from '../../components/HighlightedMarkdown'
 
 const markdown = `
 
-# Hello World!
+## Hello World!
+
+---
+
+Quick facts about Python:\n
+- Dynamically typed
+- Interpreted
+- Automatic garbage collection
+- Supports object-oriented programming
+
+---
 
 \`\`\`python
-def hello_world():
-    print('hello world')
+print('Hello World!')
 
-# hello world
+# Hello World!
+
 \`\`\`
+
+---
+
 `
 
 const HelloWorld = () => {
