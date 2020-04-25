@@ -8,6 +8,7 @@ import Python from "./pages/Python"
 import Golang from "./pages/Golang"
 import Cpp from "./pages/C++"
 import C from "./pages/C"
+import Javascript from "./pages/Javascript"
 
 import "./App.css"
 
@@ -23,6 +24,9 @@ function App() {
         <Route path='/python'>
           <Python />
         </Route>
+        <Route path='/javascript'>
+          <Javascript />
+        </Route>
         <Route path='/golang'>
           <Golang />
         </Route>
@@ -33,7 +37,7 @@ function App() {
           <C />
         </Route>
         <Route>
-          <h1 className='text-center'>Page not found</h1>
+          <h1 className='text-center py-5'>Page not found</h1>
         </Route>
       </Switch>
       <Footer></Footer>

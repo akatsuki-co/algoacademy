@@ -1,16 +1,28 @@
+import React from "react"
 import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
 const markdown = `
 
-# Hello World!
+## Hello World!
+
+---
+
+Quick facts about Javascript:\n
+- Dynamically typed
+- Interpreted
+- Automatic garbage collection
+- Supports object-oriented programming
+
+---
 
 \`\`\`js
-function helloWorld() {
-    console.log("hello world")
-}
+console.log("Hello World!")
 
-\\\\ hello world
+\\\\ Hello World!
 \`\`\`
+
+---
+
 `
 
 const HelloWorld = () => {
