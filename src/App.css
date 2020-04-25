@@ -27,6 +27,10 @@ a:hover {
   color: black;
 }
 
+#sidebar .nav-link {
+  padding: 5px;
+}
+
 .nav-icon {
   opacity: 0.5;
 }

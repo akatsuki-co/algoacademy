@@ -6,6 +6,8 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Python from "./pages/Python"
 import Golang from "./pages/Golang"
+import Cpp from "./pages/C++"
+import C from "./pages/C"
 
 import "./App.css"
 
@@ -23,6 +25,12 @@ function App() {
         </Route>
         <Route path='/golang'>
           <Golang />
+        </Route>
+        <Route path='/c++'>
+          <Cpp />
+        </Route>
+        <Route path='/c'>
+          <C />
         </Route>
         <Route>
           <h1 className='text-center'>Page not found</h1>
