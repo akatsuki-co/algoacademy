@@ -14,6 +14,7 @@ const C = () => {
         subMenu: [
           "Hello World",
           "Data Types",
+          "Looping",
           "Functions",
           "Structures",
           "Arrays",

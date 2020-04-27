@@ -7,10 +7,10 @@ const markdown = `
 
 ---
 
-Quick facts about C:\n
+##### Quick facts about C:\n
 - Statically typed
 - Compiled
-- No garbage collection
+- Manual memory management (no garbage collection)
 
 ---
 
