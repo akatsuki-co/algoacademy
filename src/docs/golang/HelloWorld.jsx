@@ -23,7 +23,7 @@ func main() {
   fmt.Println("Hello World!")
 }
 
-\\\\ Hello World!
+\/\/ Hello World!
 \`\`\`
 
 ---
