@@ -14,6 +14,9 @@ const Golang = () => {
           subMenu: [
             "Hello World",
             "Data Types",
+            "Variables",
+            "Loops",
+            "Pointers",
             "Arrays",
             "Slices",
             "Maps",
