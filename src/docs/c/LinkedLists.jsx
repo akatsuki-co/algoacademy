@@ -69,6 +69,50 @@ int main()
 }
 
 \`\`\`
+
+---
+
+**Interview Question**
+
+### Inserting a node in a sorted linked list
+
+---
+
+\`\`\`c
+#include <stdio.h>
+#include "lists.h"
+
+node *insert_node(node **head, int n)
+{
+    node *curr, *new_node;
+
+    if (!head)
+        return (NULL);
+    new_node = create_node(n);
+    curr = *head;
+    // empty list
+    if (!curr)
+    {
+        *head = new_node;
+        return new_node;
+    }
+    // head insert
+    if (number < curr->n)
+    {
+        new_node->next = curr;
+        *head = new_node;
+        return new_node;
+    }
+    // middle and tail insert
+    while (curr->next && curr->next->n <= number)
+        curr = curr->next;
+    new_node->next = curr->next;
+    curr->next = new_node;
+    return new_node;
+}
+
+\`\`\`
+
 ---
 
 ### Removing a node in a linked list
