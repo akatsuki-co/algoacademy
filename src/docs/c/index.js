@@ -5,6 +5,7 @@ import Looping from "./Looping"
 import Arrays from "./Arrays"
 import Functions from "./Functions"
 import Structures from "./Structures"
+import LinkedLists from "./LinkedLists"
 
 const routes = [
   { path: "/c", exact: true, component: HelloWorld },
@@ -14,6 +15,7 @@ const routes = [
   { path: "/c/arrays", exact: true, component: Arrays },
   { path: "/c/functions", exact: true, component: Functions },
   { path: "/c/structures", exact: true, component: Structures },
+  { path: "/c/linked_lists", exact: true, component: LinkedLists },
   {
     path: "/c",
     exact: false,
