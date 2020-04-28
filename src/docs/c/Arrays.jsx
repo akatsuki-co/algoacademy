@@ -12,6 +12,10 @@ An array is a variable that can store multiple values of the same data type.\n
 ---
 
 ### Initializing an array
+- For arrays on the stack, array sizes have to be defined at compile time.
+- For variable-sized arrays, user must allocate memory on the heap using malloc, calloc...
+
+---
 
 \`\`\`c
 #include <stdio.h>
@@ -41,8 +45,10 @@ int main()
 
 ---
 
+**Interview Question**
 
-### Using an array to store fibonacci numbers
+### Calculate (n) fibonacci numbers\n
+- Use memoization with arrays.
 
 ---
 
