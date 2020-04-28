@@ -1,8 +1,5 @@
 # Dev Notes
 
-4/25/20 - Tu
-I've the decision to migrate from nextJS to create-react-app. In the little time I spent with nextJS, I was unable to get the app working as a SPA. Because it is rendered server side, using react-router was causing a lot of problems. Also, I feel not using a framework will be better for a learning environment since our team is relatively new to react. We can spend more time focusing on hooks and writing good react code than trying to optimize for speed within the bounds of a framework.
-
 ### Init
 
 `npm install`
@@ -36,4 +33,14 @@ I've the decision to migrate from nextJS to create-react-app. In the little time
 - p[a-z][0-9] - padding
 - m[a-z][0-9] - margin
 
+
+### How to change menu/submenu
+
+- Edit tableOfContents string in pages/{language}.jsx
+
+
+### How to add a document
+
+- Create component in /docs/{language}/{lesson}.jsx
+- Add path in /docs/{language}/index.jsx
 

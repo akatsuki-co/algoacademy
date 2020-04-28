@@ -96,6 +96,29 @@ int main()
 
 ---
 
+### Strings
+
+- In C, strings are char arrays terminated by a null byte.
+
+\`\`\`c
+#include <stdio.h>
+
+int main()
+{
+    char *string = "studybuddy";
+    while (*string != '\\0')
+    {
+        printf("%c ", *string);
+        string++;
+    }
+    return 0;
+}
+
+// s t u d y b u d d y 
+\`\`\`
+
+---
+
 ### Booleans\n
 - if using \`<stdbool.h>\` library\n
   - true
@@ -105,6 +128,8 @@ int main()
   - 0 (false)
 
 ---
+
+_Author: Tu Vo_
 
 `
 
