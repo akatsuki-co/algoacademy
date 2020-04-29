@@ -166,6 +166,7 @@ int main()
 }
 
 \`\`\`
+
 ---
 
 **Interview Question**
@@ -197,6 +198,40 @@ int main()
 }
 
 \`\`\`
+
+---
+
+**Interview Question**
+
+### Detect if a linked list has a cycle\n
+- A cycle occurs when a node in a linked list points to a previous node in the list, therefore causing the linked list to loop.
+
+\`\`\`c
+#include <stdio.h>
+#include "lists.h"
+
+int has_cycle(node *head)
+{
+	node *t, *h;
+
+	if (!head)
+        return 0;
+    t = head;
+    h = head;
+	while (h->next && h->next->next)
+	{
+		t = t->next;
+		h = h->next->next;
+		if (t == h)
+			return 1;
+	}
+	return 0;
+}
+
+\`\`\`
+
+---
+
 _Author: Tu Vo_
 
 `
