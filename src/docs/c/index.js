@@ -8,6 +8,7 @@ import Structures from "./Structures"
 import LinkedLists from "./LinkedLists"
 import Pointers from "./Pointers"
 import Stacks from "./Stacks"
+import Queues from "./Queues"
 
 const routes = [
   { path: "/c", exact: true, component: HelloWorld },
@@ -20,6 +21,7 @@ const routes = [
   { path: "/c/linked_lists", exact: true, component: LinkedLists },
   { path: "/c/pointers", exact: true, component: Pointers },
   { path: "/c/stacks", exact: true, component: Stacks },
+  { path: "/c/queues", exact: true, component: Queues },
   {
     path: "/c",
     exact: false,
