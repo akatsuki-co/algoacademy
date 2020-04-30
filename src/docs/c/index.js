@@ -9,6 +9,7 @@ import LinkedLists from "./LinkedLists"
 import Pointers from "./Pointers"
 import Stacks from "./Stacks"
 import Queues from "./Queues"
+import BitManipulation from "./BitManipulation"
 
 const routes = [
   { path: "/c", exact: true, component: HelloWorld },
@@ -22,6 +23,7 @@ const routes = [
   { path: "/c/pointers", exact: true, component: Pointers },
   { path: "/c/stacks", exact: true, component: Stacks },
   { path: "/c/queues", exact: true, component: Queues },
+  { path: "/c/bit_manipulation", exact: true, component: BitManipulation },
   {
     path: "/c",
     exact: false,
