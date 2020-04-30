@@ -26,7 +26,8 @@ const C = () => {
         menu: "Data Structures",
         subMenu: [
           "Linked Lists",
-          "Stacks and Queues",
+          "Stacks",
+          "Queues",
           "Hash Tables",
           "Sets",
           "Trees",
