@@ -32,7 +32,7 @@ int main()
 
 Because pointers are just numbers, you can do arithmetric with them.
 
-
+---
 
 \`\`\`c
 #include <stdio.h>

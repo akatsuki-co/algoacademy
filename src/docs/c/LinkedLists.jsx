@@ -97,7 +97,7 @@ node *insert_node(node **head, int n)
         return new_node;
     }
     // head insert
-    if (number < curr->n)
+    if (n < curr->n)
     {
         new_node->next = curr;
         *head = new_node;
@@ -128,28 +128,28 @@ node *insert_node(node **head, int n)
 
 int remove_node_at_index(node **head, unsigned int index)
 {
-    node *current;
+    node *curr;
     node *next;
     unsigned int i;
 
     if (!head || !(*head))
         return (-1);
-    current = *head;
+    curr = *head;
     // removing the current head
     if (index == 0)
     {
-        *head = current->next;
-        free(current);
+        *head = curr->next;
+        free(curr);
         return (-1);
     }
-    for (i = 0; current && i < index - 1; i++)
-        current = current->next;
+    for (i = 0; curr && i < index - 1; i++)
+        curr = curr->next;
     // out of bounds
-    if (!current || !(current->next))
+    if (!curr || !(curr->next))
         return (-1);
-    next = current->next->next;
-    free(current->next);
-    current->next = next;
+    next = curr->next->next;
+    free(curr->next);
+    curr->next = next;
     return (0);
 }
 
@@ -180,7 +180,7 @@ int main()
 
 void delete_mid_node(node *mid)
 {
-    node *next_node;
+    node *tmp;
 
     tmp = mid->next;
     mid->n = tmp->n;
@@ -236,8 +236,8 @@ _Author: Tu Vo_
 
 `
 
-const Arrays = () => {
+const LinkedLists = () => {
   return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
 }
 
-export default Arrays
+export default LinkedLists

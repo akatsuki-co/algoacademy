@@ -3,13 +3,13 @@ import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
 const markdown = `
 
-## Stacks and Queues
+## Stacks
 
 ---
 
 A stack is a data structure where elements are inserted and removed based on a last-in first-out (LIFO) principle.\n
 - A helpful way to visualize a stack is to imagine a pancake "stack" where you eat things from the top or most recently added layer and work your way down to the oldest pancake.
-- In C, a single linked-list is generally used to represent a stack.
+- In C, a singly linked-list is generally used to represent a stack.
 
 ---
 
@@ -84,8 +84,8 @@ int pop(node **root)
     if (is_empty(*root))
         exit(1);
     temp = *root;
-    *root = temp->next;
     popped = temp->value;
+    *root = temp->next;
     free(temp);
     return popped;
 }
@@ -101,12 +101,12 @@ int peek(node *root)
 {
     if (is_empty(root))
         exit(1);
-    return root->value;
+    return root->n;
 }
 
 \`\`\`
 
---- 
+---
 
 _Author: Tu Vo_
 
