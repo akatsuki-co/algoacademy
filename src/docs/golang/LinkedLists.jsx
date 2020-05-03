@@ -20,7 +20,7 @@ type node struct {
 
 ---
 
-### Adding a node to a linked list
+### Add a node to a linked list
 
 - Nodes are typically added to the head of a singly linked list as that is a O(1) operation.
 - Adding anywhere else requires traversing the pointers to reach the desired location of insertion.
@@ -50,7 +50,7 @@ func main() {
 
 **Interview Question**
 
-### Inserting a node in a sorted linked list
+### Insert a node in a sorted linked list
 
 ---
 
@@ -81,7 +81,7 @@ func insertNode(head **node, n int) *node {
 
 ---
 
-### Removing a node in a linked list
+### Remove a node in a linked list
 
 - Removing the head of a list is a O(1) operation.
 - If you want to remove a node from a given index, that will require traversing the list, making it a O(n) operation.
