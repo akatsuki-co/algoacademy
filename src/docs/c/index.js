@@ -11,6 +11,7 @@ import Stacks from "./Stacks"
 import Queues from "./Queues"
 import BitManipulation from "./BitManipulation"
 import Sorting from "./Sorting"
+import HashTables from "./HashTables"
 
 const routes = [
   { path: "/c", exact: true, component: HelloWorld },
@@ -26,6 +27,7 @@ const routes = [
   { path: "/c/queues", exact: true, component: Queues },
   { path: "/c/bit_manipulation", exact: true, component: BitManipulation },
   { path: "/c/sorting", exact: true, component: Sorting },
+  { path: "/c/hash_tables", exact: true, component: HashTables },
   {
     path: "/c",
     exact: false,
