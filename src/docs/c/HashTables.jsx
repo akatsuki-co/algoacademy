@@ -8,10 +8,9 @@ const markdown = `
 
 A hash table is a data structure that maps keys to values.\n
 - It is implemented with an array that uses a hash function to compute an index for its keys.
-- In the event that there is a collision (duplicate keys), there are several strategies that can be used to resolve this matter:
-  1. Separate chaining - a linked list (or other data structure) is used to store similar hashes at duplicate indexes
-  2. Open addressing - the next empty index in the array is used to store similar hashes
-
+- In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
+    1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
+    2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
 ---
 
 ### Initialize a hash table
@@ -34,7 +33,7 @@ typedef struct hash_node
 typedef struct hash_table_t
 {
 	unsigned int size;
-	node **linked_list;
+	node **array;
 } hash_table;
 
 hash_table *create_hash_table(unsigned int size)
@@ -47,8 +46,8 @@ hash_table *create_hash_table(unsigned int size)
 	if (!ht)
 		return (NULL);
 	ht->size = size;
-	ht->linked_list = calloc(size, sizeof(node **));
-	if (!ht->linked_list)
+	ht->array = calloc(size, sizeof(node **));
+	if (!ht->array)
 	{
 		free(ht);
 		return (NULL);
@@ -98,20 +97,20 @@ unsigned int generate_key(char *key, unsigned int size)
 
 ### Set a key/value pair
 - We will be using separate chaining to handle collisions
+- Runtime: O(1)
 
 --- 
 
 \`\`\`c
-
-void set_hash_table(hash_table *ht, char *key, char *value)
+void set(hash_table *ht, char *key, char *value)
 {
 	unsigned int index;
 	node *curr, *new_node;
 
 	if (!ht || !key || !value)
 		exit(1);
-	index = generate_index(key, ht->size);
-	curr = ht->linked_list[index];
+	index = generate_key(key, ht->size);
+	curr = ht->array[index];
 	while (curr)
 	{
         // replace an existing key
@@ -127,8 +126,8 @@ void set_hash_table(hash_table *ht, char *key, char *value)
 	new_node = malloc(sizeof(node));
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
-	new_node->next = ht->linked_list[index];
-	ht->linked_list[index] = new_node;
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 }
 
 \`\`\`
@@ -136,23 +135,24 @@ void set_hash_table(hash_table *ht, char *key, char *value)
 ---
 
 ### Get a value
+- Runtime: O(1)
 
 ---
 
 \`\`\`c
-char *hash_table_get(hash_table *ht, char *key)
+char *get(hash_table *ht, char *key)
 {
 	unsigned int index;
-	node *curr = NULL;
+	node *curr;
 
 	if (!ht || !key || !*key)
 		return (NULL);
-	index = generate_index(key, ht->size);
-	curr = ht->linked_list[index];
+	index = generate_key(key, ht->size);
+	curr = ht->array[index];
 	while (curr)
 	{
+        // key exists
 		if (strcmp(curr->key, key) == 0)
-            // key exists
 			return (curr->value);
 		curr = curr->next;
 	}
@@ -176,9 +176,9 @@ void hash_table_delete(hash_table *ht)
 	if (!ht)
 		return;
 	for (i = 0; i < ht->size; i++)
-		if (ht->linked_list[i])
+		if (ht->array[i])
 		{
-			curr = ht->linked_list[i];
+			curr = ht->array[i];
 			while (curr)
 			{
 				tmp = curr;
@@ -189,7 +189,7 @@ void hash_table_delete(hash_table *ht)
 				free(tmp);
 			}
 		}
-	free(ht->linked_list);
+	free(ht->array);
 	free(ht);
 }
 \`\`\`
