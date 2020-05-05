@@ -10,7 +10,8 @@ A hash table is a data structure that maps keys to values.\n
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
     1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
-    2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+	2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+	
 ---
 
 ### Initialize a hash table
@@ -41,18 +42,18 @@ hash_table *create_hash_table(unsigned int size)
 	hash_table *ht;
 
 	if (!size)
-		return (NULL);
+		return NULL;
 	ht = calloc(1, sizeof(hash_table));
 	if (!ht)
-		return (NULL);
+		return NULL;
 	ht->size = size;
 	ht->array = calloc(size, sizeof(node **));
 	if (!ht->array)
 	{
 		free(ht);
-		return (NULL);
+		return NULL;
 	}
-	return (ht);
+	return ht;
 }
 
 \`\`\`
@@ -146,7 +147,7 @@ char *get(hash_table *ht, char *key)
 	node *curr;
 
 	if (!ht || !key || !*key)
-		return (NULL);
+		return NULL;
 	index = generate_key(key, ht->size);
 	curr = ht->array[index];
 	while (curr)
@@ -168,7 +169,7 @@ char *get(hash_table *ht, char *key)
 ---
 
 \`\`\`c
-void hash_table_delete(hash_table *ht)
+void delete_hash_table(hash_table *ht)
 {
 	int i;
 	node *curr, *tmp;
