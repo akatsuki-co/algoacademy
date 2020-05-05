@@ -2,19 +2,19 @@ import React from "react"
 import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
 const markdown = `
-## Hash Tables
+## Sets
 
 ---
 
-A hash table is a data structure that maps keys to values.\n
+A set is a data structure that maps keys to values, similarly to a hash table. The difference is that the values in a set can either be true or false.\n
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
     1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
-	2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
-	
+    2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+
 ---
 
-### Initialize a hash table
+### Initialize a set
 - Calloc initializes all bytes in the allocated storage to zero
 
 ---
@@ -24,38 +24,37 @@ A hash table is a data structure that maps keys to values.\n
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct hash_node
+typedef struct set_node
 {
 	char *key;
-	char *value;
-	struct hash_node *next;
+	int value;
+	struct set_node *next;
 } node;
 
-typedef struct hash_table_t
+typedef struct set_t
 {
 	unsigned int size;
 	node **array;
-} hash_table;
+} set;
 
-hash_table *create_hash_table(unsigned int size)
+set *create_set(unsigned int size)
 {
-	hash_table *ht;
+	set *s;
 
 	if (!size)
 		return NULL;
-	ht = calloc(1, sizeof(hash_table));
-	if (!ht)
+	s = calloc(1, sizeof(set));
+	if (!s)
 		return NULL;
-	ht->size = size;
-	ht->array = calloc(size, sizeof(node **));
-	if (!ht->array)
+	s->size = size;
+	s->array = calloc(size, sizeof(node **));
+	if (!s->array)
 	{
-		free(ht);
+		free(s);
 		return NULL;
 	}
-	return ht;
+	return s;
 }
-
 \`\`\`
 
 ---
@@ -96,102 +95,96 @@ unsigned int generate_key(char *key, unsigned int size)
 
 ---
 
-### Set a key/value pair
+### Add a key
 - We will be using separate chaining to handle collisions
 - Runtime: O(1)
 
 --- 
 
 \`\`\`c
-void set(hash_table *ht, char *key, char *value)
+void add(set *s, char *key)
 {
 	unsigned int index;
 	node *curr, *new_node;
 
-	if (!ht || !key || !value)
+	if (!s || !key)
 		exit(1);
-	index = generate_key(key, ht->size);
-	curr = ht->array[index];
+	index = generate_key(key, s->size);
+	curr = s->array[index];
 	while (curr)
 	{
-        // replace an existing key
+        // key already exists
 		if (strcmp(curr->key, key) == 0)
-		{
-			free(curr->value);
-			curr->value = strdup(value);
 			return;
-		}
 		curr = curr->next;
 	}
     // add new key/value
 	new_node = malloc(sizeof(node));
 	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
+	new_node->value = 1;
+	new_node->next = s->array[index];
+	s->array[index] = new_node;
 }
-
 \`\`\`
 
 ---
 
-### Get a value
+### Check if a set has a key
 - Runtime: O(1)
 
 ---
 
 \`\`\`c
-char *get(hash_table *ht, char *key)
+int has(set *s, char *key)
 {
 	unsigned int index;
 	node *curr;
 
-	if (!ht || !key || !*key)
-		return NULL;
-	index = generate_key(key, ht->size);
-	curr = ht->array[index];
+	if (!s || !key || !*key)
+		return 0;
+	index = generate_key(key, s->size);
+	curr = s->array[index];
 	while (curr)
 	{
         // key exists
 		if (strcmp(curr->key, key) == 0)
-			return (curr->value);
+			return 1;
 		curr = curr->next;
 	}
     // key doesn't exist
-	return (NULL);
+	return 0;
 }
 \`\`\`
 
 ---
 
-### Delete a hash table
+### Delete a set
 
 ---
 
 \`\`\`c
-void delete_hash_table(hash_table *ht)
+void delete_set(set *s)
 {
 	int i;
 	node *curr, *tmp;
 
-	if (!ht)
+	if (!s)
 		return;
-	for (i = 0; i < ht->size; i++)
-		if (ht->array[i])
+	for (i = 0; i < s->size; i++)
+		if (s->array[i])
 		{
-			curr = ht->array[i];
+			curr = s->array[i];
 			while (curr)
 			{
 				tmp = curr;
 				free(curr->key);
-				if (curr->value)
-					free(curr->value);
+				free(&curr->value);
 				curr = curr->next;
 				free(tmp);
 			}
 		}
-	free(ht->array);
-	free(ht);
+	free(s->array);
+	free(s);
 }
 \`\`\`
 
@@ -201,8 +194,8 @@ _Author: Tu Vo_
 
 `
 
-const HashTables = () => {
+const Sets = () => {
   return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
 }
 
-export default HashTables
+export default Sets
