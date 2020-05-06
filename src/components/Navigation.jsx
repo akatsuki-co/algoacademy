@@ -24,7 +24,7 @@ const Navigation = () => (
           <Nav className='mr-auto'>
             <Nav.Link>About</Nav.Link>
             <Nav.Link>F.A.Q.</Nav.Link>
-            <Nav.Link>Contribute</Nav.Link>
+            <Nav.Link href="/contribute">Contribute</Nav.Link>
           </Nav>
           <Nav className='ml-auto' id='search-form'>
             <Form inline>
