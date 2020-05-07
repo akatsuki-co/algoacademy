@@ -10,6 +10,8 @@ import Cpp from "./pages/C++"
 import C from "./pages/C"
 import Javascript from "./pages/Javascript"
 
+import Contribute from "./components/Contribute"
+
 import "./App.css"
 
 function App() {
@@ -35,6 +37,9 @@ function App() {
         </Route>
         <Route path='/c'>
           <C />
+        </Route>
+        <Route path='/contribute'>
+          <Contribute />
         </Route>
         <Route>
           <h1 className='text-center py-5'>Page not found</h1>
