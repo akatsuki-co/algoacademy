@@ -15,7 +15,7 @@ A dictionary is a collection of associated pairs of items.\n
 
 ### Initializing a dictionary
 
-Dictionaries can be initalized empty or with values.
+Dictionaries can be initialized empty or with values.
 
 \`\`\`python
 dict1 = {}

@@ -6,7 +6,7 @@ const markdown = `
 
 ---
 
-An list is an ordered collection that can store zero or more references to Python data objects.\n
+A list is an ordered collection that can store zero or more references to Python data objects.\n
 - Written as comma-delimited values enclosed in square brackets.
 - Heterogeneous: the data objects do not need to be from the same class.
 
@@ -14,7 +14,7 @@ An list is an ordered collection that can store zero or more references to Pytho
 
 ### Initializing a list
 
-Lists can be initalized empty or with values.
+Lists can be initialized empty or with values.
 
 \`\`\`python
 list1 = []
