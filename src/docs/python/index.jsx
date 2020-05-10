@@ -5,10 +5,10 @@ import Dictionaries from "./Dictionaries"
 
 const routes = [
   { path: "/python", exact: true, component: HelloWorld },
-  { path: "/python/hello_world", exact: true, component: HelloWorld },
-  { path: "/python/data_types", exact: false, component: DataTypes },
-  { path: "/python/lists", exact: false, component: Lists },
-  { path: "/python/dictionaries", exact: false, component: Dictionaries },
+  { path: "/python/hello_world", exact: true, component: HelloWorld, file: 'HelloWorld' },
+  { path: "/python/data_types", exact: false, component: DataTypes, file: 'DataTypes' },
+  { path: "/python/lists", exact: false, component: Lists, file: 'Lists' },
+  { path: "/python/dictionaries", exact: false, component: Dictionaries, file: 'Dictionaries' },
 ]
 
 export default routes
