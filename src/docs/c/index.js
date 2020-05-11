@@ -12,6 +12,8 @@ import Queues from "./Queues"
 import BitManipulation from "./BitManipulation"
 import Sorting from "./Sorting"
 import HashTables from "./HashTables"
+import Sets from "./Sets"
+import BinaryTrees from "./BinaryTrees"
 
 const routes = [
   { path: "/c", exact: true, component: HelloWorld },
@@ -28,6 +30,8 @@ const routes = [
   { path: "/c/bit_manipulation", exact: true, component: BitManipulation },
   { path: "/c/sorting", exact: true, component: Sorting },
   { path: "/c/hash_tables", exact: true, component: HashTables },
+  { path: "/c/sets", exact: true, component: Sets },
+  { path: "/c/binary_trees", exact: true, component: BinaryTrees },
   {
     path: "/c",
     exact: false,

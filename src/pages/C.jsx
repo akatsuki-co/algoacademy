@@ -30,7 +30,7 @@ const C = () => {
           "Queues",
           "Hash Tables",
           "Sets",
-          "Trees",
+          "Binary Trees",
           "Heaps",
           "Graphs",
         ],
