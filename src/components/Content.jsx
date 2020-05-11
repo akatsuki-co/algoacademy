@@ -6,29 +6,22 @@ import shortid from 'shortid'
 import HighlightedMarkdown from "./HighlightedMarkdown"
 
 
-const Content = ({routes}) => {
-  // const allRoutes = routes.map((route) => {
-  //   return (
-  //     <Route
-  //       key={shortid.generate()}
-  //       exact={route.exact}
-  //       path={route.path}
-  //       component={route.component} />
-  //   )
-  // })\
+const Content = ({data, markdownFile}) => {
     const [markdown, setMarkdown] = useState(`Nothing here yet!`);
+    const [clicked, setClicked] = useState(true)
 
     useEffect(() => {
         getMarkdown();
-}, []);
+}, [clicked]);
 
   const getMarkdown = async () => {
-    const markdownFile = 'HelloWorld'; 
-    const language = 'python'
-    const file = await import(`../docs/${language}/${markdownFile}.md`);
+    const language = data.language
+    const markdownFileName = markdownFile.replace(/\s+/g, '')
+    const file = await import(`../docs/${language}/${markdownFileName}.md`);
     const response = await fetch(file.default);
     const text = await response.text();
     setMarkdown(text);
+    setClicked(!clicked)
   };
   return (
     <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left' id="content">

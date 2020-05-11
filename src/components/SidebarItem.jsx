@@ -6,7 +6,7 @@ import { withRouter, useHistory } from "react-router-dom"
 import slugify from "../utils/slugify"
 import shortid from "shortid"
 
-const SidebarItem = ({ menu, subMenu, language }) => {
+const SidebarItem = ({ menu, subMenu, language, setMarkdownFile }) => {
   let history = useHistory()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -16,6 +16,7 @@ const SidebarItem = ({ menu, subMenu, language }) => {
 
   const handleClick = (event) => {
     history.push(`/${language}/${slugify(event.target.innerHTML)}`)
+    setMarkdownFile(event.target.innerHTML)
   }
 
   const subMenuLinks = subMenu.map((subMenuItem) => (
