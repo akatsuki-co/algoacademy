@@ -40,17 +40,20 @@ const Cpp = () => {
     ],
   }
   const [markdownFile, setMarkdownFile] = useState('HelloWorld')
+  const [clicked, setClicked] = useState(true)
 
-  return (
-    <section className='py-3'>
-      <Container>
-        <Row>
-          <Sidebar setMarkdownFile={setMarkdownFile} data={tableOfContents}></Sidebar>
-          <Content markdownFile={markdownFile} data={tableOfContents}></Content>
-        </Row>
-      </Container>
-    </section>
-  )
+
+    return (
+            <section className='py-3'>
+              <Container>
+                <Row> 
+                  <Sidebar clicked={clicked} setClicked={setClicked} setMarkdownFile={setMarkdownFile} data={tableOfContents}></Sidebar>
+                  <Content clicked={clicked} markdownFile={markdownFile} data={tableOfContents}></Content>
+                </Row>
+              </Container>
+            </section>
+          
+    )
 }
 
 export default Cpp
