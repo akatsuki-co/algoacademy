@@ -2,7 +2,8 @@
 
 ---
 
-A dictionary is a collection of associated pairs of items.\n
+A dictionary is a collection of associated pairs of items.
+
 - Each pair consists of a key and value.
 - Written as comma-delimited key:value pairs enclosed in curly braces.
 - Dictionaries are unordered.
@@ -11,7 +12,7 @@ A dictionary is a collection of associated pairs of items.\n
 
 ### Initializing a dictionary
 
-Dictionaries can be initalized empty or with values.
+Dictionaries can be initialized empty or with values.
 
 ```python
 dict1 = {}

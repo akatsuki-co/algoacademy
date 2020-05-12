@@ -2,7 +2,8 @@
 
 ---
 
-An list is an ordered collection that can store zero or more references to Python data objects.\n
+A list is an ordered collection that can store zero or more references to Python data objects.
+
 - Written as comma-delimited values enclosed in square brackets.
 - Heterogeneous: the data objects do not need to be from the same class.
 
@@ -10,7 +11,7 @@ An list is an ordered collection that can store zero or more references to Pytho
 
 ### Initializing a list
 
-Lists can be initalized empty or with values.
+Lists can be initialized empty or with values.
 
 ```python
 list1 = []
@@ -44,7 +45,7 @@ len(my_list)  # 8
 
 # Slicing: Extract part of the list
 my_list[3, 6]  # [3.5, 2, False]
-:
+
 ```
 
 ---

@@ -5,11 +5,8 @@
 Quick facts about Python:
 
 - Dynamically typed
-
 - Interpreted
-
 - Automatic garbage collection
-
 - Supports object-oriented programming
 
 ---
@@ -23,4 +20,3 @@ print('Hello World!')
 
 ---
 
-By Ryuichi
