@@ -1,7 +1,3 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Arrays
 
 ---
@@ -17,7 +13,7 @@ An array is a variable that can store multiple values of the same data type.\n
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 int main()
@@ -41,7 +37,7 @@ int main()
     }
     return 0;
 }
-\`\`\`
+```
 
 ---
 
@@ -52,7 +48,7 @@ int main()
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 int main()
@@ -75,16 +71,8 @@ int main()
 
 // 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Arrays = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Arrays
