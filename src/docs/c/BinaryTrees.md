@@ -1,7 +1,3 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Binary Trees
 
 ---
@@ -13,7 +9,7 @@ A binary tree is a data structure that is composed of nodes that have at most tw
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,7 +34,7 @@ bt_node *create_node(bt_node *parent, int value)
 	bt->n = value;
 	return bt;
 }
-\`\`\`
+```
 
 ---
 
@@ -50,7 +46,7 @@ bt_node *create_node(bt_node *parent, int value)
 
 ---
 
-\`\`\`c
+```c
 void preorder_traversal(const bt_node *tree)
 {
 	if (!tree)
@@ -59,7 +55,7 @@ void preorder_traversal(const bt_node *tree)
 	preorder_traversal(tree->left);
 	preorder_traversal(tree->right);
 }
-\`\`\`
+```
 
 ---
 
@@ -67,7 +63,7 @@ void preorder_traversal(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 void inorder_traversal(const bt_node *tree)
 {
 	if (!tree)
@@ -76,7 +72,7 @@ void inorder_traversal(const bt_node *tree)
     printf("%i ", tree->n);
 	inorder_traversal(tree->right);
 }
-\`\`\`
+```
 
 ---
 
@@ -84,7 +80,7 @@ void inorder_traversal(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 void postorder_traversal(const bt_node *tree)
 {
 	if (!tree)
@@ -93,7 +89,7 @@ void postorder_traversal(const bt_node *tree)
     postorder_traversal(tree->right);
     printf("%i ", tree->n);
 }
-\`\`\`
+```
 
 --- 
 
@@ -103,7 +99,7 @@ void postorder_traversal(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 int bt_height(const bt_node *tree)
 {
 	int left, right;
@@ -115,7 +111,7 @@ int bt_height(const bt_node *tree)
 	return (MAX(left, right) + 1);
 }
 
-\`\`\`
+```
 
 --- 
 
@@ -125,7 +121,7 @@ int bt_height(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 int bt_depth(const bt_node *tree)
 {
 	int count = 0;
@@ -139,7 +135,7 @@ int bt_depth(const bt_node *tree)
 	}
 	return count;
 }
-\`\`\`
+```
 
 ---
 
@@ -149,14 +145,14 @@ int bt_depth(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 int bt_size(const bt_node *tree)
 {
 	if (!tree)
 		return 0;
 	return (1 + bt_size(tree->left) + bt_size(tree->right));
 }
-\`\`\`
+```
 
 ---
 
@@ -171,7 +167,7 @@ int bt_size(const bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 int is_balanced(bt_node *tree)
 {
     int left_height, right_height;
@@ -184,7 +180,7 @@ int is_balanced(bt_node *tree)
         is_balanced(tree->right) &&
         is_balanced(tree->left));
 }
-\`\`\`
+```
 
 ---
 

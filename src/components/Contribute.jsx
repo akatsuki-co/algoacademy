@@ -1,12 +1,7 @@
-import React, { useRef, useState } from 'react';
-import Markdown from 'markdown-to-jsx';
-import hljs from 'highlight.js';
-import { Form, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
 
 import Editor from "./Editor"
 import Preview from "./Preview"
-
-import HighlightedMarkdown from "./HighlightedMarkdown"
 
 
 const Contribute = () => {

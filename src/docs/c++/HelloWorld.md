@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
 const markdown = `
@@ -7,24 +7,24 @@ const markdown = `
 
 ---
 
-##### Quick facts about C:\n
+Quick facts about C++:\n
 - Statically typed
 - Compiled
-- Manual memory management (no garbage collection)
+- No garbage collection
+- Supports object-oriented programming
 
 ---
 
-\`\`\`c
-#include <stdio.h>
+\`\`\`cpp
+#include <iostream>
 
 int main()
 {
-    printf("Hello World!\\n");
+    std::cout << "Hello World!\\n";
     return 0;
 }
 
-// Hello World!
-
+\\\\ Hello World!
 \`\`\`
 
 ---
