@@ -1,12 +1,9 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Lists
 
 ---
 
-A list is an ordered collection that can store zero or more references to Python data objects.\n
+A list is an ordered collection that can store zero or more references to Python data objects.
+
 - Written as comma-delimited values enclosed in square brackets.
 - Heterogeneous: the data objects do not need to be from the same class.
 
@@ -16,16 +13,16 @@ A list is an ordered collection that can store zero or more references to Python
 
 Lists can be initialized empty or with values.
 
-\`\`\`python
+```python
 list1 = []
 list2 = [2, False, 'Python', 3.5]
-\`\`\`
+```
 
 ---
 
 ### List Operations
 
-\`\`\`python
+```python
 my_list = [2, False, 'Python', 3.5]
 
 # Indexing: Access an element
@@ -49,13 +46,13 @@ len(my_list)  # 8
 # Slicing: Extract part of the list
 my_list[3, 6]  # [3.5, 2, False]
 
-\`\`\`
+```
 
 ---
 
 ### List Methods
 
-\`\`\`python
+```python
 my_list = [2, False, 'Python', 3.5]
 
 # Append: Add new item to the end of the list
@@ -97,16 +94,8 @@ my_list.count(2)  # 1
 my_list.remove(2)
 my_list  # [8, 5, 0]
 
-\`\`\`
+```
 
 ---
 
 _Author: Brent Muha_
-
-`
-
-const Arrays = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Arrays

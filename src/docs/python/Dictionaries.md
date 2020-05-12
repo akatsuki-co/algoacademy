@@ -1,12 +1,9 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Dictionaries
 
 ---
 
-A dictionary is a collection of associated pairs of items.\n
+A dictionary is a collection of associated pairs of items.
+
 - Each pair consists of a key and value.
 - Written as comma-delimited key:value pairs enclosed in curly braces.
 - Dictionaries are unordered.
@@ -17,16 +14,16 @@ A dictionary is a collection of associated pairs of items.\n
 
 Dictionaries can be initialized empty or with values.
 
-\`\`\`python
+```python
 dict1 = {}
 dict2 = {'California': 'Sacramento', 'Maryland': 'Annapolis'}
-\`\`\`
+```
 
 ---
 
 ### Dictionary Operations
 
-\`\`\`python
+```python
 gary = {'Age': 9, 'Breed': 'American Shorthair'}
 
 # Indexing: Return value associated with key, otherwise error
@@ -40,13 +37,13 @@ gary['Size']  # KeyError: 'Size'
 # Del: Remove the entry from the dictionary
 del gary['Age']
 gary  # {'Breed': 'American Shorthair'}
-\`\`\`
+```
 
 ---
 
 ### Dictionary Methods
 
-\`\`\`python
+```python
 gary = {'Age': 9, 'Breed': 'American Shorthair'}
 
 # Keys: Return the keys of the dictionary in a dict_keys object
@@ -65,16 +62,8 @@ gary.get('Size')  # None
 # Get: Return the value associated with key, alt otherwise
 gary.get('Size', 'large')  # 'large'
 
-\`\`\`
+```
 
 ---
 
 _Author: Brent Muha_
-
-`
-
-const Arrays = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Arrays
