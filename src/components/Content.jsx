@@ -19,7 +19,10 @@ const Content = ({data, markdownFile}) => {
     const markdownFileName = markdownFile.replace(/\s+/g, '')
     const file = await import(`../docs/${language}/${markdownFileName}.md`);
     const response = await fetch(file.default);
-    const text = await response.text();
+    let text = await response.text();
+      if (text == "") {
+          text = "# Nothing here yet! Come back again soon!"
+      }
     setMarkdown(text);
     setClicked(!clicked)
   };

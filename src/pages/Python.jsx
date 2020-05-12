@@ -3,7 +3,6 @@ import Sidebar from "../components/Sidebar"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Content from "../components/Content"
-import routes from "../docs/python"
 
 const Python = () => {
   const tableOfContents = {
