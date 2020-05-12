@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import Sidebar from "../components/Sidebar"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Content from "../components/Content"
-import routes from "../docs/golang"
 
 const Golang = () => {
   const tableOfContents = {
@@ -43,12 +42,14 @@ const Golang = () => {
         },
       ],
     }
+  const [markdownFile, setMarkdownFile] = useState('HelloWorld')
+
   return (
     <section className='py-3'>
       <Container>
         <Row>
-          <Sidebar data={tableOfContents}></Sidebar>
-          <Content routes={routes}></Content>
+          <Sidebar setMarkdownFile={setMarkdownFile} data={tableOfContents}></Sidebar>
+          <Content markdownFile={markdownFile} data={tableOfContents}></Content>
         </Row>
       </Container>
     </section>
