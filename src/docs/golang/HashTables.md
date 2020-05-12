@@ -1,16 +1,14 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
-const markdown = `
 ## Hash Tables
 
 ---
 
-A hash table is a data structure that maps keys to values.\n
+A hash table is a data structure that maps keys to values.
+
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
-    1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
-    2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+  1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
+  2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
 
 ---
 
@@ -18,7 +16,7 @@ A hash table is a data structure that maps keys to values.\n
 
 ---
 
-\`\`\`golang
+```golang
 const hashTableSize = 1024
 
 type node struct {
@@ -30,16 +28,17 @@ type node struct {
 type hashTable struct {
     array[hashTableSize]*node
 }
-\`\`\`
+```
 
 ---
 
 ### Implement a hash function
+
 - We will be using the djb2 algorithm
 
 ---
 
-\`\`\`golang
+```golang
 func hashDjb2(str string) int {
     // use of prime number
 	hash := 5381;
@@ -48,7 +47,7 @@ func hashDjb2(str string) int {
     }
 	return hash;
 }
-\`\`\`
+```
 
 ---
 
@@ -56,22 +55,23 @@ func hashDjb2(str string) int {
 
 ---
 
-\`\`\`golang
+```golang
 func generateKey(key string) int {
 	return hashDjb2(key) % hashTableSize
 }
 
-\`\`\`
+```
 
 ---
 
 ### Set a key/value pair
+
 - We will be using separate chaining to handle collisions
 - Runtime: O(1)
 
---- 
+---
 
-\`\`\`golang
+```golang
 func set(ht hashTable, key string, value string) {
     index := generateKey(key)
     curr := ht.array[index]
@@ -93,16 +93,17 @@ func set(ht hashTable, key string, value string) {
         curr = curr.next
     }
 }
-\`\`\`
+```
 
 ---
 
 ### Get a value
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`golang
+```golang
 func get(ht hashTable, key string) (string, bool) {
     index := generateKey(key)
     curr := ht.array[index]
@@ -117,16 +118,8 @@ func get(ht hashTable, key string) (string, bool) {
     return "", false
 }
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const HashTables = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default HashTables

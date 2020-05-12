@@ -1,13 +1,9 @@
-import React from "react"
-import HighlightedMarkdown from '../../components/HighlightedMarkdown'
-
-const markdown = `\
-
 ## Data Types
 
 ---
 
-### Integers\n
+### Integers
+
 - int, uint, uintptr (machine dependent)
 - int8, int16, int32, int64
 - uint8, uint16, uint32, uint64
@@ -18,7 +14,7 @@ const markdown = `\
 
 #### Max/Min Values
 
-\`\`\`golang
+```golang
 package main
 
 import (
@@ -27,13 +23,13 @@ import (
 )
 
 func main() {
-  fmt.Printf("MaxInt64 = %v\\n", math.MaxInt64)
-  fmt.Printf("MaxInt32 = %v\\n", math.MaxInt32)
-  fmt.Printf("MaxInt16 = %v\\n", math.MaxInt16)
+    fmt.Printf("MaxInt64 = %v\\n", math.MaxInt64)
+    fmt.Printf("MaxInt32 = %v\\n", math.MaxInt32)
+    fmt.Printf("MaxInt16 = %v\\n", math.MaxInt16)
 
-  fmt.Printf("MinInt64 = %v\\n", math.MinInt64)
-  fmt.Printf("MinInt32 = %v\\n", math.MinInt32)
-  fmt.Printf("MinInt16 = %v\\n", math.MinInt16)
+    fmt.Printf("MinInt64 = %v\\n", math.MinInt64)
+    fmt.Printf("MinInt32 = %v\\n", math.MinInt32)
+    fmt.Printf("MinInt16 = %v\\n", math.MinInt16)
 }
 
 // MaxInt64 = 9223372036854775807
@@ -43,13 +39,13 @@ func main() {
 // MinInt32 = -2147483648
 // MinInt16 = -32768
 
-\`\`\`
+```
 
 ---
 
 #### Generating a random number
 
-\`\`\`golang
+```golang
 package main
 
 import {
@@ -58,15 +54,16 @@ import {
 }
 
 func main() {
-    \/\/ generate a random number from 0 to 100
+    // generate a random number from 0 to 100
     randomNum := rand.Intn(100) + 1
 }
 
-\`\`\`
+```
 
 ---
 
-### Floating Point Numbers\n
+### Floating Point Numbers
+
 - float32
 - float64
 
@@ -74,36 +71,27 @@ func main() {
 
 ### Strings
 
-\`\`\`golang
+```golang
 package main
 
 import "fmt"
 
 func main() {
     // declare strings
-  var hello string = "Hello"
-  var world string = "World!"
+    var hello string = "Hello"
+    var world string = "World!"
     // string concatentation
-  fmt.Println(hello + " " + world)
+    fmt.Println(hello + " " + world)
 }
 
 // Hello World!
-\`\`\`
+```
 
 ---
 
-### Booleans\n
+### Booleans
+
 - true
 - false
 
 ---
-
-`
-
-const DataTypes = () => {
-  return (
-  <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-  )
-}
-
-export default DataTypes

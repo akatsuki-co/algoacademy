@@ -1,22 +1,22 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
-const markdown = `
 ## Linked Lists
 
 ---
 
-A linked list is a data structure where elements are linked with pointers, therefore not being contiguous in memory.\n
+A linked list is a data structure where elements are linked with pointers, therefore not being contiguous in memory.
+
 - Each link, or more commonly referred to as "node", contains a data field and a reference to the next node in the list.
 - The last node will point to a nil value.
 - Variants of linked lists include singly (each node has one pointer) or doubly (each node has two pointers).
 
-\`\`\`go
+---
+
+```go
 type node struct {
     n int
     next *node
 }
-\`\`\`
+```
 
 ---
 
@@ -25,9 +25,9 @@ type node struct {
 - Nodes are typically added to the head of a singly linked list as that is a O(1) operation.
 - Adding anywhere else requires traversing the pointers to reach the desired location of insertion.
 
---- 
+---
 
-\`\`\`go
+```go
 package main
 
 func addNode(head **node, n int) {
@@ -44,7 +44,7 @@ func main() {
     printList(head) // 4 -> 3 -> 2 -> 1 -> 0
 }
 
-\`\`\`
+```
 
 ---
 
@@ -54,7 +54,7 @@ func main() {
 
 ---
 
-\`\`\`go
+```go
 func insertNode(head **node, n int) *node {
     if *head == nil {
         return nil
@@ -77,7 +77,7 @@ func insertNode(head **node, n int) *node {
     curr.next = newNode
     return newNode
 }
-\`\`\`
+```
 
 ---
 
@@ -86,9 +86,9 @@ func insertNode(head **node, n int) *node {
 - Removing the head of a list is a O(1) operation.
 - If you want to remove a node from a given index, that will require traversing the list, making it a O(n) operation.
 
---- 
+---
 
-\`\`\`go
+```go
 package main
 
 func removeNodeAtIndex(head **node, index int) {
@@ -119,16 +119,17 @@ func main()
     print_list(head); // 3 -> 2 -> 1
 }
 
-\`\`\`
+```
 
 ---
 
 **Interview Question**
 
 ### Delete a node in the middle of a linked list
+
 - Given only its reference
 
-\`\`\`go
+```go
 package main
 
 func deleteMidNode(mid *node) {
@@ -145,16 +146,17 @@ func main()
     return 0;
 }
 
-\`\`\`
+```
 
 ---
 
 **Interview Question**
 
 ### Detect if a linked list has a cycle\n
+
 - A cycle occurs when a node in a linked list points to a previous node in the list, therefore causing the linked list to loop.
 
-\`\`\`go
+```go
 func hasCycle(head *node) bool {
     if head == nil {
         return false
@@ -170,16 +172,8 @@ func hasCycle(head *node) bool {
     return false
 }
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const LinkedLists = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default LinkedLists

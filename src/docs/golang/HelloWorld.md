@@ -5,9 +5,7 @@
 Quick facts about Golang:
 
 - Statically typed
-
 - Compiled
-
 - Automatic garbage collection
 
 ---
