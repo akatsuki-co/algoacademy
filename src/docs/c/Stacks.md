@@ -1,19 +1,16 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 
 ## Stacks
 
 ---
 
-A stack is a data structure where elements are inserted and removed based on a last-in first-out (LIFO) principle.\n
+A stack is a data structure where elements are inserted and removed based on a last-in first-out (LIFO) principle.
+
 - A helpful way to visualize a stack is to imagine a pancake "stack" where you eat things from the top or most recently added layer and work your way down to the oldest pancake.
 - In C, a singly linked-list is generally used to represent a stack.
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,31 +31,33 @@ node *create_node(int n)
     return new_node;
 }
 
-\`\`\`
+```
 
 ---
 
-### Check if a stack is empty\n
+### Check if a stack is empty
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 int is_empty(node *root)
 {
     return !root;
 }
 
-\`\`\`
+```
 
 ---
 
-### Push a node onto a stack\n
+### Push a node onto a stack
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 void push(node **root, int value)
 {
     node *new_node = create_node(value);
@@ -66,16 +65,17 @@ void push(node **root, int value)
     *root = new_node;
 }
 
-\`\`\`
+```
 
 ---
 
-### Pop a node out of a stack\n
+### Pop a node out of a stack
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 int pop(node **root)
 {
     node *temp;
@@ -89,14 +89,15 @@ int pop(node **root)
     free(temp);
     return popped;
 }
-\`\`\`
+```
 
 ---
 
 ### Peek
+
 - Runtime: O(1)
 
-\`\`\`c
+```c
 int peek(node *root)
 {
     if (is_empty(root))
@@ -104,16 +105,8 @@ int peek(node *root)
     return root->n;
 }
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Stacks = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Stacks

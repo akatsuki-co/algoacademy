@@ -1,7 +1,3 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Sorting
 
 ---
@@ -10,23 +6,24 @@ const markdown = `
 
 ---
 
-\`\`\`c
+```c
 void swap(int *a, int *b)
 {
 	int tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
-\`\`\`
+```
 
 ---
 
-### Bubble Sort\n
-- Time complexity: O(n\\*\\*2)
+### Bubble Sort
+
+- Time complexity: O(n\*\*2)
 
 ---
 
-\`\`\`c
+```c
 void bubble_sort(int *arr, int size)
 {
 	int i, repeat = 1;
@@ -47,16 +44,17 @@ void bubble_sort(int *arr, int size)
 	}
 }
 
-\`\`\`
+```
 
 ---
 
-### Insertion Sort\n
-- Time complexity: O(n\\*\\*2)
+### Insertion Sort
+
+- Time complexity: O(n\*\*2)
 
 ---
 
-\`\`\`c
+```c
 void insertion_sort(int *arr, int size)
 {
     int i, j, key;
@@ -73,16 +71,17 @@ void insertion_sort(int *arr, int size)
         arr[j + 1] = key;
     }
 }
-\`\`\`
+```
 
 ---
 
-### Quicksort\n
-- Time complexity: O(n * log(n))
+### Quicksort
+
+- Time complexity: O(n \* log(n))
 
 ---
 
-\`\`\`c
+```c
 int partition(int *arr, int low, int high)
 {
     // using the last element as the pivot
@@ -113,16 +112,17 @@ void quick_sort(int arr[], int low, int high, int size)
         quick_sort(arr, p + 1, high, size);
     }
 }
-\`\`\`
+```
 
 ---
 
-### Shellsort\n
-- Time complexity: O(n * log(n))
+### Shellsort
+
+- Time complexity: O(n \* log(n))
 
 ---
 
-\`\`\`c
+```c
 void shell_sort(int *arr, int size)
 {
 	int inner, outer, interval = 1, val;
@@ -148,16 +148,17 @@ void shell_sort(int *arr, int size)
 		interval = (interval - 1) / 3;
 	}
 }
-\`\`\`
+```
 
 ---
 
 ### Counting Sort
+
 - Time complexity: O(n + k) where n is the number of items and k is the number of possible values
 
 ---
 
-\`\`\`c
+```c
 int max(int *arr, int size)
 {
     int i, max = 0;
@@ -191,16 +192,17 @@ void counting_sort(int *arr, int size)
 	}
 	free(storage);
 }
-\`\`\`
+```
 
 ---
 
 ### Merge Sort
-- Time complexity: O(n * log(n))
+
+- Time complexity: O(n \* log(n))
 
 ---
 
-\`\`\`c
+```c
 void merge(int *arr, int *inner, int start, int mid, int end)
 {
 	int i, j, k = 0;
@@ -241,16 +243,17 @@ void merge_sort(int *arr, int size)
 	helper(arr, inner, 0, size);
 	free(inner);
 }
-\`\`\`
+```
 
 ---
 
 ### Heap Sort
-- Time complexity: O(n * log(n))
+
+- Time complexity: O(n \* log(n))
 
 ---
 
-\`\`\`c
+```c
 void heapify(int *arr, int n, int i)
 {
 	int max = i, left = 2 * i, right = 2 * i + 1;
@@ -278,16 +281,17 @@ void heap_sort(int *arr, int size)
 		heapify(arr, i, 0);
 	}
 }
-\`\`\`
+```
 
 ---
 
 ### Radix Sort
+
 - Time complexity: O(k + n) where k is the key length and n is the number of keys
 
 ---
 
-\`\`\`c
+```c
 int max(int *arr, int size)
 {
     int i, max = 0;
@@ -327,16 +331,8 @@ void radix_sort(int *arr, int size)
 	for (i = 1; max_num / i > 0; i *= 10)
 		helper(arr, size, i);
 }
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Sorting = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Sorting

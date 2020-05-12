@@ -1,24 +1,19 @@
-import React from "react"
-import HighlightedMarkdown from '../../components/HighlightedMarkdown'
-
-const markdown = `\
-
 ## Looping
 
 ---
 
-### For Loop\n
+### For Loop
 
 General format:
 
-\`\`\`txt
+```txt
 for ( init_expression; loop_condition; loop_expression )
     program statement (or statements)
-\`\`\`
+```
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 int main()
@@ -26,26 +21,24 @@ int main()
     int i;
 
     for (i = 0; i < 5; i++)
-    {
         printf("%i ", i); // 0 1 2 3 4
-    }
     return 0;
 }
 
-\`\`\`
+```
 
 ---
 
-### While Loop\n
+### While Loop
 
-\`\`\`txt
+```txt
 while ( expression )
     program statement (or statements)
-\`\`\`
+```
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 int main()
@@ -62,18 +55,8 @@ int main()
 
 // 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const DataTypes = () => {
-  return (
-  <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-  )
-}
-
-export default DataTypes

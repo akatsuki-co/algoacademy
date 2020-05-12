@@ -1,17 +1,16 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Linked Lists
 
 ---
 
-A linked list is a data structure where elements are linked with pointers, therefore not being contiguous in memory.\n
+A linked list is a data structure where elements are linked with pointers, therefore not being contiguous in memory.
+
 - Each link, or more commonly referred to as "node", contains a data field and a reference to the next node in the list.
 - The last node will point to a null value.
 - Variants of linked lists include singly (each node has one pointer) or doubly (each node has two pointers).
 
-\`\`\`c
+---
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,7 +32,7 @@ node *create_node(int n)
     return new_node;
 }
 
-\`\`\`
+```
 
 ---
 
@@ -42,9 +41,9 @@ node *create_node(int n)
 - Nodes are typically added to the head of a singly linked list as that is a O(1) operation.
 - Adding anywhere else requires traversing the pointers to reach the desired location of insertion.
 
---- 
+---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include "lists.h"
 
@@ -68,7 +67,7 @@ int main()
     return 0;
 }
 
-\`\`\`
+```
 
 ---
 
@@ -78,7 +77,7 @@ int main()
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include "lists.h"
 
@@ -111,7 +110,7 @@ node *insert_node(node **head, int n)
     return new_node;
 }
 
-\`\`\`
+```
 
 ---
 
@@ -120,9 +119,9 @@ node *insert_node(node **head, int n)
 - Removing the head of a list is a O(1) operation.
 - If you want to remove a node from a given index, that will require traversing the list, making it a O(n) operation.
 
---- 
+---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include "lists.h"
 
@@ -165,16 +164,19 @@ int main()
     return 0;
 }
 
-\`\`\`
+```
 
 ---
 
 **Interview Question**
 
 ### Delete a node in the middle of a linked list
+
 - Given only its reference
 
-\`\`\`c
+---
+
+```c
 #include <stdio.h>
 #include "lists.h"
 
@@ -197,16 +199,19 @@ int main()
     return 0;
 }
 
-\`\`\`
+```
 
 ---
 
 **Interview Question**
 
-### Detect if a linked list has a cycle\n
+### Detect if a linked list has a cycle
+
 - A cycle occurs when a node in a linked list points to a previous node in the list, therefore causing the linked list to loop.
 
-\`\`\`c
+---
+
+```c
 #include <stdio.h>
 #include "lists.h"
 
@@ -228,16 +233,9 @@ int has_cycle(node *head)
 	return 0;
 }
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
 
-`
-
-const LinkedLists = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default LinkedLists

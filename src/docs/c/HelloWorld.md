@@ -3,6 +3,7 @@
 ---
 
 ##### Quick facts about C:
+
 - Statically typed
 - Compiled
 - Manual memory management (no garbage collection)
@@ -14,7 +15,7 @@
 
 int main()
 {
-    printf("Hello World!\\n");
+    printf("Hello World!\n");
     return 0;
 }
 

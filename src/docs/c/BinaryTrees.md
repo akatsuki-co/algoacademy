@@ -5,7 +5,7 @@
 A binary tree is a data structure that is composed of nodes that have at most two children. The top of the binary tree is referred to as the root.
 
 - Nodes can be also constructed with or without references to the parent, that is dependent on the user. Having a reference to the parent node makes tree traversal easier at the cost of extra space.
-- A leaf is a node that has no children (\\*left and *right point to NULL).
+- A leaf is a node that has no children (\*left and *right point to NULL).
 
 ---
 
@@ -91,7 +91,7 @@ void postorder_traversal(const bt_node *tree)
 }
 ```
 
---- 
+---
 
 ### Find the height of a node
 
@@ -113,7 +113,7 @@ int bt_height(const bt_node *tree)
 
 ```
 
---- 
+---
 
 ### Find the depth of a node
 
@@ -163,7 +163,7 @@ int bt_size(const bt_node *tree)
 
 #### Top down
 
- - Time complexity: O(n\\**2) because the height of each node is being recalculated at every level.
+- Time complexity: O(n\\\*\*2) because the height of each node is being recalculated at every level.
 
 ---
 
@@ -190,7 +190,7 @@ int is_balanced(bt_node *tree)
 
 ---
 
-\`\`\`c
+```c
 int dfs(bt_node *tree)
 {
     int left, right;
@@ -212,16 +212,8 @@ int is_balanced(bt_node *tree)
 {
     return dfs(tree) != -1;
 }
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const BinaryTrees = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default BinaryTrees

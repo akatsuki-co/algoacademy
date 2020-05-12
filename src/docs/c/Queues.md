@@ -1,19 +1,16 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 
 ## Queues
 
 ---
 
-A queue is a data structure where elements are inserted and removed based on a first-in first-out (LIFO) principle.\n
+A queue is a data structure where elements are inserted and removed based on a first-in first-out (LIFO) principle.
+
 - A helpful way to visualize a queue is to imagine people in a line at an amusement park. People who line up first gets served first.
 - In C, a singly linked-list with two pointers that reference the head and tail of the list is used to represent a queue.
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -49,54 +46,57 @@ Queue* create_queue()
     return q;
 }
 
-\`\`\`
+```
 
 ---
 
-### Check if a queue is empty\n
+### Check if a queue is empty
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 int is_empty(Queue *q)
 {
     return !q->head;
 }
 
-\`\`\`
+```
 
 ---
 
-### Enqueue a node\n
+### Enqueue a node
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 void enqueue(Queue* q, int n)
 {
     node* new_node = create_node(n);
     if (is_empty(q))
     {
         q->head = new_node;
-        q->tail = new_node; 
+        q->tail = new_node;
         return;
     }
     q->tail->next = new_node;
     q->tail = new_node;
 }
 
-\`\`\`
+```
 
 ---
 
-### Dequeue a node\n
+### Dequeue a node
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 int dequeue(Queue *q)
 {
     node *tmp;
@@ -112,14 +112,15 @@ int dequeue(Queue *q)
     free(tmp);
     return popped;
 }
-\`\`\`
+```
 
 ---
 
 ### Peek
+
 - Runtime: O(1)
 
-\`\`\`c
+```c
 int peek(node *root)
 {
     if (is_empty(root))
@@ -127,20 +128,21 @@ int peek(node *root)
     return root->n;
 }
 
-\`\`\`
+```
 
 ---
 
 **Interview Question**
 
-### Implement a queue with two stacks\n
+### Implement a queue with two stacks
+
 - Enqueue: O(1) runtime
 - Dequeue: amortized O(1) runtime
 - Peek: amortized O(1) runtime
 
 ---
 
-\`\`\`c  
+```c
 #include "stack.h"
 
 typedef struct queue_with_stacks
@@ -174,16 +176,8 @@ int peek(queue *q)
     return peek(q->oldest);
 }
 
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Queues = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Queues
