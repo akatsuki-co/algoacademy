@@ -1,7 +1,3 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 ## Bit Manipulation
 
 ---
@@ -10,7 +6,7 @@ const markdown = `
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 void print_binary(unsigned long int n)
@@ -40,7 +36,7 @@ int main()
     print_binary(~0); // 1111111111111111111111111111111111111111111111111111111111111111
     return 0;
 }
-\`\`\`
+```
 
 ---
 
@@ -48,14 +44,14 @@ int main()
 
 ---
 
-\`\`\`c
+```c
 int get_bit(unsigned long int n, unsigned int index)
 {
 	if (index > sizeof(n) * 8 - 1)
 		exit(1)
 	return ((n >> index) & 1);
 }
-\`\`\`
+```
 
 ---
 
@@ -63,27 +59,27 @@ int get_bit(unsigned long int n, unsigned int index)
 
 ---
 
-\`\`\`c
+```c
 void set_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > sizeof(index) * 8 - 1)
 		exit(1);
 	*n |= 1 << index;
 }
-\`\`\`
+```
 
 ---
 
 ### Clear the bit at a given index
 
-\`\`\`c
+```c
 void clear_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > sizeof(n) * 8 - 1)
 		exit(1)
 	*n &= ~(1UL << index);
 }
-\`\`\`
+```
 
 ---
 
@@ -93,7 +89,7 @@ void clear_bit(unsigned long int *n, unsigned int index)
 
 ---
 
-\`\`\`c
+```c
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int res = 0;
@@ -110,7 +106,7 @@ int main()
     printf("%i", flip_bits(4, 3)); // 3
     return 0;
 }
-\`\`\`
+```
 
 ---
 
@@ -118,23 +114,15 @@ int main()
 
 ### Determine if a number is a power of two in constant time
 
---- 
+---
 
-\`\`\`c
+```c
 int is_power_of_two(unsigned int n)
 {
     return n && !(n & (n - 1));
 }
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const BitManipulation = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default BitManipulation

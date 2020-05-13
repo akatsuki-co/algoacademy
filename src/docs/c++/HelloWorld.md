@@ -1,13 +1,9 @@
-import React from 'react'
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
-
 ## Hello World!
 
 ---
 
-Quick facts about C++:\n
+Quick facts about C++:
+
 - Statically typed
 - Compiled
 - No garbage collection
@@ -15,24 +11,16 @@ Quick facts about C++:\n
 
 ---
 
-\`\`\`cpp
+```cpp
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\\n";
+    std::cout << "Hello World!\n";
     return 0;
 }
 
-\\\\ Hello World!
-\`\`\`
+// Hello World!
+```
 
 ---
-
-`
-
-const HelloWorld = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default HelloWorld

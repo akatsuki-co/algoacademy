@@ -1,24 +1,19 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `\
-
 ## Functions
 
 General format:
 
-\`\`\`txt
+```txt
 return_type name_of_function(function parameter(s))
 {
     function body;
 }
-\`\`\`
+```
 
 ---
 
 ### A function to determine if an ASCII string has all unique characters
 
-\`\`\`c
+```c
 #include <stdio.h>
 
 int is_unique(char *str)
@@ -38,20 +33,13 @@ int is_unique(char *str)
 
 int main()
 {
-    printf("%i\\n", is_unique("abcdef")); // 1
-    printf("%i\\n", is_unique("abcdea")); // 0
+    printf("%i\n", is_unique("abcdef")); // 1
+    printf("%i\n", is_unique("abcdea")); // 0
     return 0;
 }
 
-\`\`\`
+```
+
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Functions = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Functions

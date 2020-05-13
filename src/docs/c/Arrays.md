@@ -2,12 +2,14 @@
 
 ---
 
-An array is a variable that can store multiple values of the same data type.\n
+An array is a variable that can store multiple values of the same data type.
+
 - The data is ordered and contiguous in memory.
 
 ---
 
 ### Initializing an array
+
 - For arrays on the stack, array sizes have to be defined at compile time.
 - For variable-sized arrays, user must allocate memory on the heap using malloc, calloc...
 
@@ -43,7 +45,8 @@ int main()
 
 **Interview Question**
 
-### Calculate (n) fibonacci numbers\n
+### Calculate (n) fibonacci numbers
+
 - Use memoization with arrays.
 
 ---

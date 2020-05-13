@@ -1,25 +1,24 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
-const markdown = `
 ## Sets
 
 ---
 
-A set is a data structure that maps keys to values, similarly to a hash table. The difference is that the values in a set can either be true or false.\n
+A set is a data structure that maps keys to values, similarly to a hash table. The difference is that the values in a set can either be true or false.
+
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
-    1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
-    2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+  1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
+  2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
 
 ---
 
 ### Initialize a set
+
 - Calloc initializes all bytes in the allocated storage to zero
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,16 +54,17 @@ set *create_set(unsigned int size)
 	}
 	return s;
 }
-\`\`\`
+```
 
 ---
 
 ### Implement a hash function
+
 - We will be using the djb2 algorithm
 
 ---
 
-\`\`\`c
+```c
 unsigned int hash_djb2(char *str)
 {
 	unsigned int hash;
@@ -77,7 +77,7 @@ unsigned int hash_djb2(char *str)
 	return hash;
 }
 
-\`\`\`
+```
 
 ---
 
@@ -85,23 +85,24 @@ unsigned int hash_djb2(char *str)
 
 ---
 
-\`\`\`c
+```c
 unsigned int generate_key(char *key, unsigned int size)
 {
 	return hash_djb2(key) % size;
 }
 
-\`\`\`
+```
 
 ---
 
 ### Add a key
+
 - We will be using separate chaining to handle collisions
 - Runtime: O(1)
 
---- 
+---
 
-\`\`\`c
+```c
 void add(set *s, char *key)
 {
 	unsigned int index;
@@ -125,16 +126,17 @@ void add(set *s, char *key)
 	new_node->next = s->array[index];
 	s->array[index] = new_node;
 }
-\`\`\`
+```
 
 ---
 
 ### Check if a set has a key
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 int has(set *s, char *key)
 {
 	unsigned int index;
@@ -154,7 +156,7 @@ int has(set *s, char *key)
     // key doesn't exist
 	return 0;
 }
-\`\`\`
+```
 
 ---
 
@@ -162,7 +164,7 @@ int has(set *s, char *key)
 
 ---
 
-\`\`\`c
+```c
 void delete_set(set *s)
 {
 	int i;
@@ -186,16 +188,8 @@ void delete_set(set *s)
 	free(s->array);
 	free(s);
 }
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const Sets = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default Sets

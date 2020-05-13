@@ -1,25 +1,23 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
 
-const markdown = `
 ## Hash Tables
 
 ---
 
-A hash table is a data structure that maps keys to values.\n
+A hash table is a data structure that maps keys to values.
+
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
-    1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
-	2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
-	
+  1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs 2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+
 ---
 
 ### Initialize a hash table
+
 - Calloc initializes all bytes in the allocated storage to zero
 
 ---
 
-\`\`\`c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -56,16 +54,17 @@ hash_table *create_hash_table(unsigned int size)
 	return ht;
 }
 
-\`\`\`
+```
 
 ---
 
 ### Implement a hash function
+
 - We will be using the djb2 algorithm
 
 ---
 
-\`\`\`c
+```c
 unsigned int hash_djb2(char *str)
 {
 	unsigned int hash;
@@ -78,7 +77,7 @@ unsigned int hash_djb2(char *str)
 	return hash;
 }
 
-\`\`\`
+```
 
 ---
 
@@ -86,23 +85,24 @@ unsigned int hash_djb2(char *str)
 
 ---
 
-\`\`\`c
+```c
 unsigned int generate_key(char *key, unsigned int size)
 {
 	return hash_djb2(key) % size;
 }
 
-\`\`\`
+```
 
 ---
 
 ### Set a key/value pair
+
 - We will be using separate chaining to handle collisions
 - Runtime: O(1)
 
---- 
+---
 
-\`\`\`c
+```c
 void set(hash_table *ht, char *key, char *value)
 {
 	unsigned int index;
@@ -131,16 +131,17 @@ void set(hash_table *ht, char *key, char *value)
 	ht->array[index] = new_node;
 }
 
-\`\`\`
+```
 
 ---
 
 ### Get a value
+
 - Runtime: O(1)
 
 ---
 
-\`\`\`c
+```c
 char *get(hash_table *ht, char *key)
 {
 	unsigned int index;
@@ -160,7 +161,7 @@ char *get(hash_table *ht, char *key)
     // key doesn't exist
 	return (NULL);
 }
-\`\`\`
+```
 
 ---
 
@@ -168,7 +169,7 @@ char *get(hash_table *ht, char *key)
 
 ---
 
-\`\`\`c
+```c
 void delete_hash_table(hash_table *ht)
 {
 	int i;
@@ -193,16 +194,8 @@ void delete_hash_table(hash_table *ht)
 	free(ht->array);
 	free(ht);
 }
-\`\`\`
+```
 
 ---
 
 _Author: Tu Vo_
-
-`
-
-const HashTables = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default HashTables

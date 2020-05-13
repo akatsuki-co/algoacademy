@@ -1,13 +1,10 @@
-import React from "react"
-import HighlightedMarkdown from "../../components/HighlightedMarkdown"
-
-const markdown = `
 
 ## Hello World!
 
 ---
 
-Quick facts about Javascript:\n
+Quick facts about Javascript:
+
 - Dynamically typed
 - Interpreted
 - Automatic garbage collection
@@ -15,18 +12,10 @@ Quick facts about Javascript:\n
 
 ---
 
-\`\`\`js
+```js
 console.log("Hello World!")
 
-\\\\ Hello World!
-\`\`\`
+// Hello World!
+```
 
 ---
-
-`
-
-const HelloWorld = () => {
-  return <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-}
-
-export default HelloWorld
