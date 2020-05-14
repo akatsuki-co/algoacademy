@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import Col from "react-bootstrap/Col"
+import {useParams} from 'react-router'
+
 
 import HighlightedMarkdown from "./HighlightedMarkdown"
 
 
-const Content = ({data, clicked, markdownFile}) => {
+const Content = ({language}) => {
     const [markdown, setMarkdown] = useState(`Nothing here yet!`);
+    let params = useParams()
 
-    useEffect(() => {
+   useEffect(() => {
         getMarkdown();
-}, [clicked]);
+}, [params]);
 
   const getMarkdown = async () => {
-    const language = data.language
-    const markdownFileName = markdownFile.replace(/\s+/g, '')
+    const markdownFileName = params.topic 
     const file = await import(`../docs/${language}/${markdownFileName}.md`);
     const response = await fetch(file.default);
     let text = await response.text();
