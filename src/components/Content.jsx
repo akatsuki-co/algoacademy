@@ -10,25 +10,29 @@ const Content = ({language}) => {
     const [markdown, setMarkdown] = useState(`Nothing here yet!`);
     let params = useParams()
 
-   useEffect(() => {
+    useEffect(() => {
         getMarkdown();
-}, [params]);
+    }, [params]);
 
-  const getMarkdown = async () => {
-    const markdownFileName = params.topic 
-    const file = await import(`../docs/${language}/${markdownFileName}.md`);
-    const response = await fetch(file.default);
-    let text = await response.text();
-      if (text === "") {
-          text = "# Nothing here yet! Come back again soon!"
-      }
-    setMarkdown(text);
-  };
-  return (
-    <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left' id="content">
+    async function getMarkdown() {
+        try {
+            const markdownFileName = params.topic 
+            const file = await import(`../docs/${language}/${markdownFileName}.md`);
+            const response = await fetch(file.default);
+            let text = await response.text();
+            if (text === "") {
+                text = "# Nothing here yet! Come back again soon!"
+            }
+            setMarkdown(text);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+    return (
+        <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left' id="content">
         <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-    </Col>
-  )
+        </Col>
+    )
 }
 
 export default Content
