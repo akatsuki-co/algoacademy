@@ -5,16 +5,13 @@ import Nav from "react-bootstrap/Nav"
 import Col from "react-bootstrap/Col"
 import SidebarItem from "./SidebarItem"
 
-const Sidebar = ({ data, clicked, setClicked, setMarkdownFile }) => {
+const Sidebar = ({ data }) => {
   const sidebarItems = data.sidebar.map((el) => (
     <SidebarItem
       language={data.language}
       key={shortid.generate()}
       menu={el.menu}
       subMenu={el.subMenu}
-      clicked={clicked}
-      setClicked={setClicked}
-      setMarkdownFile={setMarkdownFile}
     />
   ))
   return (
