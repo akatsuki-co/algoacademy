@@ -11,13 +11,11 @@ const Content = ({language}) => {
     let params = useParams()
 
     useEffect(() => {
-        getMarkdown();
-    }, [params]);
-
     async function getMarkdown() {
         try {
             const markdownFileName = params.topic 
-            const file = await import(`../docs/${language}/${markdownFileName}.md`);
+            const topic_language = language
+            const file = await import(`../docs/${topic_language}/${markdownFileName}.md`);
             const response = await fetch(file.default);
             let text = await response.text();
             if (text === "") {
@@ -28,6 +26,9 @@ const Content = ({language}) => {
             console.error(e);
         }
     };
+        getMarkdown();
+    }, [params, language]);
+
     return (
         <Col md="7" xl="8" className='ml-md-auto py-3 pl-5 border-left' id="content">
         <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
