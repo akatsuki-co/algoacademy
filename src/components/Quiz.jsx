@@ -121,7 +121,7 @@ function Quiz() {
       <div className="quiz results gradient">
         <h2>Results</h2>
         <ul>{renderResultsData()}</ul>
-        <button className="btn btn-primary" onClick={restart}>
+        <button className="quiz-btn btn-primary" onClick={restart}>
           Restart
         </button>
       </div>
@@ -137,7 +137,7 @@ function Quiz() {
           <Question />
           {renderError()}
           <Answers />
-          <button className="btn btn-primary" onClick={next}>
+          <button className="quiz-btn btn-primary" onClick={next}>
             Confirm and Continue
           </button>
         </div>
