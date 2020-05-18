@@ -5,7 +5,7 @@ import Cards from "./components/Cards";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Python from "./pages/Python";
-import Golang from "./pages/Golang";
+import Go from "./pages/Go";
 import Cpp from "./pages/C++";
 import C from "./pages/C";
 import Javascript from "./pages/Javascript";
@@ -29,13 +29,8 @@ function App() {
         <Route path="/javascript">
           <Javascript />
         </Route>
-<<<<<<< HEAD
-        <Route path="/golang">
-          <Golang />
-=======
-        <Route path='/go'>
+        <Route path="/go">
           <Go />
->>>>>>> a8382bcf1bb51705a0dda9fbab96b8d6a9820f0c
         </Route>
         <Route path="/c++">
           <Cpp />
