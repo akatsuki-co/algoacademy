@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import Sidebar from "../components/Sidebar"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Content from "../components/Content"
+import { Switch, Route  } from "react-router-dom"
 
 const C = () => {
   const tableOfContents = {
@@ -40,16 +41,16 @@ const C = () => {
       },
     ],
   }
-  const [markdownFile, setMarkdownFile] = useState('HelloWorld')
-  const [clicked, setClicked] = useState(true)
-
 
     return (
             <section className='py-3'>
               <Container>
-                <Row> 
-                  <Sidebar clicked={clicked} setClicked={setClicked} setMarkdownFile={setMarkdownFile} data={tableOfContents}></Sidebar>
-                  <Content clicked={clicked} markdownFile={markdownFile} data={tableOfContents}></Content>
+        <Row> 
+                  <Sidebar data={tableOfContents}></Sidebar>
+                <Switch>
+                    <Route path="/c/:topic" render={(props) => <Content {...props} language="c" />}/>
+                    <Route path="/" render={(props) => <Content {...props} language="c" default_topic="hello_world"/>}/>
+                </Switch>
                 </Row>
               </Container>
             </section>

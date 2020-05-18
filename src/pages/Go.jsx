@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import Sidebar from "../components/Sidebar"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Content from "../components/Content"
+import { Switch, Route  } from "react-router-dom"
 
-const Golang = () => {
+const Go = () => {
   const tableOfContents = {
-    language: "golang",
+    language: "go",
     sidebar: [
         {
           menu: "Basics",
@@ -42,16 +43,16 @@ const Golang = () => {
         },
       ],
     }
-  const [markdownFile, setMarkdownFile] = useState('HelloWorld')
-  const [clicked, setClicked] = useState(true)
-
 
     return (
             <section className='py-3'>
               <Container>
                 <Row> 
-                  <Sidebar clicked={clicked} setClicked={setClicked} setMarkdownFile={setMarkdownFile} data={tableOfContents}></Sidebar>
-                  <Content clicked={clicked} markdownFile={markdownFile} data={tableOfContents}></Content>
+                  <Sidebar data={tableOfContents}></Sidebar>
+                <Switch>
+                    <Route path="/go/:topic" render={(props) => <Content {...props} language="go" />}/>
+        <Route path="/" render={(props) => <Content {...props} language="go" default_topic="hello_world"/>}/>
+                </Switch>
                 </Row>
               </Container>
             </section>
@@ -59,4 +60,4 @@ const Golang = () => {
     )
 }
 
-export default Golang
+export default Go
