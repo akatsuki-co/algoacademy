@@ -22,8 +22,8 @@ const Content = ({language}) => {
                 text = "# Nothing here yet! Come back again soon!"
             }
             setMarkdown(text);
-        } catch (e) {
-            console.error(e);
+        } catch (error) {
+            console.error(error);
         }
     };
         getMarkdown();
