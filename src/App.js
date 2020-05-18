@@ -11,6 +11,7 @@ import C from "./pages/C"
 import Javascript from "./pages/Javascript"
 
 import Contribute from "./components/Contribute"
+import Quiz from "./components/Quiz"
 
 import "./App.css"
 
@@ -41,6 +42,9 @@ function App() {
         <Route path='/contribute'>
           <Contribute />
         </Route>
+        <Route path='/quiz'>
+          <Quiz />
+        </Route>        
         <Route>
           <h1 className='text-center py-5'>Page not found</h1>
         </Route>
