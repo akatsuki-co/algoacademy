@@ -6,7 +6,7 @@ import Card from "./Card"
 import shortid from 'shortid'
 
 const Cards = () => {
-  const languages = ["python", "c", "javascript", "c++", "golang", "java"]
+  const languages = ["python", "c", "javascript", "c++", "go", "java"]
   return (
     <section id="cards" className="py-3">
       <Container>

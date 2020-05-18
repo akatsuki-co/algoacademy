@@ -47,7 +47,7 @@ const Python = () => {
           <Sidebar data={tableOfContents}></Sidebar>
         <Switch>
             <Route path="/python/:topic" render={(props) => <Content {...props} language="python" />}/>
-            <Route path="/"></Route>
+            <Route path="/" render={(props) => <Content {...props} language="python" default_topic="hello_world"/>}/>
         </Switch>
         </Row>
       </Container>

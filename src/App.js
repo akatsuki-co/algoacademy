@@ -9,7 +9,6 @@ import Golang from "./pages/Golang";
 import Cpp from "./pages/C++";
 import C from "./pages/C";
 import Javascript from "./pages/Javascript";
-
 import Contribute from "./components/Contribute";
 import Quiz from "./components/Quiz";
 
@@ -30,8 +29,13 @@ function App() {
         <Route path="/javascript">
           <Javascript />
         </Route>
+<<<<<<< HEAD
         <Route path="/golang">
           <Golang />
+=======
+        <Route path='/go'>
+          <Go />
+>>>>>>> a8382bcf1bb51705a0dda9fbab96b8d6a9820f0c
         </Route>
         <Route path="/c++">
           <Cpp />
