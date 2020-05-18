@@ -1,8 +1,8 @@
-import React, {useReducer} from 'react';
-import Progress from './Progress';
-import Question from './Question';
-import Answers from './Answers';
-import QuizContext from '../context/QuizContext';
+import React, { useReducer } from "react";
+import Progress from "./Progress";
+import Question from "./Question";
+import Answers from "./Answers";
+import QuizContext from "../context/QuizContext";
 
 import {
   SET_ANSWERS,
@@ -11,53 +11,53 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from '../reducers/types.js';
-import quizReducer from '../reducers/QuizReducer';
+} from "../reducers/types.js";
+import quizReducer from "../reducers/QuizReducer";
 
 function Quiz() {
   const questions = [
     {
-        id: 1,
-        question: 'Which statement about Hooks is not true?',
-        answer_a:
-            'Hooks are 100% backwards-compatible and can be used side by side with classes',
-        answer_b: 'Hooks are still in beta and not available yet',
-        answer_c:
-            "Hooks are completely opt-in, there's no need to rewrite existing code",
-        answer_d: 'All of the above',
-        correct_answer: 'b',
+      id: 1,
+      question: "Which statement about Hooks is not true?",
+      answer_a:
+        "Hooks are 100% backwards-compatible and can be used side by side with classes",
+      answer_b: "Hooks are still in beta and not available yet",
+      answer_c:
+        "Hooks are completely opt-in, there's no need to rewrite existing code",
+      answer_d: "All of the above",
+      correct_answer: "b",
     },
     {
-        id: 2,
-        question: 'Which one is not a Hook?',
-        answer_a: 'useState()',
-        answer_b: 'useConst()',
-        answer_c: 'useReducer()',
-        answer_d: 'All of the above',
-        correct_answer: 'b',
+      id: 2,
+      question: "Which one is not a Hook?",
+      answer_a: "useState()",
+      answer_b: "useConst()",
+      answer_c: "useReducer()",
+      answer_d: "All of the above",
+      correct_answer: "b",
     },
     {
-        id: 3,
-        question: 'What Hook should be used for data fetching?',
-        answer_a: 'useDataFetching()',
-        answer_b: 'useApi()',
-        answer_c: 'useEffect()',
-        answer_d: 'useRequest()',
-        correct_answer: 'c',
+      id: 3,
+      question: "What Hook should be used for data fetching?",
+      answer_a: "useDataFetching()",
+      answer_b: "useApi()",
+      answer_c: "useEffect()",
+      answer_d: "useRequest()",
+      correct_answer: "c",
     },
   ];
 
   const initialState = {
     questions,
     currentQuestion: 0,
-    currentAnswer: '',
+    currentAnswer: "",
     answers: [],
     showResults: false,
-    error: ''
+    error: "",
   };
 
   const [state, dispatch] = useReducer(quizReducer, initialState);
-  const {currentQuestion, currentAnswer, answers, showResults, error} = state;
+  const { currentQuestion, currentAnswer, answers, showResults, error } = state;
   const question = questions[currentQuestion];
 
   const renderError = () => {
@@ -65,56 +65,57 @@ function Quiz() {
       return;
     }
 
-    return <div className="error">{error}</div>
-  }
+    return <div className="error">{error}</div>;
+  };
 
   const renderResultMark = (question, answer) => {
     if (question.correct_answer === answer.answer) {
       return <span className="correct">Correct</span>;
     }
     return <span className="failed">Failed</span>;
-  }
+  };
 
   const renderResultsData = () => {
-    return answers.map( answer => {
+    return answers.map((answer) => {
       const question = questions.find(
-        question => question.id === answer.questionId
+        (question) => question.id === answer.questionId
       );
 
       return (
         <div key={question.id}>
           {question.question} - {renderResultMark(question, answer)}
         </div>
-      )
+      );
     });
   };
 
   const restart = () => {
-    dispatch({type: RESET_QUIZ});
-  }
+    dispatch({ type: RESET_QUIZ });
+  };
 
   const next = () => {
-    const answer = {questionId:question.id, answer: currentAnswer};
+    const answer = { questionId: question.id, answer: currentAnswer };
 
     if (!currentAnswer) {
-      dispatch({type: SET_ERROR, error: 'Please select an option'});
+      dispatch({ type: SET_ERROR, error: "Please select an option" });
       return;
     }
 
+    console.table(answer);
     answers.push(answer);
-    dispatch({type: SET_ANSWERS, answers});
-    dispatch({type: SET_CURRENT_ANSWER, currentAnswer: ''});
+    dispatch({ type: SET_ANSWERS, answers });
+    dispatch({ type: SET_CURRENT_ANSWER, currentAnswer: "" });
 
     if (currentQuestion + 1 < questions.length) {
       dispatch({
         type: SET_CURRENT_QUESTION,
         currentQuestion: currentQuestion + 1,
       });
-      return; 
+      return;
     }
 
-    dispatch({type: SET_SHOW_RESULTS, showResults: true});
-  }
+    dispatch({ type: SET_SHOW_RESULTS, showResults: true });
+  };
 
   if (showResults) {
     return (
@@ -125,15 +126,12 @@ function Quiz() {
           Restart
         </button>
       </div>
-    )
+    );
   } else {
     return (
-      <QuizContext.Provider value={{state, dispatch}}>
-        <div className="quiz gradient">
-          <Progress
-            total={questions.length}
-            current={currentQuestion + 1}
-          />
+      <QuizContext.Provider value={{ state, dispatch }}>
+        <div className="quiz gradient py-5">
+          <Progress total={questions.length} current={currentQuestion + 1} />
           <Question />
           {renderError()}
           <Answers />
