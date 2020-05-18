@@ -2,18 +2,19 @@ import React, {useState, useEffect} from 'react'
 import Col from "react-bootstrap/Col"
 import {useParams} from 'react-router'
 
-
 import HighlightedMarkdown from "./HighlightedMarkdown"
 
-
-const Content = ({language}) => {
+const Content = ({language, default_topic}) => {
     const [markdown, setMarkdown] = useState(`Nothing here yet!`);
     let params = useParams()
 
     useEffect(() => {
     async function getMarkdown() {
         try {
-            const markdownFileName = params.topic 
+            let markdownFileName = params.topic; 
+            if (default_topic) {
+                markdownFileName = default_topic;
+            }
             const topic_language = language
             const file = await import(`../docs/${topic_language}/${markdownFileName}.md`);
             const response = await fetch(file.default);

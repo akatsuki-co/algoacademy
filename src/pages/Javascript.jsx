@@ -49,7 +49,7 @@ const Javascript = () => {
                   <Sidebar data={tableOfContents}></Sidebar>
                 <Switch>
                     <Route path="/javascript/:topic" render={(props) => <Content {...props} language="javascript" />}/>
-                    <Route path="/"></Route>
+        <Route path="/" render={(props) => <Content {...props} language="javascript" default_topic="hello_world"/>}/>
                 </Switch>
                 </Row>
               </Container>

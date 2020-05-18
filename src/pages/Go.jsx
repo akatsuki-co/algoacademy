@@ -51,7 +51,7 @@ const Go = () => {
                   <Sidebar data={tableOfContents}></Sidebar>
                 <Switch>
                     <Route path="/go/:topic" render={(props) => <Content {...props} language="go" />}/>
-                    <Route path="/"></Route>
+        <Route path="/" render={(props) => <Content {...props} language="go" default_topic="hello_world"/>}/>
                 </Switch>
                 </Row>
               </Container>

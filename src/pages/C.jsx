@@ -49,7 +49,7 @@ const C = () => {
                   <Sidebar data={tableOfContents}></Sidebar>
                 <Switch>
                     <Route path="/c/:topic" render={(props) => <Content {...props} language="c" />}/>
-                    <Route path="/"></Route>
+                    <Route path="/" render={(props) => <Content {...props} language="c" default_topic="hello_world"/>}/>
                 </Switch>
                 </Row>
               </Container>
