@@ -14,8 +14,6 @@ import {
 } from '../reducers/types.js';
 import quizReducer from '../reducers/QuizReducer';
 
-// mport '../Quiz.css';
-
 function Quiz() {
   const questions = [
     {
