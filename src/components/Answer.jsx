@@ -1,5 +1,5 @@
 import React from 'react'
-import { SET_CURRENT_ANSWER, SET_ERROR } from '../reducers/types.js'
+import { SET_CURRENT_ANSWER, SET_ERROR } from '../reducers/types.jsx'
 
 function Answer(props) {
   let classes = ['answer']

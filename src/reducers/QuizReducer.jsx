@@ -5,7 +5,7 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from './types.js'
+} from './types.jsx'
 
 function quizReducer(state, action) {
   switch (action.type) {

@@ -12,7 +12,7 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from '../reducers/types.js'
+} from '../reducers/types.jsx'
 import quizReducer from '../reducers/QuizReducer'
 
 function Quiz() {
