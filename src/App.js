@@ -9,8 +9,8 @@ import Go from "./pages/Go"
 import Cpp from "./pages/C++"
 import C from "./pages/C"
 import Javascript from "./pages/Javascript"
-
 import Contribute from "./components/Contribute"
+import Quiz from "./components/Quiz"
 
 import "./App.css"
 import QuizHome from "./pages/QuizHome"
