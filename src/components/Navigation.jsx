@@ -14,7 +14,7 @@ const Navigation = () => (
       <Navbar variant='light' expand='md'>
         <Link to='/'>
           <Navbar.Brand className='d-flex align-items-center'>
-            <img src='/favicon.png' width='25' height='25' alt="favicon"></img>
+            <img src='/favicon.png' width='25' height='25' alt='favicon'></img>
             <span className='ml-2'>Study Buddy</span>
           </Navbar.Brand>
         </Link>
@@ -24,15 +24,12 @@ const Navigation = () => (
           <Nav className='mr-auto'>
             <Nav.Link>About</Nav.Link>
             <Nav.Link>F.A.Q.</Nav.Link>
-            <Nav.Link href="/contribute">Contribute</Nav.Link>
-            <Nav.Link href="/quiz">Quiz</Nav.Link>
+            <Nav.Link href='/contribute'>Contribute</Nav.Link>
+            <Nav.Link href='/quiz'>Quiz</Nav.Link>
           </Nav>
           <Nav className='ml-auto' id='search-form'>
             <Form inline>
-              <FormControl
-                type='text'
-                placeholder='Search'
-              />
+              <FormControl type='text' placeholder='Search' />
               <Button variant='outline-primary'>Search</Button>
             </Form>
           </Nav>
