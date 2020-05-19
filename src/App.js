@@ -13,6 +13,7 @@ import Javascript from "./pages/Javascript"
 import Contribute from "./components/Contribute"
 
 import "./App.css"
+import QuizHome from "./pages/QuizHome"
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path='/contribute'>
           <Contribute />
+        </Route>
+        <Route path='/quizHome'>
+          <QuizHome></QuizHome>
         </Route>
         <Route>
           <h1 className='text-center py-5'>Page not found</h1>
