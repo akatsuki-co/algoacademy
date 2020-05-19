@@ -42,7 +42,7 @@ function App() {
         <Route path='/contribute'>
           <Contribute />
         </Route>
-        <Route path='/quizHome'>
+        <Route path='/quiz'>
           <QuizHome></QuizHome>
         </Route>
         <Route>
