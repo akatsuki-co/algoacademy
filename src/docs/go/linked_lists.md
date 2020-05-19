@@ -1,4 +1,3 @@
-
 ## Linked Lists
 
 ---

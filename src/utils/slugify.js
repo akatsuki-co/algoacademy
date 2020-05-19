@@ -1,8 +1,8 @@
 const slugify = (string) => {
   return string
-    .split(" ")
+    .split(' ')
     .map((word) => word.toLowerCase())
-    .join("_")
+    .join('_')
 }
 
 export default slugify

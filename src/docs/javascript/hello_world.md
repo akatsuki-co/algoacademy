@@ -1,4 +1,3 @@
-
 ## Hello World!
 
 ---
@@ -13,7 +12,7 @@ Quick facts about Javascript:
 ---
 
 ```js
-console.log("Hello World!")
+console.log('Hello World!')
 
 // Hello World!
 ```

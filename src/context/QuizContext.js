@@ -1,5 +1,5 @@
-import {createContext} from 'react';
+import { createContext } from 'react'
 
-const QuizContext = createContext();
+const QuizContext = createContext()
 
-export default QuizContext;
+export default QuizContext
