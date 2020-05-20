@@ -146,3 +146,7 @@ class LinkedList:
             string += ' -> ' + str(current.get_data())
         return string
 ```
+
+---
+
+_Author: Brent Muha_
