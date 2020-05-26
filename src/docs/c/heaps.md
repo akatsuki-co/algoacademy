@@ -116,3 +116,7 @@ heap_node *heap_insert(heap_node **root, int value)
 	return (new_node);
 }
 ```
+
+---
+
+_Author: Tu Vo_
