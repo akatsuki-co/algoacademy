@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -18,7 +17,6 @@ const Navigation = () => (
             <span className="ml-2">Study Buddy</span>
           </Navbar.Brand>
         </Link>
-
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse">
           <Nav className="mr-auto">

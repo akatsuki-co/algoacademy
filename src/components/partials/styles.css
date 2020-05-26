@@ -1,0 +1,18 @@
+.social a {
+  margin: 0 7px;
+}
+
+@media only screen and (max-width: 768px) {
+  #search-form {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 844px) {
+  .social {
+    display: none;
+  }
+  .header-text {
+    margin: 0px 10px;
+  }
+}

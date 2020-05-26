@@ -1,11 +1,11 @@
-import React, { ChangeEvent } from 'react'
+import React from 'react'
 
 const Editor = ({ markdown, setMarkdown }) => {
   return (
     <div class="col">
       <h2>Editor</h2>
       <textarea
-        onChange={(e: ChangeEvent) => setMarkdown(e.target.value)}
+        onChange={(e) => setMarkdown(e.target.value)}
         rows={20}
         value={markdown}
       />

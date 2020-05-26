@@ -1,8 +1,8 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/sidebar/Sidebar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Content from '../components/Content'
+import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
 
 const Cpp = () => {

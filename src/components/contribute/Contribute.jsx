@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import Editor from './Editor'
 import Preview from './Preview'
 
@@ -17,12 +16,10 @@ _italic_
 `)
 
   return (
-    <div>
-      <div className="container justify-content">
-        <div className="row">
-          <Editor markdown={markdown} setMarkdown={setMarkdown} />
-          <Preview markdown={markdown} />
-        </div>
+    <div className='container justify-content'>
+      <div className='row'>
+        <Editor markdown={markdown} setMarkdown={setMarkdown} />
+        <Preview markdown={markdown} />
       </div>
     </div>
   )
