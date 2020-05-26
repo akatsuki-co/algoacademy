@@ -1,9 +1,8 @@
 import React from 'react'
-
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
-import capitalize from '../utils/capitalize'
+import capitalize from '../../utils/capitalize'
 
 const Card = ({ language }) => (
   <Col md="4">

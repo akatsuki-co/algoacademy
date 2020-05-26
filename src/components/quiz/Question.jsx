@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
-import QuizContext from '../context/QuizContext'
+import QuizContext from '../../context/QuizContext'
+
+import './styles.css'
 
 function Question() {
   const { state } = useContext(QuizContext)

@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
-import QuizCard from '../components/QuizCard'
+import QuizCard from '../components/quiz/QuizCard'
 import Row from 'react-bootstrap/Row'
 import { Switch, Route } from 'react-router-dom'
-import Quiz from '../components/Quiz'
+import Quiz from '../components/quiz/Quiz'
 
 const QuizHome = () => {
   const quizzes = [

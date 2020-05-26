@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import Markdown from 'markdown-to-jsx'
 import hljs from 'highlight.js'
 
+import './styles.css'
+
 const HighlightedMarkdown = ({ children }) => {
   const rootRef = useRef()
 

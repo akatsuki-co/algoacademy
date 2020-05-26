@@ -7,7 +7,7 @@ import {
   RESET_QUIZ,
 } from './types.jsx'
 
-function quizReducer(state, action) {
+const quizReducer = (state, action) => {
   switch (action.type) {
     case SET_CURRENT_ANSWER:
       return {

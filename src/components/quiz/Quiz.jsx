@@ -2,8 +2,10 @@ import React, { useReducer } from 'react'
 import Progress from './Progress'
 import Question from './Question'
 import Answers from './Answers'
-import QuizContext from '../context/QuizContext'
+import QuizContext from '../../context/QuizContext'
 import { useHistory } from 'react-router-dom'
+
+import './styles.css'
 
 import {
   SET_ANSWERS,
@@ -12,8 +14,8 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from '../reducers/types.jsx'
-import quizReducer from '../reducers/QuizReducer'
+} from '../../reducers/types.jsx'
+import quizReducer from '../../reducers/QuizReducer'
 
 function Quiz() {
   const questions = [

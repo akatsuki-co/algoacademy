@@ -1,5 +1,7 @@
 import React from 'react'
-import { SET_CURRENT_ANSWER, SET_ERROR } from '../reducers/types.jsx'
+import { SET_CURRENT_ANSWER, SET_ERROR } from '../../reducers/types.jsx'
+
+import './styles.css'
 
 function Answer(props) {
   let classes = ['answer']
@@ -16,9 +18,8 @@ function Answer(props) {
     <button
       value={props.letter}
       className={classes.join(' ')}
-      onClick={handleClick}
-    >
-      <span className="letter">{props.letter}.</span>
+      onClick={handleClick}>
+      <span className='letter'>{props.letter}.</span>
       {props.answer}
     </button>
   )
