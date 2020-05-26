@@ -32,12 +32,11 @@ const C = () => {
           'Sets',
           'Binary Trees',
           'Heaps',
-          'Graphs',
         ],
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
