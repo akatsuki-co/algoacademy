@@ -9,7 +9,7 @@ const Header = () => (
     <Container>
       <Row className="align-items-center">
         <Col lg="6" className="header-text">
-          <h1>Welcome to Study Buddy!</h1>
+          <h1>Welcome to Algo Academy!</h1>
           <p className="lead my-5">
             Are you preparing for a technical interview? Do you want to learn a
             new programming language? Need to review data structures and

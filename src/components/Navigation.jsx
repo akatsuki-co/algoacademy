@@ -15,10 +15,9 @@ const Navigation = () => (
         <Link to="/">
           <Navbar.Brand className="d-flex align-items-center">
             <img src="/favicon.png" width="25" height="25" alt="favicon"></img>
-            <span className="ml-2">Study Buddy</span>
+            <span className="ml-2">Algo Academy</span>
           </Navbar.Brand>
         </Link>
-
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse">
           <Nav className="mr-auto">
