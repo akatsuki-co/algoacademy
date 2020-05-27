@@ -1,1 +1,1 @@
-# studybuddy
+# algoacademy
