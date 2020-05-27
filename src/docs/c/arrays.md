@@ -2,9 +2,9 @@
 
 ---
 
-An array is a variable that can store multiple values of the same data type.
+An array is a data structure that can store multiple values of the same data type.
 
-- The data is ordered and contiguous in memory.
+- The data is ordered, indexed from 0 and contiguous in memory.
 
 ---
 
