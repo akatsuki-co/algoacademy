@@ -2,7 +2,7 @@
 
 ---
 
-### Primitive Data Types
+### Primitives
 
 Primitives in JS are data values with no additional properties and/or methods.
 
@@ -41,6 +41,7 @@ The typeof operator can return one of two complex data types:
 - object
 
 Objects, arrays, other collections data types fall under the `object` category.
+
 Functions fall under `functions`.
 
 ---
