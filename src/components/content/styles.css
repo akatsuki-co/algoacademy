@@ -1,7 +1,3 @@
-.loader {
-    min-height: 500px;
-}
-
 @media only screen and (max-width: 768px) {
   #content {
     padding-left: 15px !important;

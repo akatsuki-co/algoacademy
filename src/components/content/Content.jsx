@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import { useParams } from 'react-router'
 import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown'
-import PacmanLoader from "react-spinners/PacmanLoader";
 
 import './styles.css'
+import Loader from '../ui/Loader' 
 
 const Content = ({ language, default_topic }) => {
   const [markdown, setMarkdown] = useState(``)
@@ -39,20 +38,13 @@ const Content = ({ language, default_topic }) => {
     getMarkdown()
   }, [params, language, default_topic])
 
-    const renderLoader = () => {
-        return (
-        <Row className="justify-content-center align-items-center loader">
-            <PacmanLoader color={"#808080"}/>
-        </Row>
-        )}
-
   return (
     <Col
       md='7'
       xl='8'
       className='ml-md-auto py-3 pl-5 border-left'
       id='content'>
-      {isLoading ? renderLoader() : <HighlightedMarkdown>{markdown}</HighlightedMarkdown>}
+      {isLoading ? <Loader/> : <HighlightedMarkdown>{markdown}</HighlightedMarkdown>}
     </Col>
   )
 }
