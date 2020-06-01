@@ -29,7 +29,7 @@ const Javascript = () => {
           'Stacks and Queues',
           'Hash Tables',
           'Sets',
-          'Trees',
+          'Binary Trees',
           'Heaps',
           'Graphs',
         ],
