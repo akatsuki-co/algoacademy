@@ -19,7 +19,7 @@ void swap(int *a, int *b)
 
 ### Bubble Sort
 
-- Time complexity: O(n\*\*2)
+- Time complexity: O(n\*\*2).
 
 ---
 
@@ -50,7 +50,7 @@ void bubble_sort(int *arr, int size)
 
 ### Insertion Sort
 
-- Time complexity: O(n\*\*2)
+- Time complexity: O(n\*\*2).
 
 ---
 
@@ -77,7 +77,7 @@ void insertion_sort(int *arr, int size)
 
 ### Quicksort
 
-- Time complexity: O(n \* log(n))
+- Time complexity: O(n \* log(n)).
 
 ---
 
@@ -118,7 +118,7 @@ void quick_sort(int arr[], int low, int high, int size)
 
 ### Shellsort
 
-- Time complexity: O(n \* log(n))
+- Time complexity: O(n \* log(n)).
 
 ---
 
@@ -154,7 +154,10 @@ void shell_sort(int *arr, int size)
 
 ### Counting Sort
 
-- Time complexity: O(n + k) where n is the number of items and k is the number of possible values
+- Time complexity: O(n + k) where n is the number of items and k is the number of possible values.
+- Space complexity: O(max(n)).
+- Will not work with negative values.
+
 
 ---
 
@@ -198,7 +201,7 @@ void counting_sort(int *arr, int size)
 
 ### Merge Sort
 
-- Time complexity: O(n \* log(n))
+- Time complexity: O(n \* log(n)).
 
 ---
 
@@ -249,7 +252,7 @@ void merge_sort(int *arr, int size)
 
 ### Heap Sort
 
-- Time complexity: O(n \* log(n))
+- Time complexity: O(n \* log(n)).
 
 ---
 
@@ -287,7 +290,7 @@ void heap_sort(int *arr, int size)
 
 ### Radix Sort
 
-- Time complexity: O(k + n) where k is the key length and n is the number of keys
+- Time complexity: O(k + n) where k is the key length and n is the number of keys.
 
 ---
 
