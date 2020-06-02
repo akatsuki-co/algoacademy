@@ -14,7 +14,7 @@ An array is a data structure that can store multiple values of different types.
 
 ```js
 let arr = [1, 2, 3]
-let arr1 = [1, '2', 3] // arrays can hold mixed data types
+let arr1 = [1, "2", 3] // arrays can hold mixed data types
 let arr2 = new Array(1, 2, 3) // arrays can be initialized with the keyword new
 ```
 
@@ -90,8 +90,14 @@ console.log(arr) // [ 1, 2, 200, 4, 5 ]
 ---
 
 ```js
-let arr = Array(5).fill(0)
+let arr = new Array(5).fill(0)
 console.log(arr) // [ 0, 0, 0, 0, 0 ]
+
+// Be careful when filling with objects
+let arr = new Array(5).fill([])
+// All the inner arrays will be the same object
+arr[0].push(1)
+console.log(arr) // [ [ 1 ], [ 1 ], [ 1 ], [ 1 ], [ 1 ] ]
 ```
 
 ---
@@ -134,7 +140,7 @@ console.log(arr === shallowCopy2) // false
 
 ```js
 const deepCopy = (inObject) => {
-  if (typeof inObject !== 'object' || inObject === null) {
+  if (typeof inObject !== "object" || inObject === null) {
     return inObject // Return the value if inObject is not an object or is null. Recall that typeof null is object.
   }
   // Create an array or object to hold the values
@@ -175,7 +181,7 @@ console.log(divisibleByThree) // undefined
 ```js
 let arr = [1, 5, 11, 16, 25, 32]
 console.log(arr.includes(25)) // true
-console.log(arr.includes('25')) // false
+console.log(arr.includes("25")) // false
 ```
 
 ---
@@ -193,6 +199,35 @@ let arr3 = arr.concat(arr1)
 console.log(arr3) // [ 1, 2, 3, 4, 5, 6 ]
 ```
 
+### Flatten an array
+
+---
+
+```js
+let arr = [[1], 2, 3, [4, 5, 6]]
+arr = [].concat(...arr) // Will only work on 1 nested level
+console.log(arr) // [ 1, 2, 3, 4, 5, 6 ]
+
+let arr = [[1], 2, 3, [4, 5, 6, [7, 8]]]
+arr = [].concat(...arr)
+console.log(arr) // [ 1, 2, 3, 4, 5, 6, [ 7, 8 ] ]
+
+// Use this function instead
+const flatten = (arr) => {
+  return arr.reduce((flat, toFlatten) => {
+    return flat.concat(
+      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+    )
+  }, [])
+}
+
+let arr = [[1], 2, 3, [4, 5, 6, [7, 8]]]
+arr = flatten(arr)
+console.log(arr) // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+```
+
+---
+
 ---
 
 ### Convert an array to a string
@@ -204,6 +239,31 @@ console.log(arr3) // [ 1, 2, 3, 4, 5, 6 ]
 ```js
 let arr = [1, 2, 3]
 console.log(arr.toString()) // '1,2,3'
+```
+
+---
+
+### Mutate an array from within a function
+
+- This is against best practice as it's always a good idea to practice immutability.
+
+```js
+let arr = [1, 2, 3]
+
+const mutateNaive = (arr) => {
+  arr = ["a", "b", "c"]
+}
+
+mutateNaive(arr)
+console.log(arr) // [1, 2, 3]
+
+const mutate = (arr) => {
+  let newArr = ["a", "b", "c"]
+  arr = arr.splice(0, arr.length, ...newArr)
+}
+
+mutate(arr)
+console.log(arr) // ['a', 'b', 'c']
 ```
 
 ---
