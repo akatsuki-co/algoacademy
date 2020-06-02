@@ -92,8 +92,6 @@ def quick_sort(arr: List[int], low: int, high: int):
         p = partition(arr, low, high)
         quick_sort(arr, low, p - 1)
         quick_sort(arr, p + 1, high)
-
-
 ```
 
 ---
