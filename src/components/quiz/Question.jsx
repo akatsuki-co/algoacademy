@@ -3,11 +3,10 @@ import QuizContext from '../../context/QuizContext'
 
 import './styles.css'
 
-function Question() {
+const Question = () => {
   const { state } = useContext(QuizContext)
-  const { currentQuestion, questions } = state
-  const question = questions[currentQuestion]
-  return <h1>{question.question}</h1>
+  const { currentQuestion } = state
+  return <h1>{currentQuestion.question}</h1>
 }
 
 export default Question
