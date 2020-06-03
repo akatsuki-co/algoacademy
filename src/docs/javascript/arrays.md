@@ -14,7 +14,7 @@ An array is a data structure that can store multiple values of different types.
 
 ```js
 let arr = [1, 2, 3]
-let arr1 = [1, "2", 3] // arrays can hold mixed data types
+let arr1 = [1, '2', 3] // arrays can hold mixed data types
 let arr2 = new Array(1, 2, 3) // arrays can be initialized with the keyword new
 ```
 
@@ -140,7 +140,7 @@ console.log(arr === shallowCopy2) // false
 
 ```js
 const deepCopy = (inObject) => {
-  if (typeof inObject !== "object" || inObject === null) {
+  if (typeof inObject !== 'object' || inObject === null) {
     return inObject // Return the value if inObject is not an object or is null. Recall that typeof null is object.
   }
   // Create an array or object to hold the values
@@ -181,7 +181,7 @@ console.log(divisibleByThree) // undefined
 ```js
 let arr = [1, 5, 11, 16, 25, 32]
 console.log(arr.includes(25)) // true
-console.log(arr.includes("25")) // false
+console.log(arr.includes('25')) // false
 ```
 
 ---
@@ -228,6 +228,22 @@ console.log(arr) // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 
 ---
 
+### Shuffle an array (Knuth's algorithm)
+
+```js
+const shuffle = (array) => {
+  let currentIndex = array.length
+  while (currentIndex) {
+    let randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    let temp = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temp
+  }
+  return array
+}
+```
+
 ---
 
 ### Convert an array to a string
@@ -251,14 +267,14 @@ console.log(arr.toString()) // '1,2,3'
 let arr = [1, 2, 3]
 
 const mutateNaive = (arr) => {
-  arr = ["a", "b", "c"]
+  arr = ['a', 'b', 'c']
 }
 
 mutateNaive(arr)
 console.log(arr) // [1, 2, 3]
 
 const mutate = (arr) => {
-  let newArr = ["a", "b", "c"]
+  let newArr = ['a', 'b', 'c']
   arr = arr.splice(0, arr.length, ...newArr)
 }
 
