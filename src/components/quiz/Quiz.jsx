@@ -24,7 +24,7 @@ function Quiz() {
     currentQuestionIndex: 0,
     currentQuestion: null,
     currentAnswer: '',
-    answers: [],
+    answers: {},
     showResults: false,
     error: '',
   }
@@ -53,10 +53,18 @@ function Quiz() {
   }
 
   const next = () => {
-    const answer = { questionId: currentQuestion.id, answer: currentAnswer }
     if (!currentAnswer)
       return dispatch({ type: SET_ERROR, error: 'Please select an option' })
-    answers.push(answer)
+    const correctAnswers = currentQuestion.correct_answer
+    if (!correctAnswers.includes(currentAnswer)) {
+      answers[currentQuestionIndex] = false
+      return dispatch({
+        type: SET_ERROR,
+        error: 'Incorrect answer. Try again!',
+      })
+    }
+    if (answers[currentQuestionIndex] === undefined)
+      answers[currentQuestionIndex] = true
     dispatch({ type: SET_ANSWERS, answers })
     dispatch({ type: SET_CURRENT_ANSWER, currentAnswer: '' })
     if (currentQuestionIndex + 1 < questions.length) {
@@ -69,13 +77,14 @@ function Quiz() {
     }
     dispatch({ type: SET_SHOW_RESULTS, showResults: true })
   }
+
   return showResults ? (
     <QuizContext.Provider value={{ state, dispatch }}>
       <Results />
     </QuizContext.Provider>
   ) : (
     <QuizContext.Provider value={{ state, dispatch }}>
-      <div className='quiz gradient py-5'>
+      <div className='quiz gradient py-2'>
         {currentQuestion ? null : shuffleQuiz()}
         <Progress total={questions.length} current={currentQuestionIndex + 1} />
         <Question />
