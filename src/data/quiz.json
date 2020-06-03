@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "question": "Which statement about Hooks is not true?",
+    "answers": {
+      "a": "Hooks are 100% backwards-compatible and can be used side by side with classes",
+      "b": "Hooks are still in beta and not available yet",
+      "c": "Hooks are completely opt-in, there's no need to rewrite existing code",
+      "d": "All of the above"
+    },
+    "correct_answer": ["b"]
+  },
+  {
+    "id": 2,
+    "question": "Which one is not a Hook?",
+    "answers": {
+      "a": "useReducer",
+      "b": "useConst",
+      "c": "useHistory",
+      "d": "useParams"
+    },
+    "correct_answer": ["b"]
+  },
+  {
+    "id": 3,
+    "question": "Who invented Python?",
+    "answers": {
+      "a": "Guido Van Rossum",
+      "b": "Dennis Ritchie",
+      "c": "Brendan Eich",
+      "d": "Yukihiro Matsumoto"
+    },
+    "correct_answer": ["a"]
+  }
+]
