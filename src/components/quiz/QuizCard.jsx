@@ -14,10 +14,8 @@ const QuizCard = ({ title, id }) => {
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi,
-              illo?
-            </p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi,
+            illo?
             <Link to={`/quiz/${id}`}>Take the Quiz!</Link>
           </Card.Text>
         </Card.Body>
