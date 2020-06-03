@@ -39,13 +39,6 @@
   outline: none;
 }
 
-.results span.correct {
-  color: green;
-}
-
-.results span.failed {
-  color: red;
-}
 
 .error {
   color: #f27c7c;
