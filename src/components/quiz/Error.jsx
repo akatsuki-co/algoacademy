@@ -1,15 +1,12 @@
-import React, { useContext } from 'react'
-import QuizContext from '../../context/QuizContext'
+import React, { useContext } from "react"
+import QuizContext from "../../context/QuizContext"
 
-import './styles.css'
+import "./styles.css"
 
-function Error() {
+const Error = () => {
   const { state } = useContext(QuizContext)
   const { error } = state
-  if (!error) {
-    return null
-  }
-
+  if (!error) return null
   return <div className="error">{error}</div>
 }
 
