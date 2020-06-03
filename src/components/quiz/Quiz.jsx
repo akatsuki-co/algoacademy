@@ -1,11 +1,11 @@
-import React, { useReducer } from 'react'
-import Progress from './Progress'
-import Question from './Question'
-import Answers from './Answers'
-import QuizContext from '../../context/QuizContext'
-import { useHistory } from 'react-router-dom'
+import React, { useReducer } from "react"
+import Progress from "./Progress"
+import Question from "./Question"
+import Answers from "./Answers"
+import Results from "./Results"
+import QuizContext from "../../context/QuizContext"
 
-import './styles.css'
+import "./styles.css"
 
 import {
   SET_ANSWERS,
@@ -14,103 +14,71 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from '../../reducers/types.jsx'
-import quizReducer from '../../reducers/QuizReducer'
+} from "../../reducers/types.jsx"
+import quizReducer from "../../reducers/QuizReducer"
 
 function Quiz() {
   const questions = [
     {
       id: 1,
-      question: 'Which statement about Hooks is not true?',
+      question: "Which statement about Hooks is not true?",
       answer_a:
-        'Hooks are 100% backwards-compatible and can be used side by side with classes',
-      answer_b: 'Hooks are still in beta and not available yet',
+        "Hooks are 100% backwards-compatible and can be used side by side with classes",
+      answer_b: "Hooks are still in beta and not available yet",
       answer_c:
         "Hooks are completely opt-in, there's no need to rewrite existing code",
-      answer_d: 'All of the above',
-      correct_answer: 'b',
+      answer_d: "All of the above",
+      correct_answer: "b",
     },
     {
       id: 2,
-      question: 'Which one is not a Hook?',
-      answer_a: 'useState()',
-      answer_b: 'useConst()',
-      answer_c: 'useReducer()',
-      answer_d: 'All of the above',
-      correct_answer: 'b',
+      question: "Which one is not a Hook?",
+      answer_a: "useState()",
+      answer_b: "useConst()",
+      answer_c: "useReducer()",
+      answer_d: "All of the above",
+      correct_answer: "b",
     },
     {
       id: 3,
-      question: 'What Hook should be used for data fetching?',
-      answer_a: 'useDataFetching()',
-      answer_b: 'useApi()',
-      answer_c: 'useEffect()',
-      answer_d: 'useRequest()',
-      correct_answer: 'c',
+      question: "What Hook should be used for data fetching?",
+      answer_a: "useDataFetching()",
+      answer_b: "useApi()",
+      answer_c: "useEffect()",
+      answer_d: "useRequest()",
+      correct_answer: "c",
     },
   ]
 
   const initialState = {
     questions,
     currentQuestion: 0,
-    currentAnswer: '',
+    currentAnswer: "",
     answers: [],
     showResults: false,
-    error: '',
+    error: "",
   }
 
   const [state, dispatch] = useReducer(quizReducer, initialState)
   const { currentQuestion, currentAnswer, answers, showResults, error } = state
   const question = questions[currentQuestion]
-  let history = useHistory()
 
   const renderError = () => {
     if (!error) {
       return
     }
-
     return <div className="error">{error}</div>
-  }
-
-  const renderResultMark = (question, answer) => {
-    if (question.correct_answer === answer.answer) {
-      return <span className="correct">Correct</span>
-    }
-    return <span className="failed">Failed</span>
-  }
-
-  const renderResultsData = () => {
-    return answers.map((answer) => {
-      const question = questions.find(
-        (question) => question.id === answer.questionId
-      )
-
-      return (
-        <div key={question.id}>
-          {question.question} - {renderResultMark(question, answer)}
-        </div>
-      )
-    })
-  }
-
-  const restart = () => {
-    dispatch({ type: RESET_QUIZ })
-    history.push('/quiz')
   }
 
   const next = () => {
     const answer = { questionId: question.id, answer: currentAnswer }
-
     if (!currentAnswer) {
-      dispatch({ type: SET_ERROR, error: 'Please select an option' })
+      dispatch({ type: SET_ERROR, error: "Please select an option" })
       return
     }
-
-    console.table(answer)
     answers.push(answer)
     dispatch({ type: SET_ANSWERS, answers })
-    dispatch({ type: SET_CURRENT_ANSWER, currentAnswer: '' })
-
+    dispatch({ type: SET_CURRENT_ANSWER, currentAnswer: "" })
     if (currentQuestion + 1 < questions.length) {
       dispatch({
         type: SET_CURRENT_QUESTION,
@@ -118,35 +86,26 @@ function Quiz() {
       })
       return
     }
-
     dispatch({ type: SET_SHOW_RESULTS, showResults: true })
   }
 
-  if (showResults) {
-    return (
-      <div className="quiz results gradient">
-        <h2>Results</h2>
-        <ul>{renderResultsData()}</ul>
-        <button className="quiz-btn btn-primary" onClick={restart}>
-          Go Back
+  return showResults ? (
+    <QuizContext.Provider value={{ state, dispatch }}>
+      <Results />
+    </QuizContext.Provider>
+  ) : (
+    <QuizContext.Provider value={{ state, dispatch }}>
+      <div className="quiz gradient py-5">
+        <Progress total={questions.length} current={currentQuestion + 1} />
+        <Question />
+        {renderError()}
+        <Answers />
+        <button className="quiz-btn btn-primary" onClick={next}>
+          Confirm and Continue
         </button>
       </div>
-    )
-  } else {
-    return (
-      <QuizContext.Provider value={{ state, dispatch }}>
-        <div className="quiz gradient py-5">
-          <Progress total={questions.length} current={currentQuestion + 1} />
-          <Question />
-          {renderError()}
-          <Answers />
-          <button className="quiz-btn btn-primary" onClick={next}>
-            Confirm and Continue
-          </button>
-        </div>
-      </QuizContext.Provider>
-    )
-  }
+    </QuizContext.Provider>
+  )
 }
 
 export default Quiz
