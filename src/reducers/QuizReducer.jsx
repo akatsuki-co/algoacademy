@@ -1,11 +1,13 @@
 import {
   SET_ANSWERS,
+  SET_CURRENT_QUESTION_INDEX,
   SET_CURRENT_QUESTION,
+  SET_NEXT_QUESTION,
   SET_CURRENT_ANSWER,
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
-} from './types.jsx'
+} from "./types.jsx"
 
 const quizReducer = (state, action) => {
   switch (action.type) {
@@ -14,9 +16,20 @@ const quizReducer = (state, action) => {
         ...state,
         currentAnswer: action.currentAnswer,
       }
+    case SET_CURRENT_QUESTION_INDEX:
+      return {
+        ...state,
+        currentQuestionIndex: action.currentQuestionIndex,
+      }
     case SET_CURRENT_QUESTION:
       return {
         ...state,
+        currentQuestion: action.currentQuestion,
+      }
+    case SET_NEXT_QUESTION:
+      return {
+        ...state,
+        currentQuestionIndex: action.currentQuestionIndex,
         currentQuestion: action.currentQuestion,
       }
     case SET_ERROR:
@@ -38,10 +51,10 @@ const quizReducer = (state, action) => {
       return {
         ...state,
         answers: [],
-        currentQuestion: 0,
-        currentAnswer: '',
+        currentQuestionIndex: 0,
+        currentAnswer: "",
         showResults: false,
-        error: '',
+        error: "",
       }
     default:
       return state
