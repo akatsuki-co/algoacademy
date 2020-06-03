@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 const QuizCard = ({ title, id }) => {
+  let progress = 'Progress = '
+  let quizResults = sessionStorage.getItem('python101')
+  progress += quizResults ? quizResults : '0/3'
   return (
     <>
       <Card className='quizCard'>
@@ -20,7 +23,7 @@ const QuizCard = ({ title, id }) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <small className='text-muted'>Progress 0/3</small>
+          <small className='text-muted'>{progress}</small>
         </Card.Footer>
       </Card>
     </>
