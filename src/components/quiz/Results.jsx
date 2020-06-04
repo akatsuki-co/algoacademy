@@ -8,38 +8,41 @@ import './styles.css'
 const Results = () => {
   let history = useHistory()
   const { state, dispatch } = useContext(QuizContext)
-  const { answers, questions } = state
-
-  const renderResultMark = (question, answer) => {
-    if (question.correct_answer.includes(answer.answer)) {
-      return <span className='correct'>Correct</span>
-    }
-    return <span className='failed'>Failed</span>
-  }
+  const { answers } = state
 
   const renderResultsData = () => {
-    return answers.map((answer) => {
-      const question = questions.find(
-        (question) => question.id === answer.questionId
-      )
-      return (
-        <div key={question.id}>
-          {question.question} - {renderResultMark(question, answer)}
-        </div>
-      )
-    })
+    const correctAnswers = Object.values(answers).reduce((a, b) => {
+      b && a++
+      return a
+    }, 0)
+    const questionTotal = Object.keys(answers).length
+    window.sessionStorage.setItem(
+      'python101',
+      `${correctAnswers}/${questionTotal}`
+    )
+    return (
+      <>
+        <h2>Final Score</h2>
+        <h3>{`${correctAnswers}/${questionTotal}`}</h3>
+      </>
+    )
   }
 
   const restart = () => {
     dispatch({ type: RESET_QUIZ })
+  }
+
+  const quizHome = () => {
     history.push('/quiz')
   }
   return (
     <div className='quiz results gradient'>
-      <h2>Results</h2>
-      <ul>{renderResultsData()}</ul>
-      <button className='quiz-btn btn-primary' onClick={restart}>
+      {renderResultsData()}
+      <button className='quiz-btn btn-primary' onClick={quizHome}>
         Go Back
+      </button>
+      <button className='quiz-btn btn-primary' onClick={restart}>
+        Try Again
       </button>
     </div>
   )
