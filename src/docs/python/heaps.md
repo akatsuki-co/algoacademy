@@ -17,6 +17,8 @@ In order to to transform a populated list into a heap, use `heapify`. By default
 
 - Time complexity: O(n)
 
+---
+
 ```python
 from heapq import heapify
 
@@ -25,11 +27,15 @@ heapify(arr)
 print(arr) # [7, 36, 16, 44, 43, 71, 54, 88, 73, 65]
 ```
 
+---
+
 ### Heappush and Heappop
 
 In order to insert and remove elements, use `heappush` and `heappop` respectively. The first argument to these functions will always be the heap as it changes the heap in-place.
 
 - Time complexity: O(log(n))
+
+---
 
 ```python
 from heapq import heappush, heappop
@@ -43,9 +49,13 @@ lowest = heappop(arr)
 print(lowest) # -3
 ```
 
+---
+
 ### Max Heaps
 
 Converting a list into a max-heap requires changing all inserted values into the opposite sign first. Just be sure to revert the values when popping.
+
+---
 
 ```python
 arr = [43, 36, 16, 73, 65, 71, 54, 88, 44, 7]
