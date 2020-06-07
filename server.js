@@ -7,14 +7,14 @@ const Question = require("./models/Question")
 
 require("dotenv").config()
 
+const port = process.env.PORT
+const db = process.env.DATABASE
+
 const app = express()
 app.get("/", (req, res) => {
     getAllQuestions(req, res)
 })
 
-const port = process.env.PORT
-
-const db = process.env.DATABASE
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
@@ -35,6 +35,5 @@ const getAllQuestions = async (req, res) => {
     res.send({
         status: "success", questions
     })
-
 }
 

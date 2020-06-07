@@ -2,10 +2,12 @@ const fs = require("fs")
 const mongoose = require("mongoose")
 const Question = require("./models/Question")
 
-const mongo_string = "mongodb+srv://rmiyazaki:Rache6499@algoacademy-y4tcj.mongodb.net/test?retryWrites=true&w=majority"
+require("dotenv").config()
+
+const db = process.env.DATABASE
 
 mongoose
-    .connect(mongo_string, {
+    .connect(db, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,
@@ -21,7 +23,7 @@ const questions = JSON.parse(
 const importData = async () => {
     try {
         await Question.create(questions)
-        console.log("Successfully importing questions")
+        console.log("Successfully imported questions")
     } catch (err) {
         console.log(err)
     }
