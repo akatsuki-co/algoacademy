@@ -13,6 +13,9 @@ package-lock.json
 # environment
 .env
 
+# production
+/client/build
+
 # misc
 .DS_Store
 .env.local

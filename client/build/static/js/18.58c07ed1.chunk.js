@@ -1,2 +1,0 @@
-(this.webpackJsonpstudybuddy=this.webpackJsonpstudybuddy||[]).push([[18],{338:function(d,s,t){d.exports=t.p+"static/media/stacks_and_queues.d41d8cd9.md"}}]);
-//# sourceMappingURL=18.58c07ed1.chunk.js.map
