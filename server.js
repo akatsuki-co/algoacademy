@@ -13,6 +13,7 @@ const db = process.env.DATABASE
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.use(cors())
 
 // Routes
 
