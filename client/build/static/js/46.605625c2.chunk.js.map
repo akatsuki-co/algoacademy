@@ -1,0 +1,1 @@
+{"version":3,"sources":["docs/go/hello_world.md"],"names":["module","exports"],"mappings":"8FAAAA,EAAOC,QAAU,IAA0B","file":"static/js/46.605625c2.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/hello_world.461adf34.md\";"],"sourceRoot":""}

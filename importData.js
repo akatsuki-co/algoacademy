@@ -11,38 +11,38 @@ mongoose
         useFindAndModify: false,
         useUnifiedTopology: true,
     }).then(() => {
-            console.log("Mongo is connected")
+        console.log("Mongo is connected")
     })
 
 const questions = JSON.parse(
-            fs.readFileSync(`${__dirname}/data.json`, "utf-8")
+    fs.readFileSync(`${__dirname}/data.json`, "utf-8")
 )
 
 const importData = async () => {
     try {
-                await Question.create(questions)
-                    console.log("Successfully importing questions")
+        await Question.create(questions)
+        console.log("Successfully importing questions")
     } catch (err) {
-                console.log(err)
+        console.log(err)
     }
-        process.exit()
+    process.exit()
 }
 
 const deleteData = async () => {
     try {
-                await Question.deleteMany()
-                console.log("Successfully deleted questions")
+        await Question.deleteMany()
+        console.log("Successfully deleted questions")
     } catch (err) {
-                console.log(err)
+        console.log(err)
     }
-        process.exit()
+    process.exit()
 }
 
 mongoose.connection.once("open", () => {
-        const argv = process.argv[2]
+    const argv = process.argv[2]
     if (argv === "--import") {
-                importData()
+        importData()
     } else if (argv === "--delete") {
-                deleteData()
+        deleteData()
     }
 })
