@@ -2,7 +2,7 @@ const fs = require("fs")
 const cors = require("cors")
 const express = require("express")
 const mongoose = require("mongoose")
-
+const path = require("path")
 const Question = require("./models/Question")
 
 require("dotenv").config()
@@ -11,15 +11,17 @@ const port = process.env.PORT
 const db = process.env.DATABASE
 
 const app = express()
-app.get("/", (req, res) => {
+
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+
+// Routes
+
+// API Endpoints
+app.get("/questions", (req, res) => {
     getAllQuestions(req, res)
 })
 
-
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
-})
-
+// Database
 mongoose
     .connect(db, {
         useNewUrlParser: true,
@@ -29,6 +31,10 @@ mongoose
     }).then(() => {
         console.log("Mongo is connected to server")
     })
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+})
 
 const getAllQuestions = async (req, res) => {
     const questions =  await Question.find()
