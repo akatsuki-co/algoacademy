@@ -7,7 +7,7 @@ const Quiz = require("./models/Quiz")
 
 require("dotenv").config()
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 const db = process.env.DATABASE
 
 const app = express()
@@ -16,6 +16,9 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 app.use(cors())
 
 // Routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"))
+})
 
 // API Endpoints
 app.get("/questions", (req, res) => {
