@@ -36,7 +36,7 @@ const Javascript = () => {
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
