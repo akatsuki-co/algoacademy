@@ -21,7 +21,7 @@ app.get("*", (req, res) => {
 })
 
 // API Endpoints
-app.get("/questions", (req, res) => {
+app.get("/api/v1/quizzes", (req, res) => {
     getAllQuiz(req, res)
 })
 
