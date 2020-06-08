@@ -12,13 +12,13 @@ int linear_search(int *array, unsigned int size, int value)
 	unsigned int i;
 
 	if (!array)
-		exit(1);
+		return -1;
 	for (i = 0; i < size; i++)
 	{
 		if (array[i] == value)
 			return i;
 	}
-	exit(1);
+	return -1;
 }
 ```
 
@@ -34,7 +34,7 @@ int binary_search(int *array, unsigned int size, int value)
 	unsigned int mid, start, end;
 
 	if (!array)
-		exit(1);
+		return -1;
 	start = 0;
 	end = size - 1;
 	while (start <= end)
@@ -47,7 +47,7 @@ int binary_search(int *array, unsigned int size, int value)
 		else
 			return mid;
 	}
-	exit(1);
+	return -1;
 }
 ```
 
