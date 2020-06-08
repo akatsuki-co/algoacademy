@@ -163,5 +163,115 @@
       "d": "init() is a constructor method."
     },
     "correct_answer": ["d"]
+  },
+  {
+    "id": 16,
+    "question": "How do you write ternary expressions in Python?",
+    "answers": {
+      "a": "condition ? condition_if_true : condition_if_false.",
+      "b": "condition_if_true if condition else condition_if_false.",
+      "c": "condition ^ condition_if_true | condition_if_false",
+      "d": "Python does not support ternary expressions."
+    },
+    "correct_answer": ["b"]
+  },
+  {
+    "id": 17,
+    "question": "What is the @property in Python?",
+    "answers": {
+      "a": "@property is a decorator used to document your class methods.",
+      "b": "@property is a generator that yields calls to the property method.",
+      "c": "@property is a decorator that allows a function to be accessed like an attribute.",
+      "d": "@property does not exist in Python."
+    },
+    "correct_answer": ["c"]
+  },
+  {
+    "id": 18,
+    "question": "What is a dictionary comprehension?",
+    "answers": {
+      "a": "It is a way to create a dictionary by merging two sets of data which are in the form of either lists or arrays.",
+      "b": "It is a dictionary that has optimized for agility and performance.",
+      "c": "It is a old way method of creating dictionaries in Python 2.0*.",
+      "d": "It is the act of flattening out nested dictionaries to make it easier to loop through its key/pair values."
+    },
+    "correct_answer": ["a"]
+  },
+  {
+    "id": 19,
+    "question": "How would you make a deep copy of lists/dictionaries in Python?",
+    "answers": {
+      "a": "You can simply use the = operator to assign it to another object.",
+      "b": "Import the clone libary and use deepcopy().",
+      "c": "Python has a deepcopy() builtin.",
+      "d": "Import the copy library and use deepcopy()."
+    },
+    "correct_answer": ["d"]
+  },
+  {
+    "id": 20,
+    "question": "How do you represent infinity in Python?",
+    "answers": {
+      "a": "math.intmax",
+      "b": "+NaN",
+      "c": "inf",
+      "d": "float('inf')"
+    },
+    "correct_answer": ["d"]
+  },
+  {
+    "id": 21,
+    "question": "What is true about switch statements in Python?",
+    "answers": {
+      "a": "Switch statements use lambdas for case statements to keep code short and clean.",
+      "b": "Switch statements follow the reducer design pattern by accepting actions and payloads.",
+      "c": "Switch statements do not require break statements as it is implictly implied.",
+      "d": "They are not supported in Python."
+    },
+    "correct_answer": ["d"]
+  },
+  {
+    "id": 22,
+    "question": "Which Python collection would be used to build a LRU (Least Recently Used) cache?",
+    "answers": {
+      "a": "FrozenSet",
+      "b": "OrderedDict",
+      "c": "Counter",
+      "d": "DefaultDict"
+    },
+    "correct_answer": ["b"]
+  },
+  {
+    "id": 23,
+    "question": "How can Python Docstrings be accessed?",
+    "answers": {
+      "a": "Using the @docstring decorator on the object.",
+      "b": "Calling the builtin documentation() on the object.",
+      "c": "Using the __doc__ method of the object and/or the help function",
+      "d": "Import the typing library and calling doc() on the object."
+    },
+    "correct_answer": ["c"]
+  },
+  {
+    "id": 24,
+    "question": "Explain the difference between a generator and an iterator in Python.",
+    "answers": {
+      "a": "An iterator uses the yield statement to return values. A generator is an object that generates random values whenever called.",
+      "b": "An iterator is a subclass of a list and a generator is a subclass of a dictionary.",
+      "c": "An iterator serves as a holder for objects so that they can be iterated over. A generator facilitates the creation of a custom iterator.",
+      "d": "Iterators and generators do not exist in Python."
+    },
+    "correct_answer": ["c"]
+  },
+  {
+    "id": 25,
+    "question": "Why is the 'with' statement used in Python I/O?",
+    "answers": {
+      "a": "It allows the user to bypass all read/write permissions which makes it a powerful scripting tool.",
+      "b": "It allows Python to detect what encoding the file needs to be opened with, such as 'utf-8' or 'utf-16'.",
+      "c": "It automatically catches all Exceptions and prints it to stdout.",
+      "d": "It clarifies code that previously used try...finally blocks to ensure that clean-up code is executed."
+    },
+    "correct_answer": ["d"]
   }
 ]

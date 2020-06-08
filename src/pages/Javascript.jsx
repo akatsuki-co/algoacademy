@@ -17,9 +17,7 @@ const Javascript = () => {
           'Arrays',
           'Functions And Closures',
           'Higher Order Functions',
-          'Asynchronous Programming',
-          'ES6',
-          'Promises',
+          'ES6 and Promises',
         ],
       },
       {
