@@ -3,7 +3,7 @@ const cors = require("cors")
 const express = require("express")
 const mongoose = require("mongoose")
 const path = require("path")
-const Question = require("./models/Question")
+const Quiz = require("./models/Quiz")
 
 require("dotenv").config()
 
@@ -19,7 +19,7 @@ app.use(cors())
 
 // API Endpoints
 app.get("/questions", (req, res) => {
-    getAllQuestions(req, res)
+    getAllQuiz(req, res)
 })
 
 // Database
@@ -37,8 +37,8 @@ app.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
 
-const getAllQuestions = async (req, res) => {
-    const questions =  await Question.find()
+const getAllQuizs = async (req, res) => {
+    const questions =  await Quiz.find()
     res.send({
         status: "success", questions
     })

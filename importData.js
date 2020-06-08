@@ -1,6 +1,6 @@
 const fs = require("fs")
 const mongoose = require("mongoose")
-const Question = require("./models/Question")
+const Quiz = require("./models/Quiz")
 
 require("dotenv").config()
 
@@ -17,12 +17,12 @@ mongoose
     })
 
 const questions = JSON.parse(
-    fs.readFileSync(`${__dirname}/data.json`, "utf-8")
+    fs.readFileSync(`${__dirname}/client/src/data/quiz.json`, "utf-8")
 )
 
 const importData = async () => {
     try {
-        await Question.create(questions)
+        await Quiz.create(questions)
         console.log("Successfully imported questions")
     } catch (err) {
         console.log(err)
@@ -32,7 +32,7 @@ const importData = async () => {
 
 const deleteData = async () => {
     try {
-        await Question.deleteMany()
+        await Quiz.deleteMany()
         console.log("Successfully deleted questions")
     } catch (err) {
         console.log(err)

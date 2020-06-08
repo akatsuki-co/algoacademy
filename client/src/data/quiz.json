@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "question": "Which statement about tuples is false?",
     "answers": {
       "a": "Tuples are stored in a single block of memory.",
@@ -8,10 +7,10 @@
       "c": "Tuples consist of mutable objects.",
       "d": "Tuples have data stored in () brackets."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 2,
     "question": "Which of the following is an invalid method on list objects?",
     "answers": {
       "a": "push",
@@ -19,10 +18,10 @@
       "c": "append",
       "d": "concat"
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 3,
     "question": "Who invented Python?",
     "answers": {
       "a": "Guido Van Rossum",
@@ -30,10 +29,10 @@
       "c": "Brendan Eich",
       "d": "Yukihiro Matsumoto"
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 4,
     "question": "What library can arrays be imported from?",
     "answers": {
       "a": "bcrypt",
@@ -41,10 +40,10 @@
       "c": "math",
       "d": "numpy"
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 5,
     "question": "How is memory managed in Python?",
     "answers": {
       "a": "All Python objects and data structures are handled in the public heap.",
@@ -52,10 +51,10 @@
       "c": "Python has an inbuilt garbage collector, which recycles all unused memory.",
       "d": "Everything runs on the cloud."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 6,
     "question": "What is the GIL?",
     "answers": {
       "a": "Greater Illinois Lakes",
@@ -63,10 +62,10 @@
       "c": "Graph Interface Library",
       "d": "Global Interpreter Lock"
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 7,
     "question": "Which of the following statements about lambda functions is true?",
     "answers": {
       "a": "Python does not support lambdas.",
@@ -74,10 +73,10 @@
       "c": "Lambdas are instantiated with the def keyword.",
       "d": "Lambas return true by default."
     },
-    "correct_answer": ["b"]
+    "correct_answer": ["b"],
+    "topic": "python"
   },
   {
-    "id": 8,
     "question": "What is pickling in Python?",
     "answers": {
       "a": "Pickling is converting an object into a string representation and then dumping it into a file.",
@@ -85,10 +84,10 @@
       "c": "Trick question. Pickling is turning cucumbers into literal pickles.",
       "d": "Pickling is a common practice in which every function in a file is unit-tested."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 9,
     "question": "What is the Numpy library not used for?",
     "answers": {
       "a": "Linear algebra",
@@ -96,10 +95,10 @@
       "c": "Encryption",
       "d": "Histograms"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 10,
     "question": "What types of inheritance is supported by Python?",
     "answers": {
       "a": "Single inheritance - a derived class acquires the members of a single superclass.",
@@ -107,10 +106,10 @@
       "c": "Multiple inheritance - a derived class is inherited from more than one base class.",
       "d": "All of the above."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 11,
     "question": "Does Python support polymorphism?",
     "answers": {
       "a": "True",
@@ -118,10 +117,10 @@
       "c": "I don't know",
       "d": "All of the above."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 12,
     "question": "What python builtin is used to loop over indexes AND elements?",
     "answers": {
       "a": "xrange",
@@ -129,10 +128,10 @@
       "c": "enumerate",
       "d": "reduce"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 13,
     "question": "Which one of these is NOT a Python linter?",
     "answers": {
       "a": "flake8",
@@ -140,10 +139,10 @@
       "c": "analinter",
       "d": "pylama"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 14,
     "question": "What are Python decorators?",
     "answers": {
       "a": "A decorator is a design pattern that allows a user to add new functionality to an existing object.",
@@ -151,10 +150,10 @@
       "c": "A decorator is a tool to take advantage of concurrency and multithreading.",
       "d": "Python does not support decorators. You have to import the decorator library."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 15,
     "question": "What is __init__?",
     "answers": {
       "a": "init() is used to declare special objects like generators.",
@@ -162,6 +161,7 @@
       "c": "init() initializes all variables declared in a class to the global scope.",
       "d": "init() is a constructor method."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   }
 ]
