@@ -16,7 +16,6 @@ const Python = () => {
           'Data Types',
           'Lists',
           'Dictionaries',
-          'Functions',
           'Comprehensions',
         ],
       },
@@ -35,7 +34,7 @@ const Python = () => {
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
