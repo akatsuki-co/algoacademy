@@ -1,29 +1,12 @@
-const fs = require("fs")
-const cors = require("cors")
 const express = require("express")
 const mongoose = require("mongoose")
-const path = require("path")
-const Quiz = require("./models/Quiz")
 
 require("dotenv").config()
 
+const app = require("./app")
+
 const port = process.env.PORT || 5000
 const db = process.env.DATABASE
-
-const app = express()
-
-app.use(express.static(path.join(__dirname, 'client', 'build')))
-app.use(cors())
-
-// Routes
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"))
-})
-
-// API Endpoints
-app.get("/api/v1/quizzes", (req, res) => {
-    getAllQuiz(req, res)
-})
 
 // Database
 mongoose
@@ -32,18 +15,16 @@ mongoose
         useCreateIndex: true,
         useFindAndModify: false,
         useUnifiedTopology: true,
-    }).then(() => {
-        console.log("Mongo is connected to server")
+    })
+    .then(() => {
+        console.log("Database is connected")
+    })
+    .catch((err) => {
+        console.log("Database connection was unsuccessfull")
+        console.log(err)
+        process.exit(1)
     })
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
-
-const getAllQuizs = async (req, res) => {
-    const questions =  await Quiz.find()
-    res.send({
-        status: "success", questions
-    })
-}
-
