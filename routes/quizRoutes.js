@@ -63,11 +63,12 @@ router
 
 /**
  * @swagger
- * /api/v1/quizzes/:id:
+ * /api/v1/quizzes/{id}:
  *    get:
  *      description: Returns a Quiz question
  *      parameters:
- *        - name: id
+ *        - in: path
+ *          name: id
  *          description: id of the Quesion object
  *          type: string
  *          format: string
@@ -77,8 +78,8 @@ router
  *    put:
  *      description: Update a Quiz question object
  *      parameters:
- *        - in: body
- *          name: quiz
+ *        - in: path
+ *          name: id
  *          description: Details of updated quiz question
  *          schema:
  *            type: object
