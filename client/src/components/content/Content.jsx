@@ -36,7 +36,7 @@ const Content = ({ language, defaultTopic }) => {
       }
     }
     getMarkdown()
-  }, [params, language, default_topic])
+  }, [params, language, defaultTopic])
 
   return (
     <Col
