@@ -1,8 +1,9 @@
 const express = require("express")
 const path = require("path")
+const compression = require("compression")
 const cors = require("cors")
 const mongoSanitize = require("express-mongo-sanitize")
-const compression = require("compression")
+const morgan = require("morgan")
 
 const quizRouter = require("./routes/quizRoutes")
 
@@ -20,6 +21,9 @@ app.use(mongoSanitize())
 
 // Compress text files
 app.use(compression())
+
+// Morgan - HTTP request logger middleware
+app.use(morgan("dev"))
 
 const router = express.Router()
 
