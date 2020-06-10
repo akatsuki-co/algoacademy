@@ -4,6 +4,8 @@ const compression = require("compression")
 const cors = require("cors")
 const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
+const swaggerJsDoc = require("swagger-jsdoc")
+const swaggerUi = require("swagger-ui-express")
 
 const quizRouter = require("./routes/quizRoutes")
 
@@ -25,16 +27,29 @@ app.use(compression())
 // Morgan - HTTP request logger middleware
 app.use(morgan("dev"))
 
+// Swagger Options
+const swaggerOptions = {
+    swaggerDefinition: {
+        info: {
+            title: "AlgoAcademy API",
+            description: "API endpoints for AlgoAcademy",
+            contact: {
+                name: "Ryuichi Miyazaki"
+            },
+            servers: ["http://localhost:5000"]
+        }
+    },
+    apis: ["./routes/*.js"]
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions)
+
 const router = express.Router()
 
 // Mounting Routers - API endpoints
 app.use("/", router)
 app.use("/api/v1/quizzes", quizRouter)
-router.get("/test", (req, res) => {
-    res.status(200).json({
-        "status": "Message success"
-    })
-})
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 // all other routes
 app.get("*", (req, res) => {
