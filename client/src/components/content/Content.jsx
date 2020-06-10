@@ -11,6 +11,15 @@ const Content = ({ language, defaultTopic }) => {
   let params = useParams()
   const [isLoading, setIsLoading] = useState(false)
 
+
+    const toCamel = (str) => {
+        return str.replace(/([-_][a-z])/ig, ($1) => {
+                return $1.toUpperCase()
+                      .replace('-', '')
+                      .replace('_', '')
+        })
+    }
+
   useEffect(() => {
     async function getMarkdown() {
       try {
@@ -20,6 +29,7 @@ const Content = ({ language, defaultTopic }) => {
         if (defaultTopic) {
           markdownFileName = defaultTopic
         }
+        markdownFileName = toCamel(markdownFileName)
         const topicLanguage = language
         const file = await import(
           `../../docs/${topicLanguage}/${markdownFileName}.md`
