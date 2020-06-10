@@ -6,6 +6,7 @@ const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
 const swaggerJsDoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
+const bodyParser = require("body-parser")
 
 const quizRouter = require("./routes/quizRoutes")
 
@@ -17,6 +18,13 @@ app.use(cors())
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'client', 'build')))
+
+// Body parser
+app.use(bodyParser.urlencoded({
+       extended: false
+}));
+
+app.use(bodyParser.json());
 
 // Sanitize against NoSQL query injections
 app.use(mongoSanitize())

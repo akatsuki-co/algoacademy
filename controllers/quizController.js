@@ -1,16 +1,12 @@
 const Quiz = require("./../models/Quiz")
-
-// Catches errors
-catchAsync = fn => {
-    return (req, res, next) => {
-        fn(req, res, next).catch(next)
-    };
-}
+const catchAsync = require("./../utils/catchAsync")
+const AppError = require('./../utils/appError')
 
 exports.deleteQuiz = catchAsync(async(req, res, next) => {
     const quiz = await Quiz.findByIdAndDelete(req.params.id)
+    console.log(quiz)
     if (!quiz) {
-        return "No Quiz with that ID"
+        return next(new AppError("No Quiz with that ID", 404))
     }
     res.status(204).json({
         status: "success",
@@ -24,7 +20,7 @@ exports.updateQuiz = catchAsync(async(req, res, next) => {
         runValidators: true
     })
     if (!quiz) {
-        return "No Quiz with that ID"
+        return next(new AppError("No Quiz with that ID", 404))
     }
     res.status(200).json({
         status: "success",
@@ -36,6 +32,10 @@ exports.updateQuiz = catchAsync(async(req, res, next) => {
 
 exports.createQuiz = catchAsync(async(req, res) => {
     const quiz = await Quiz.create(req.body)
+    console.log(req.body)
+    if (!quiz) {
+        return next(new AppError("Question was not created...", 404))
+    }
     res.status(201).json({
         status: "success",
         data: {
@@ -48,7 +48,7 @@ exports.getQuiz = catchAsync(async(req, res) => {
     let query = await Quiz.findById(req.params.id)
     const quiz = await query
     if (!quiz) {
-        return "No Quiz with that ID"
+        return next(new AppError("No Quiz with that ID", 404))
     }
     res.status(200).json({
         status: "success",
