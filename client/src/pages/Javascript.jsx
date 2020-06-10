@@ -17,9 +17,7 @@ const Javascript = () => {
           'Arrays',
           'Functions And Closures',
           'Higher Order Functions',
-          'Asynchronous Programming',
-          'ES6',
-          'Promises',
+          'ES6 and Promises',
         ],
       },
       {
@@ -36,7 +34,7 @@ const Javascript = () => {
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
