@@ -57,7 +57,7 @@ const Go = () => {
             <Route
               path="/"
               render={(props) => (
-                <Content {...props} language="go" default_topic="hello_world" />
+                <Content {...props} language="go" defaultTopic="helloWorld" />
               )}
             />
           </Switch>

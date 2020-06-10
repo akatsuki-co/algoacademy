@@ -55,7 +55,7 @@ const Javascript = () => {
                 <Content
                   {...props}
                   language="javascript"
-                  default_topic="hello_world"
+                  defaultTopic="helloWorld"
                 />
               )}
             />

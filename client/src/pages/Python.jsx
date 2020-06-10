@@ -55,7 +55,7 @@ const Python = () => {
                 <Content
                   {...props}
                   language="python"
-                  default_topic="hello_world"
+                  defaultTopic="helloWorld"
                 />
               )}
             />

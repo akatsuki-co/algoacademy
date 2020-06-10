@@ -57,7 +57,7 @@ const Cpp = () => {
                 <Content
                   {...props}
                   language="c++"
-                  default_topic="hello_world"
+                  defaultTopic="helloWorld"
                 />
               )}
             />

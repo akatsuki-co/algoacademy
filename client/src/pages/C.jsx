@@ -54,7 +54,7 @@ const C = () => {
             <Route
               path="/"
               render={(props) => (
-                <Content {...props} language="c" default_topic="hello_world" />
+                <Content {...props} language="c" defaultTopic="helloWorld" />
               )}
             />
           </Switch>

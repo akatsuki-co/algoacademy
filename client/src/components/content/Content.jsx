@@ -6,7 +6,7 @@ import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown'
 import './styles.css'
 import Loader from '../ui/Loader' 
 
-const Content = ({ language, default_topic }) => {
+const Content = ({ language, defaultTopic }) => {
   const [markdown, setMarkdown] = useState(``)
   let params = useParams()
   const [isLoading, setIsLoading] = useState(false)
@@ -17,12 +17,12 @@ const Content = ({ language, default_topic }) => {
         setIsLoading(true)
         setMarkdown("")
         let markdownFileName = params.topic
-        if (default_topic) {
-          markdownFileName = default_topic
+        if (defaultTopic) {
+          markdownFileName = defaultTopic
         }
-        const topic_language = language
+        const topicLanguage = language
         const file = await import(
-          `../../docs/${topic_language}/${markdownFileName}.md`
+          `../../docs/${topicLanguage}/${markdownFileName}.md`
         )
         const response = await fetch(file.default)
         let text = await response.text()
