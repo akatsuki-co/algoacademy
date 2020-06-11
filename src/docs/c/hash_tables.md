@@ -6,7 +6,8 @@ A hash table is a data structure that maps keys to values.
 
 - It is implemented with an array that uses a hash function to compute an index for its keys.
 - In the event that there is a collision (duplicate keys), there are several strategies that can be used to handle it:
-  1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs 2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
+  1. Separate chaining - a linked list (or other data structure) is used to store duplicate key/value pairs
+  2. Open addressing - the next empty index in the array is used to store duplicate key/value pairs
 
 ---
 
