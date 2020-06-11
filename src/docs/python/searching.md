@@ -101,7 +101,7 @@ print(binary_search(arr, 30)) # -1
 
 In addition to searching, `bisect` also has a function called `insort` that can add values into a sorted list while maintaining the list's sorted order.
 
-`bisect.insort(a, x, lo=0, hi=len(a)`
+`bisect.insort(a, x, lo=0, hi=len(a))`
 
 - Time complexity: O(log(n))
 

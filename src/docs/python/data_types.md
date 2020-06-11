@@ -1,5 +1,7 @@
 ## Data Types
 
+---
+
 In Python, data takes the form of objects - either built-in objects that Python provides or objects we create using Python tools.
 
 ---
