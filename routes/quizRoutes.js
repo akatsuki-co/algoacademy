@@ -75,12 +75,14 @@ router
  *      responses:
  *        '200':
  *          description: Successfully return an array of Quizzes
- *    put:
+ *    patch:
+ *      summar: Update a Question
  *      description: Update a Quiz question object
  *      parameters:
  *        - in: path
  *          name: id
  *          description: Details of updated quiz question
+ *        - in: body
  *          schema:
  *            type: object
  *            required:
