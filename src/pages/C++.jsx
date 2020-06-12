@@ -31,6 +31,7 @@ const Cpp = () => {
           'Sets',
           'Trees',
           'Heaps',
+          'Tries',
           'Graphs',
         ],
       },

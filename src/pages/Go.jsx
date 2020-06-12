@@ -34,12 +34,13 @@ const Go = () => {
           'Sets',
           'Trees',
           'Heaps',
+          'Tries',
           'Graphs',
         ],
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
