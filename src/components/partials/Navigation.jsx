@@ -2,9 +2,6 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 const Navigation = () => (
@@ -20,16 +17,9 @@ const Navigation = () => (
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse">
           <Nav className="mr-auto">
-            <Nav.Link>About</Nav.Link>
-            <Nav.Link>F.A.Q.</Nav.Link>
-            <Nav.Link href="/contribute">Contribute</Nav.Link>
             <Nav.Link href="/quiz">Quiz</Nav.Link>
-          </Nav>
-          <Nav className="ml-auto" id="search-form">
-            <Form inline>
-              <FormControl type="text" placeholder="Search" />
-              <Button variant="outline-primary">Search</Button>
-            </Form>
+            <Nav.Link href="/contribute">Contribute</Nav.Link>
+            <Nav.Link>Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
