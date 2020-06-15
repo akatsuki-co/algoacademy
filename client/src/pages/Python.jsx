@@ -55,13 +55,8 @@ const Python = () => {
               render={(props) => (
                 <Content
                   {...props}
-<<<<<<< HEAD:client/src/pages/Python.jsx
                   language="python"
                   defaultTopic="helloWorld"
-=======
-                  language='python'
-                  default_topic='hello_world'
->>>>>>> master:src/pages/Python.jsx
                 />
               )}
             />
