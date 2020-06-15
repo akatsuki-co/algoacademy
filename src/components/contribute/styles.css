@@ -1,0 +1,17 @@
+.preview {
+  overflow-x: scroll;
+}
+
+.preview-container {
+  padding: 10px;
+  min-height: 475px;
+  border: 1px solid black;
+}
+
+.editor textarea {
+  padding: 10px;
+  min-height: 475px;
+  height: 100%;
+  min-width: 440px;
+  width: 100%;
+}
