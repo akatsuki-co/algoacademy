@@ -1,0 +1,58 @@
+[
+  {
+    "question": "Which of the below are components that can be configured in the VPC section of th AWS management console? (choose 2)?",
+    "answers": {
+      "a": "EBS volumes",
+      "b": "Endpoints",
+      "c": "DNS records",
+      "d": "Subnet"
+    },
+    "correct_answer": ["b", "d"],
+    "explanation": "EBS volumes and ELB must be configured in EC2 section. DNS must be configured in Amazon Route 53."
+  },
+  {
+    "question": "What statement is true in relation to data stored within an AWS Region?",
+    "answers": {
+      "a": "Data is always replicated to another region",
+      "b": "Data is not replicated outside of a region unless you configure it",
+      "c": "Data is always automatically replicated to at least one another AZ",
+      "d": "Data is automatically archived after 90 days"
+    },
+    "correct_answer": ["b"]
+  },
+  {
+    "question": "Which type of storage stores objects comprised of key, value pairs?",
+    "answers": {
+      "a": "Amazon EFS",
+      "b": "Amazon EBS",
+      "c": "Amazon S3",
+      "d": "Amazon DynamoDB"
+    },
+    "correct_answer": ["c"],
+    "explanation": "Amazon S3 is an object-based storage system that stores objects that are comprised of key, value pairs. Amazon DynamoDB stores items, not objects, based on key, value pairs. Amazon EBS is a block-based storage system. Amazon EFS is a file-based storage system."
+  },
+  {
+    "question": "Which of the facts below are accurate in relation to AWS Regions? (choose 2)",
+    "answers": {
+      "a": "Each region consists of a collection of VPCs",
+      "b": "Regions are Content Delivery Network (CDN) endpoints for CloudFront",
+      "c": "Each region consists of 2 or more availability zones",
+      "d": "Regions have direct, low-latency, high throughput and redudant network connections between each other",
+      "e": "Each region is designed to be completely isolate from the other Amazon Regions"
+    },
+    "correct_answer": ["c", "e"],
+    "explanation": "A region is not a collection of VPCs, it is composed of at least 2 AZs. VPCs exist within accounts on a per region basis. AZs (not regions) have direct, low-latency, high throughput and redundant network connections between each other. Edge locations (not regions) are Content Delivery Network (CDN) endpoints for CloudFront."
+  },
+  {
+    "question": "Which of the following would be good reasons to move from on-premises to the AWS Cloud? (choose 2)",
+    "answers": {
+      "a": "Outsource all security responsibility",
+      "b": "Gain access to free technical support services",
+      "c": "Reduce costs through easier right-sizing of workloads",
+      "d": "Improve agility and elasticity",
+      "e": "Gain end-to-end operational management of the entire infrastructure stack"
+    },
+    "correct_answer": ["c", "d"],
+    "explanation": "AWS offers elastic computing with the ability to adjust workloads, monitor utilization and programatically make changes. You can improve agility and elasticity through services such as Auto Scaling, ELB and highly scalable services such as S3 and Lambda. You do not get free technical services with AWS or end-to-end operational management of the entire infrastructure stack. You are still responsible for ensuring the security of your application, users and data."
+  }
+]
