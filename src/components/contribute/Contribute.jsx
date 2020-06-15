@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
-import Editor from './Editor'
-import Preview from './Preview'
+import React, { useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import Editor from './Editor';
+import Preview from './Preview';
+
+const welcomeText = `### Welcome to Algo Academy
+
+---
+  
+\`\`\`python
+print("hello world")
+# This is a code snippet
+\`\`\`
+
+#### This is a list:
+- **bold item**
+- _italic_ item
+`;
 
 const Contribute = () => {
-  const [markdown, setMarkdown] = useState(`
-# H1
-## H2
-### H3
-#### H4
-##### H5
-
-__bold__
-**bold**
-_italic_
-`)
+  const [markdown, setMarkdown] = useState(welcomeText);
 
   return (
-    <div className='container justify-content'>
-      <div className='row'>
+    <div className="container py-3">
+      <Row>
         <Editor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
-      </div>
+      </Row>
     </div>
-  )
-}
+  );
+};
 
-export default Contribute
+export default Contribute;
