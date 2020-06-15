@@ -6,10 +6,19 @@ import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown'
 import './styles.css'
 import Loader from '../ui/Loader' 
 
-const Content = ({ language, default_topic }) => {
+const Content = ({ language, defaultTopic }) => {
   const [markdown, setMarkdown] = useState(``)
   let params = useParams()
   const [isLoading, setIsLoading] = useState(false)
+
+
+    const toCamel = (str) => {
+        return str.replace(/([-_][a-z])/ig, ($1) => {
+                return $1.toUpperCase()
+                      .replace('-', '')
+                      .replace('_', '')
+        })
+    }
 
   useEffect(() => {
     async function getMarkdown() {
@@ -17,12 +26,13 @@ const Content = ({ language, default_topic }) => {
         setIsLoading(true)
         setMarkdown("")
         let markdownFileName = params.topic
-        if (default_topic) {
-          markdownFileName = default_topic
+        if (defaultTopic) {
+          markdownFileName = defaultTopic
         }
-        const topic_language = language
+        markdownFileName = toCamel(markdownFileName)
+        const topicLanguage = language
         const file = await import(
-          `../../docs/${topic_language}/${markdownFileName}.md`
+          `../../docs/${topicLanguage}/${markdownFileName}.md`
         )
         const response = await fetch(file.default)
         let text = await response.text()
@@ -36,7 +46,7 @@ const Content = ({ language, default_topic }) => {
       }
     }
     getMarkdown()
-  }, [params, language, default_topic])
+  }, [params, language, defaultTopic])
 
   return (
     <Col

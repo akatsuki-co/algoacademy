@@ -5,24 +5,29 @@ import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
 
-const Python = () => {
+const Go = () => {
   const tableOfContents = {
-    language: 'python',
+    language: 'go',
     sidebar: [
       {
         menu: 'Basics',
         subMenu: [
           'Hello World',
           'Data Types',
-          'Lists',
-          'Dictionaries',
-          'Comprehensions',
+          'Variables',
+          'Loops',
+          'Pointers',
+          'Arrays',
+          'Slices',
+          'Maps',
+          'Structs',
+          'Interfaces',
+          'Goroutines and Channels',
         ],
       },
       {
         menu: 'Data Structures',
         subMenu: [
-          'Collections',
           'Linked Lists',
           'Stacks and Queues',
           'Hash Tables',
@@ -41,23 +46,19 @@ const Python = () => {
   }
 
   return (
-    <section className='py-3'>
+    <section className="py-3">
       <Container>
         <Row>
           <Sidebar data={tableOfContents}></Sidebar>
           <Switch>
             <Route
-              path='/python/:topic'
-              render={(props) => <Content {...props} language='python' />}
+              path="/go/:topic"
+              render={(props) => <Content {...props} language="go" />}
             />
             <Route
-              path='/'
+              path="/"
               render={(props) => (
-                <Content
-                  {...props}
-                  language='python'
-                  default_topic='hello_world'
-                />
+                <Content {...props} language="go" defaultTopic="helloWorld" />
               )}
             />
           </Switch>
@@ -67,4 +68,4 @@ const Python = () => {
   )
 }
 
-export default Python
+export default Go

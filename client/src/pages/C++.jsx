@@ -5,19 +5,19 @@ import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
 
-const C = () => {
+const Cpp = () => {
   const tableOfContents = {
-    language: 'c',
+    language: 'c++',
     sidebar: [
       {
         menu: 'Basics',
         subMenu: [
           'Hello World',
           'Data Types',
-          'Looping',
-          'Arrays',
-          'Structures',
           'Functions',
+          'Structures',
+          'Arrays',
+          'Character Strings',
           'Pointers',
           'Bit Manipulation',
         ],
@@ -26,17 +26,18 @@ const C = () => {
         menu: 'Data Structures',
         subMenu: [
           'Linked Lists',
-          'Stacks',
-          'Queues',
+          'Stacks and Queues',
           'Hash Tables',
           'Sets',
-          'Binary Trees',
+          'Trees',
           'Heaps',
+          'Tries',
+          'Graphs',
         ],
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching'],
+        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
       },
     ],
   }
@@ -48,13 +49,17 @@ const C = () => {
           <Sidebar data={tableOfContents}></Sidebar>
           <Switch>
             <Route
-              path="/c/:topic"
-              render={(props) => <Content {...props} language="c" />}
+              path="/c++/:topic"
+              render={(props) => <Content {...props} language="c++" />}
             />
             <Route
               path="/"
               render={(props) => (
-                <Content {...props} language="c" default_topic="hello_world" />
+                <Content
+                  {...props}
+                  language="c++"
+                  defaultTopic="helloWorld"
+                />
               )}
             />
           </Switch>
@@ -64,4 +69,4 @@ const C = () => {
   )
 }
 
-export default C
+export default Cpp

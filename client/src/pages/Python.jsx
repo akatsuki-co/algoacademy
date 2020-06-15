@@ -5,26 +5,24 @@ import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
 
-const Cpp = () => {
+const Python = () => {
   const tableOfContents = {
-    language: 'c++',
+    language: 'python',
     sidebar: [
       {
         menu: 'Basics',
         subMenu: [
           'Hello World',
           'Data Types',
-          'Functions',
-          'Structures',
-          'Arrays',
-          'Character Strings',
-          'Pointers',
-          'Bit Manipulation',
+          'Lists',
+          'Dictionaries',
+          'Comprehensions',
         ],
       },
       {
         menu: 'Data Structures',
         subMenu: [
+          'Collections',
           'Linked Lists',
           'Stacks and Queues',
           'Hash Tables',
@@ -37,28 +35,28 @@ const Cpp = () => {
       },
       {
         menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching', 'Recursion', 'DFS/BFS'],
+        subMenu: ['Sorting', 'Searching'],
       },
     ],
   }
 
   return (
-    <section className="py-3">
+    <section className='py-3'>
       <Container>
         <Row>
           <Sidebar data={tableOfContents}></Sidebar>
           <Switch>
             <Route
-              path="/c++/:topic"
-              render={(props) => <Content {...props} language="c++" />}
+              path='/python/:topic'
+              render={(props) => <Content {...props} language='python' />}
             />
             <Route
-              path="/"
+              path='/'
               render={(props) => (
                 <Content
                   {...props}
-                  language="c++"
-                  default_topic="hello_world"
+                  language="python"
+                  defaultTopic="helloWorld"
                 />
               )}
             />
@@ -69,4 +67,4 @@ const Cpp = () => {
   )
 }
 
-export default Cpp
+export default Python

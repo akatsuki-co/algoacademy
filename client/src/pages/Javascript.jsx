@@ -55,8 +55,8 @@ const Javascript = () => {
               render={(props) => (
                 <Content
                   {...props}
-                  language='javascript'
-                  default_topic='hello_world'
+                  language="javascript"
+                  defaultTopic="helloWorld"
                 />
               )}
             />
