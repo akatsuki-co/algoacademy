@@ -39,7 +39,6 @@
   outline: none;
 }
 
-
 .error {
   color: #f27c7c;
 }
@@ -75,4 +74,11 @@
   color: #4f4c4c;
   background-color: #ffc107;
   font-weight: bold;
+}
+
+.card-img {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  padding: 20px;
 }
