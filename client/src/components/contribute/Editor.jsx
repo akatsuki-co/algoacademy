@@ -1,14 +1,17 @@
 import React from 'react'
 
+import './styles.css'
+
 const Editor = ({ markdown, setMarkdown }) => {
   return (
-    <div class="col">
-      <h2>Editor</h2>
-      <textarea
-        onChange={(e) => setMarkdown(e.target.value)}
-        rows={20}
-        value={markdown}
-      />
+    <div class="editor col-lg">
+      <h2 className="text-center py-1">Editor</h2>
+      <div className="editor-container">
+        <textarea
+          onChange={(e) => setMarkdown(e.target.value)}
+          value={markdown}
+        />
+      </div>
     </div>
   )
 }

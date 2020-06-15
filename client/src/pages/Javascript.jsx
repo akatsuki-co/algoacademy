@@ -29,6 +29,7 @@ const Javascript = () => {
           'Sets',
           'Binary Trees',
           'Heaps',
+          'Tries',
           'Graphs',
         ],
       },
@@ -40,22 +41,27 @@ const Javascript = () => {
   }
 
   return (
-    <section className="py-3">
+    <section className='py-3'>
       <Container>
         <Row>
           <Sidebar data={tableOfContents}></Sidebar>
           <Switch>
             <Route
-              path="/javascript/:topic"
-              render={(props) => <Content {...props} language="javascript" />}
+              path='/javascript/:topic'
+              render={(props) => <Content {...props} language='javascript' />}
             />
             <Route
-              path="/"
+              path='/'
               render={(props) => (
                 <Content
                   {...props}
+<<<<<<< HEAD:client/src/pages/Javascript.jsx
                   language="javascript"
                   defaultTopic="helloWorld"
+=======
+                  language='javascript'
+                  default_topic='hello_world'
+>>>>>>> master:src/pages/Javascript.jsx
                 />
               )}
             />
