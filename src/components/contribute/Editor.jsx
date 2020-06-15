@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import './styles.css';
+import './styles.css'
 
 const Editor = ({ markdown, setMarkdown }) => {
   return (
@@ -13,7 +13,7 @@ const Editor = ({ markdown, setMarkdown }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Editor;
+export default Editor

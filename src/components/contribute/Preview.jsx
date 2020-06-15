@@ -1,7 +1,7 @@
-import React from 'react';
-import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown';
+import React from 'react'
+import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown'
 
-import './styles.css';
+import './styles.css'
 
 const Preview = ({ markdown }) => {
   return (
@@ -11,7 +11,7 @@ const Preview = ({ markdown }) => {
         <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Preview;
+export default Preview
