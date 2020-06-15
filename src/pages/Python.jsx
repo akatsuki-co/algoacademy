@@ -29,6 +29,7 @@ const Python = () => {
           'Sets',
           'Trees',
           'Heaps',
+          'Tries',
           'Graphs',
         ],
       },
@@ -40,22 +41,22 @@ const Python = () => {
   }
 
   return (
-    <section className="py-3">
+    <section className='py-3'>
       <Container>
         <Row>
           <Sidebar data={tableOfContents}></Sidebar>
           <Switch>
             <Route
-              path="/python/:topic"
-              render={(props) => <Content {...props} language="python" />}
+              path='/python/:topic'
+              render={(props) => <Content {...props} language='python' />}
             />
             <Route
-              path="/"
+              path='/'
               render={(props) => (
                 <Content
                   {...props}
-                  language="python"
-                  default_topic="hello_world"
+                  language='python'
+                  default_topic='hello_world'
                 />
               )}
             />
