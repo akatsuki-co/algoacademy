@@ -15,6 +15,13 @@ import QuizHome from './pages/QuizHome'
 import './App.css'
 
 const App = () => {
+
+  async function fetchTable(language) {
+    const results = await fetch("https://localhost:5000/api/v1/table/?language=" + language);
+    const table = await results.json()
+    return table
+  }
+
   return (
     <div className='App'>
       <Navigation></Navigation>
@@ -23,9 +30,10 @@ const App = () => {
           <Header></Header>
           <Cards></Cards>
         </Route>
-        <Route path='/python'>
-          <Python />
-        </Route>
+        <Route
+          path='/python'
+          render={(props) => <Python {...props} fetchTable={fetchTable} />}
+        />
         <Route path='/javascript'>
           <Javascript />
         </Route>

@@ -1,7 +1,7 @@
 const fs = require("fs")
 const mongoose = require("mongoose")
 const Quiz = require("./models/Quiz")
-const TableOfContents = require("./models/TableOfContents")
+const Table = require("./models/Table")
 
 require("dotenv").config()
 
@@ -20,15 +20,15 @@ mongoose
 const questions = JSON.parse(
     fs.readFileSync(`${__dirname}/client/src/data/quiz.json`, "utf-8")
 )
-const tableOfContents = JSON.parse(
-    fs.readFileSync(`${__dirname}/client/src/data/tableOfContents.json`, "utf-8")
+const table = JSON.parse(
+    fs.readFileSync(`${__dirname}/client/src/data/table.json`, "utf-8")
 )
 
 const importData = async () => {
     try {
         await Quiz.create(questions)
-        await TableOfContents.create(tableOfContents)
-        console.log("Successfully imported tableOfContents and questions")
+        await Table.create(table)
+        console.log("Successfully imported table and questions")
     } catch (err) {
         console.log(err)
     }
@@ -38,7 +38,8 @@ const importData = async () => {
 const deleteData = async () => {
     try {
         await Quiz.deleteMany()
-        console.log("Successfully deleted questions")
+        await Table.deleteMany()
+        console.log("Successfully deleted tables and questions")
     } catch (err) {
         console.log(err)
     }

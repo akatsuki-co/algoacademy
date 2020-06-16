@@ -1,44 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect }from 'react'
 import Sidebar from '../components/sidebar/Sidebar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
 
-const Python = () => {
-  const tableOfContents = {
-    language: 'python',
-    sidebar: [
-      {
-        menu: 'Basics',
-        subMenu: [
-          'Hello World',
-          'Data Types',
-          'Lists',
-          'Dictionaries',
-          'Comprehensions',
-        ],
-      },
-      {
-        menu: 'Data Structures',
-        subMenu: [
-          'Collections',
-          'Linked Lists',
-          'Stacks and Queues',
-          'Hash Tables',
-          'Sets',
-          'Trees',
-          'Heaps',
-          'Tries',
-          'Graphs',
-        ],
-      },
-      {
-        menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching'],
-      },
-    ],
-  }
+const Python = ({fetchTable}) => {
+  const [tableOfContents, setTableOfContents] = useState({})
+
+  useEffect(() => {
+      const table = fetchTable("python")
+      setTableOfContents(table)
+      console.log(table)
+  }, [fetchTable]);
+
 
   return (
     <section className='py-3'>

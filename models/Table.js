@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const TableOfContentsSchema = new mongoose.Schema({
+const TableSchema = new mongoose.Schema({
     language: {
         type: String,
         required: [true, "Please provide a language"]
@@ -11,6 +11,6 @@ const TableOfContentsSchema = new mongoose.Schema({
     }]
 })
 
-const TableOfContents = mongoose.model("TableOfContents", TableOfContentsSchema)
+const Table = mongoose.model("Table", TableSchema)
 
-module.exports = TableOfContents
+module.exports = Table
