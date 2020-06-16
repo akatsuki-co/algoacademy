@@ -1,6 +1,7 @@
 const fs = require("fs")
 const mongoose = require("mongoose")
 const Quiz = require("./models/Quiz")
+const TableOfContents = require("./models/TableOfContents")
 
 require("dotenv").config()
 
@@ -19,11 +20,15 @@ mongoose
 const questions = JSON.parse(
     fs.readFileSync(`${__dirname}/client/src/data/quiz.json`, "utf-8")
 )
+const tableOfContents = JSON.parse(
+    fs.readFileSync(`${__dirname}/client/src/data/tableOfContents.json`, "utf-8")
+)
 
 const importData = async () => {
     try {
         await Quiz.create(questions)
-        console.log("Successfully imported questions")
+        await TableOfContents.create(tableOfContents)
+        console.log("Successfully imported tableOfContents and questions")
     } catch (err) {
         console.log(err)
     }
