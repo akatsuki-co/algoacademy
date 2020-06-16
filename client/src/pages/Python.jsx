@@ -31,6 +31,7 @@ const Python = () => {
           'Heaps',
           'Tries',
           'Graphs',
+          'Disjoint Sets',
         ],
       },
       {
