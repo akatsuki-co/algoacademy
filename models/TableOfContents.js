@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const tableOfContentsSchema = new mongoose.Schema({
+const TableOfContentsSchema = new mongoose.Schema({
     language: {
         type: String,
         required: [true, "Please provide a language"]

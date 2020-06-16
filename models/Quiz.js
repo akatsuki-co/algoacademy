@@ -18,8 +18,7 @@ const quizSchema = new mongoose.Schema({
     },
     explanation: {
         type: String,
-        required: [true, "Please provide an explanation"]
-    }
+    },
     topic: {
         type: String,
         required: [true, "Please provide a topic"]
