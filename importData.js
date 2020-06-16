@@ -21,7 +21,7 @@ const questions = JSON.parse(
     fs.readFileSync(`${__dirname}/client/src/data/quiz.json`, "utf-8")
 )
 const table = JSON.parse(
-    fs.readFileSync(`${__dirname}/client/src/data/table.json`, "utf-8")
+    fs.readFileSync(`${__dirname}/client/src/data/tables.json`, "utf-8")
 )
 
 const importData = async () => {
