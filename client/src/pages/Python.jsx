@@ -27,7 +27,7 @@ const Python = () => {
           'Stacks and Queues',
           'Hash Tables',
           'Sets',
-          'Trees',
+          'Binary Trees',
           'Heaps',
           'Tries',
           'Graphs',
