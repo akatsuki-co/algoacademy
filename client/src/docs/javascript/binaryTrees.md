@@ -129,7 +129,7 @@ const btDepth = (node) => {
 
 ### Find the size of a tree
 
-- The size of a tree is the number of total nodes in the node.
+- The size of a tree is the number of total nodes in the tree.
 
 ---
 
