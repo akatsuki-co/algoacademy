@@ -7,7 +7,6 @@ import SidebarItem from './SidebarItem'
 import './styles.css'
 
 const Sidebar = ({ data }) => {
-    console.table(data)
   const sidebarItems = data.sidebar.map((el) => (
     <SidebarItem
       language={data.language}
