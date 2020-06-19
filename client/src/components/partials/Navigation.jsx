@@ -20,6 +20,7 @@ const Navigation = () => (
             <Nav.Link href="/quiz">Quiz</Nav.Link>
             <Nav.Link href="/contribute">Contribute</Nav.Link>
             <Nav.Link>Contact Us</Nav.Link>
+            <Nav.Link href="/login">Sign In</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
