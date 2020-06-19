@@ -40,7 +40,7 @@
       "a": "Each region consists of a collection of VPCs",
       "b": "Regions are Content Delivery Network (CDN) endpoints for CloudFront",
       "c": "Each region consists of 2 or more availability zones",
-      "d": "Regions have direct, low-latency, high throughput and redudant network connections between each other",
+      "d": "Regions have direct, low-latency, high throughput and redundant network connections between each other",
       "e": "Each region is designed to be completely isolate from the other Amazon Regions"
     },
     "correct_answer": ["c", "e"],
@@ -58,6 +58,6 @@
     },
     "correct_answer": ["c", "d"],
     "topic": "ccp",
-    "explanation": "AWS offers elastic computing with the ability to adjust workloads, monitor utilization and programatically make changes. You can improve agility and elasticity through services such as Auto Scaling, ELB and highly scalable services such as S3 and Lambda. You do not get free technical services with AWS or end-to-end operational management of the entire infrastructure stack. You are still responsible for ensuring the security of your application, users and data."
+    "explanation": "AWS offers elastic computing with the ability to adjust workloads, monitor utilization and programmatically make changes. You can improve agility and elasticity through services such as Auto Scaling, ELB and highly scalable services such as S3 and Lambda. You do not get free technical services with AWS or end-to-end operational management of the entire infrastructure stack. You are still responsible for ensuring the security of your application, users and data."
   }
 ]

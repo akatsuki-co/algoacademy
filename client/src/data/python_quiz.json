@@ -224,7 +224,7 @@
     "answers": {
       "a": "Switch statements use lambdas for case statements to keep code short and clean.",
       "b": "Switch statements follow the reducer design pattern by accepting actions and payloads.",
-      "c": "Switch statements do not require break statements as it is implictly implied.",
+      "c": "Switch statements do not require break statements as it is implicitly implied.",
       "d": "They are not supported in Python."
     },
     "correct_answer": ["d"],
