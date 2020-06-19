@@ -10,23 +10,23 @@ const QuizHome = () => {
   const quizzes = [
     {
       title: 'Python',
-      quizId: 1,
+      quizId: 'python',
       quizText:
-        'This quiz goes over foundational knowlege of Python syntax, builtins, popular libraries, and OOP design.',
+        'This quiz goes over foundational knowledge of Python syntax, builtins, popular libraries, and OOP design.',
       quizImage: '/python.png',
       totalQuestions: '25',
     },
     {
       title: 'React',
-      quizId: 2,
+      quizId: 'react',
       quizText:
         'This quiz goes modern React design, hooks and state management.',
       quizImage: '/react.png',
       totalQuestions: '40',
     },
     {
-      title: 'AWS Certified Cloud Practioner',
-      quizId: 3,
+      title: 'AWS Certified Cloud Practitioner',
+      quizId: 'ccp',
       quizText:
         'This quiz goes over AWS products, pricing, security and general cloud concepts.',
       quizImage: '/aws.png',

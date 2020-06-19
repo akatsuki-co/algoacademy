@@ -56,7 +56,7 @@ const pages = [
     components: <Contribute />,
   },
   {
-    path: 'quiz',
+    path: '/quiz',
     exact: false,
     components: <QuizHome />,
   },

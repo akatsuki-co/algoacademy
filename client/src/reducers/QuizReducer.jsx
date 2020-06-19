@@ -9,6 +9,7 @@ import {
   SET_ERROR,
   SET_SHOW_RESULTS,
   RESET_QUIZ,
+  LOAD_QUESTIONS,
 } from './types.jsx'
 
 const quizReducer = (state, action) => {
@@ -70,6 +71,11 @@ const quizReducer = (state, action) => {
         currentAnswer: '',
         showResults: false,
         error: '',
+      }
+    case LOAD_QUESTIONS:
+      return {
+        ...state,
+        questions: action.questions,
       }
     default:
       return state

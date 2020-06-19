@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useLayoutEffect, useReducer } from 'react'
 import Progress from './Progress'
 import Question from './Question'
 import Answers from './Answers'
@@ -11,16 +11,16 @@ import {
   RESET_CURRENT_ANSWER,
   SET_ERROR,
   SET_SHOW_RESULTS,
+  LOAD_QUESTIONS,
 } from '../../reducers/types.jsx'
 import quizReducer from '../../reducers/QuizReducer'
 import shuffle from '../../utils/shuffle'
 
-import data from '../../data/ccp_quiz.json'
 import './styles.css'
 
 function Quiz() {
   const initialState = {
-    questions: data,
+    questions: [],
     currentQuestionIndex: 0,
     currentQuestion: null,
     currentAnswer: [],
@@ -28,6 +28,7 @@ function Quiz() {
     showResults: false,
     error: '',
   }
+
   const [state, dispatch] = useReducer(quizReducer, initialState)
   const {
     questions,
@@ -38,6 +39,24 @@ function Quiz() {
     showResults,
     error,
   } = state
+
+  useLayoutEffect(() => {
+    const loadQuestions = async () => {
+      console.log('USEEFFECT!')
+      try {
+        const req = await fetch('http://localhost:5000/api/v1/quizzes')
+        const questions = req.data
+        console.log(questions)
+        dispatch({
+          type: LOAD_QUESTIONS,
+          questions: questions,
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    loadQuestions()
+  }, [])
 
   const renderError = () => {
     if (!error) return
@@ -93,7 +112,7 @@ function Quiz() {
   ) : (
     <QuizContext.Provider value={{ state, dispatch }}>
       <div className="quiz gradient py-2">
-        {currentQuestion ? null : shuffleQuiz()}
+        {/* {currentQuestion ? null : shuffleQuiz()} */}
         <Progress total={questions.length} current={currentQuestionIndex + 1} />
         <Question />
         {renderError()}
