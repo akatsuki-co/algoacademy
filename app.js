@@ -10,6 +10,7 @@ const bodyParser = require("body-parser")
 
 const quizRouter = require("./routes/quizRoutes")
 const tableRouter = require("./routes/tableRoutes")
+const authRouter = require("./routes/authRoutes")
 
 // Start app
 const app = express()
@@ -59,6 +60,7 @@ const router = express.Router()
 app.use("/", router)
 app.use("/api/v1/quizzes", quizRouter)
 app.use("/api/v1/table", tableRouter)
+app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 // all other routes

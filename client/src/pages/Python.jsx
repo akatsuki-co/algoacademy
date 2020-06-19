@@ -11,7 +11,8 @@ const Python = () => {
   const initialState = {
     sidebar: [],
     language: '',
-  }
+    }  
+      
   const [table, setTable] = useState(initialState)
 
   useEffect(() => {
