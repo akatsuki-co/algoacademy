@@ -8,14 +8,14 @@ import {
   SET_ANSWERS,
   SET_CURRENT_QUESTION,
   SET_NEXT_QUESTION,
-  SET_CURRENT_ANSWER,
+  RESET_CURRENT_ANSWER,
   SET_ERROR,
   SET_SHOW_RESULTS,
 } from '../../reducers/types.jsx'
 import quizReducer from '../../reducers/QuizReducer'
 import shuffle from '../../utils/shuffle'
 
-import data from '../../data/quiz.json'
+import data from '../../data/ccp_quiz.json'
 import './styles.css'
 
 function Quiz() {
@@ -23,7 +23,7 @@ function Quiz() {
     questions: data,
     currentQuestionIndex: 0,
     currentQuestion: null,
-    currentAnswer: '',
+    currentAnswer: [],
     answers: {},
     showResults: false,
     error: '',
@@ -41,7 +41,7 @@ function Quiz() {
 
   const renderError = () => {
     if (!error) return
-    return <div className='error'>{error}</div>
+    return <div className="error">{error}</div>
   }
 
   const shuffleQuiz = () => {
@@ -52,11 +52,21 @@ function Quiz() {
     })
   }
 
+  const compareAnswers = (arr1, arr2) => {
+    if (arr1.length !== arr2.length) {
+      return false
+    }
+    for (let el of arr1) {
+      if (!arr2.includes(el)) return false
+    }
+    return true
+  }
+
   const next = () => {
-    if (!currentAnswer)
+    if (!currentAnswer.length)
       return dispatch({ type: SET_ERROR, error: 'Please select an option' })
-    const correctAnswers = currentQuestion.correct_answer
-    if (!correctAnswers.includes(currentAnswer)) {
+    dispatch({ type: RESET_CURRENT_ANSWER })
+    if (!compareAnswers(currentQuestion.correct_answer, currentAnswer)) {
       answers[currentQuestionIndex] = false
       return dispatch({
         type: SET_ERROR,
@@ -66,14 +76,12 @@ function Quiz() {
     if (answers[currentQuestionIndex] === undefined)
       answers[currentQuestionIndex] = true
     dispatch({ type: SET_ANSWERS, answers })
-    dispatch({ type: SET_CURRENT_ANSWER, currentAnswer: '' })
     if (currentQuestionIndex + 1 < questions.length) {
-      dispatch({
+      return dispatch({
         type: SET_NEXT_QUESTION,
         currentQuestionIndex: currentQuestionIndex + 1,
         currentQuestion: questions[currentQuestionIndex + 1],
       })
-      return
     }
     dispatch({ type: SET_SHOW_RESULTS, showResults: true })
   }
@@ -84,13 +92,13 @@ function Quiz() {
     </QuizContext.Provider>
   ) : (
     <QuizContext.Provider value={{ state, dispatch }}>
-      <div className='quiz gradient py-2'>
+      <div className="quiz gradient py-2">
         {currentQuestion ? null : shuffleQuiz()}
         <Progress total={questions.length} current={currentQuestionIndex + 1} />
         <Question />
         {renderError()}
         <Answers />
-        <button className='quiz-btn btn-primary' onClick={next}>
+        <button className="quiz-btn btn-primary" onClick={next}>
           Confirm and Continue
         </button>
       </div>
