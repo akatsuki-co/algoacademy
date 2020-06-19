@@ -10,10 +10,14 @@ const quizSchema = new mongoose.Schema({
         "b": {type: String, required: true},
         "c": {type: String, required: true},
         "d": {type: String, required: true},
+        "e": {type: String}
     },
     correct_answer: {
         type: [String],
         required: [true, "Please provide a correct answer"]
+    },
+    explanation: {
+        type: String,
     },
     topic: {
         type: String,

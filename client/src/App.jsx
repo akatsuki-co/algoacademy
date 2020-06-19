@@ -15,42 +15,44 @@ import QuizHome from './pages/QuizHome'
 import './App.css'
 
 const App = () => {
-  return (
-    <div className='App'>
-      <Navigation></Navigation>
-      <Switch>
-        <Route path='/' exact>
-          <Header></Header>
-          <Cards></Cards>
-        </Route>
-        <Route path='/python'>
-          <Python />
-        </Route>
-        <Route path='/javascript'>
-          <Javascript />
-        </Route>
-        <Route path='/go'>
-          <Go />
-        </Route>
-        <Route path='/c++'>
-          <Cpp />
-        </Route>
-        <Route path='/c'>
-          <C />
-        </Route>
-        <Route path='/contribute'>
-          <Contribute />
-        </Route>
-        <Route path='/quiz'>
-          <QuizHome></QuizHome>
-        </Route>
-        <Route>
-          <h1 className='text-center py-5'>Page not found</h1>
-        </Route>
-      </Switch>
-      <Footer></Footer>
-    </div>
-  )
-}
 
-export default App
+
+    return (
+        <div className='App'>
+            <Navigation></Navigation>
+            <Switch>
+                <Route path='/' exact>
+                    <Header></Header>
+                    <Cards></Cards>
+                </Route>
+                <Route path='/python'>
+                    <Python />
+                </Route>
+                    <Route path='/javascript'>
+                <Javascript />
+                    </Route>
+                    <Route path='/go'>
+                <Go />
+                    </Route>
+                    <Route path='/c++'>
+                <Cpp />
+                    </Route>
+                    <Route path='/c'>
+                <C />
+                    </Route>
+                    <Route path='/contribute'>
+                <Contribute />
+                    </Route>
+                    <Route path='/quiz'>
+                <QuizHome></QuizHome>
+                    </Route>
+                    <Route>
+                <h1 className='text-center py-5'>Page not found</h1>
+                    </Route>
+            </Switch>
+                <Footer></Footer>
+        </div>
+                    )
+                }
+
+            export default App

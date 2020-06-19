@@ -60,16 +60,14 @@ exports.getQuiz = catchAsync(async(req, res) => {
 
 exports.getQuizzes = catchAsync(async(req, res, next) => {
     let filter = {}
-    if (req.params.topic) {
-        filter = { topic: req.params.topic }
+    if (req.query.topic) {
+        filter = { topic: req.query.topic }
     }
     const query = Quiz.find(filter)
     const quizzes = await query
     res.status(200).json({
         status: "success",
         results: quizzes.length,
-        data: {
-            data: quizzes
-        }
+        data: quizzes
     })
 })
