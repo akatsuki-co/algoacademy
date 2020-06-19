@@ -1,57 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from '../components/sidebar/Sidebar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
+import fetchTable from '../utils/fetchTable'
 
 const Javascript = () => {
-  const tableOfContents = {
-    language: 'javascript',
-    sidebar: [
-      {
-        menu: 'Basics',
-        subMenu: [
-          'Hello World',
-          'Data Types',
-          'Arrays',
-          'Functions And Closures',
-          'Higher Order Functions',
-          'ES6 and Promises',
-        ],
-      },
-      {
-        menu: 'Data Structures',
-        subMenu: [
-          'Linked Lists',
-          'Stacks and Queues',
-          'Hash Tables',
-          'Sets',
-          'Binary Trees',
-          'Heaps',
-          'Tries',
-          'Graphs',
-        ],
-      },
-      {
-        menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching'],
-      },
-    ],
+  const initialState = {
+    sidebar: [],
+    language: '',
   }
+  const [table, setTable] = useState(initialState)
+
+  useEffect(() => {
+    const loadContents = async () => {
+      try {
+        const req = await fetchTable('javascript')
+        const { sidebar, language } = req.data[0]
+        setTable(() => {
+          return { sidebar, language }
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    loadContents()
+  }, [])
 
   return (
-    <section className='py-3'>
+    <section className="py-3">
       <Container>
         <Row>
-          <Sidebar data={tableOfContents}></Sidebar>
+          <Sidebar data={table}></Sidebar>
           <Switch>
             <Route
-              path='/javascript/:topic'
-              render={(props) => <Content {...props} language='javascript' />}
+              path="/javascript/:topic"
+              render={(props) => <Content {...props} language="javascript" />}
             />
             <Route
-              path='/'
+              path="/"
               render={(props) => (
                 <Content
                   {...props}
