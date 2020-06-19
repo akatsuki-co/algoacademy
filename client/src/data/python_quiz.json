@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "question": "Which statement about tuples is false?",
     "answers": {
       "a": "Tuples are stored in a single block of memory.",
@@ -8,10 +7,10 @@
       "c": "Tuples consist of mutable objects.",
       "d": "Tuples have data stored in () brackets."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 2,
     "question": "Which of the following is an invalid method on list objects?",
     "answers": {
       "a": "push",
@@ -19,10 +18,10 @@
       "c": "append",
       "d": "concat"
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 3,
     "question": "Who invented Python?",
     "answers": {
       "a": "Guido Van Rossum",
@@ -30,10 +29,10 @@
       "c": "Brendan Eich",
       "d": "Yukihiro Matsumoto"
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 4,
     "question": "What library can arrays be imported from?",
     "answers": {
       "a": "bcrypt",
@@ -41,10 +40,10 @@
       "c": "math",
       "d": "numpy"
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 5,
     "question": "How is memory managed in Python?",
     "answers": {
       "a": "All Python objects and data structures are handled in the public heap.",
@@ -52,10 +51,10 @@
       "c": "Python has an inbuilt garbage collector, which recycles all unused memory.",
       "d": "Everything runs on the cloud."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 6,
     "question": "What is the GIL?",
     "answers": {
       "a": "Greater Illinois Lakes",
@@ -63,10 +62,10 @@
       "c": "Graph Interface Library",
       "d": "Global Interpreter Lock"
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 7,
     "question": "Which of the following statements about lambda functions is true?",
     "answers": {
       "a": "Python does not support lambdas.",
@@ -74,10 +73,10 @@
       "c": "Lambdas are instantiated with the def keyword.",
       "d": "Lambas return true by default."
     },
-    "correct_answer": ["b"]
+    "correct_answer": ["b"],
+    "topic": "python"
   },
   {
-    "id": 8,
     "question": "What is pickling in Python?",
     "answers": {
       "a": "Pickling is converting an object into a string representation and then dumping it into a file.",
@@ -85,10 +84,10 @@
       "c": "Trick question. Pickling is turning cucumbers into literal pickles.",
       "d": "Pickling is a common practice in which every function in a file is unit-tested."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 9,
     "question": "What is the Numpy library not used for?",
     "answers": {
       "a": "Linear algebra",
@@ -96,10 +95,10 @@
       "c": "Encryption",
       "d": "Histograms"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 10,
     "question": "What types of inheritance is supported by Python?",
     "answers": {
       "a": "Single inheritance - a derived class acquires the members of a single superclass.",
@@ -107,10 +106,10 @@
       "c": "Multiple inheritance - a derived class is inherited from more than one base class.",
       "d": "All of the above."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 11,
     "question": "Does Python support polymorphism?",
     "answers": {
       "a": "True",
@@ -118,10 +117,10 @@
       "c": "I don't know",
       "d": "All of the above."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 12,
     "question": "What python builtin is used to loop over indexes AND elements?",
     "answers": {
       "a": "xrange",
@@ -129,10 +128,10 @@
       "c": "enumerate",
       "d": "reduce"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 13,
     "question": "Which one of these is NOT a Python linter?",
     "answers": {
       "a": "flake8",
@@ -140,10 +139,10 @@
       "c": "analinter",
       "d": "pylama"
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 14,
     "question": "What are Python decorators?",
     "answers": {
       "a": "A decorator is a design pattern that allows a user to add new functionality to an existing object.",
@@ -151,10 +150,10 @@
       "c": "A decorator is a tool to take advantage of concurrency and multithreading.",
       "d": "Python does not support decorators. You have to import the decorator library."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 15,
     "question": "What is __init__?",
     "answers": {
       "a": "init() is used to declare special objects like generators.",
@@ -162,10 +161,10 @@
       "c": "init() initializes all variables declared in a class to the global scope.",
       "d": "init() is a constructor method."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 16,
     "question": "How do you write ternary expressions in Python?",
     "answers": {
       "a": "condition ? condition_if_true : condition_if_false.",
@@ -173,10 +172,10 @@
       "c": "condition ^ condition_if_true | condition_if_false",
       "d": "Python does not support ternary expressions."
     },
-    "correct_answer": ["b"]
+    "correct_answer": ["b"],
+    "topic": "python"
   },
   {
-    "id": 17,
     "question": "What is the @property in Python?",
     "answers": {
       "a": "@property is a decorator used to document your class methods.",
@@ -184,10 +183,10 @@
       "c": "@property is a decorator that allows a function to be accessed like an attribute.",
       "d": "@property does not exist in Python."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 18,
     "question": "What is a dictionary comprehension?",
     "answers": {
       "a": "It is a way to create a dictionary by merging two sets of data which are in the form of either lists or arrays.",
@@ -195,10 +194,10 @@
       "c": "It is a old way method of creating dictionaries in Python 2.0*.",
       "d": "It is the act of flattening out nested dictionaries to make it easier to loop through its key/pair values."
     },
-    "correct_answer": ["a"]
+    "correct_answer": ["a"],
+    "topic": "python"
   },
   {
-    "id": 19,
     "question": "How would you make a deep copy of lists/dictionaries in Python?",
     "answers": {
       "a": "You can simply use the = operator to assign it to another object.",
@@ -206,10 +205,10 @@
       "c": "Python has a deepcopy() builtin.",
       "d": "Import the copy library and use deepcopy()."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 20,
     "question": "How do you represent infinity in Python?",
     "answers": {
       "a": "math.intmax",
@@ -217,10 +216,10 @@
       "c": "inf",
       "d": "float('inf')"
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 21,
     "question": "What is true about switch statements in Python?",
     "answers": {
       "a": "Switch statements use lambdas for case statements to keep code short and clean.",
@@ -228,10 +227,10 @@
       "c": "Switch statements do not require break statements as it is implictly implied.",
       "d": "They are not supported in Python."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   },
   {
-    "id": 22,
     "question": "Which Python collection would be used to build a LRU (Least Recently Used) cache?",
     "answers": {
       "a": "FrozenSet",
@@ -239,10 +238,10 @@
       "c": "Counter",
       "d": "DefaultDict"
     },
-    "correct_answer": ["b"]
+    "correct_answer": ["b"],
+    "topic": "python"
   },
   {
-    "id": 23,
     "question": "How can Python Docstrings be accessed?",
     "answers": {
       "a": "Using the @docstring decorator on the object.",
@@ -250,10 +249,10 @@
       "c": "Using the __doc__ method of the object and/or the help function",
       "d": "Import the typing library and calling doc() on the object."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 24,
     "question": "Explain the difference between a generator and an iterator in Python.",
     "answers": {
       "a": "An iterator uses the yield statement to return values. A generator is an object that generates random values whenever called.",
@@ -261,10 +260,10 @@
       "c": "An iterator serves as a holder for objects so that they can be iterated over. A generator facilitates the creation of a custom iterator.",
       "d": "Iterators and generators do not exist in Python."
     },
-    "correct_answer": ["c"]
+    "correct_answer": ["c"],
+    "topic": "python"
   },
   {
-    "id": 25,
     "question": "Why is the 'with' statement used in Python I/O?",
     "answers": {
       "a": "It allows the user to bypass all read/write permissions which makes it a powerful scripting tool.",
@@ -272,6 +271,7 @@
       "c": "It automatically catches all Exceptions and prints it to stdout.",
       "d": "It clarifies code that previously used try...finally blocks to ensure that clean-up code is executed."
     },
-    "correct_answer": ["d"]
+    "correct_answer": ["d"],
+    "topic": "python"
   }
 ]
