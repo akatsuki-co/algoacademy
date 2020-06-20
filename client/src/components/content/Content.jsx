@@ -4,49 +4,30 @@ import { useParams } from 'react-router'
 import HighlightedMarkdown from '../highlighted_markdown/HighlightedMarkdown'
 
 import './styles.css'
-import Loader from '../ui/Loader' 
+import Loader from '../ui/Loader'
 
-const Content = ({ language, defaultTopic }) => {
-  const [markdown, setMarkdown] = useState(``)
-  let params = useParams()
+const Content = ({ table }) => {
+  let { topic } = useParams()
+  const [markdown, setMarkdown] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
-
-    const toCamel = (str) => {
-        return str.replace(/([-_][a-z])/ig, ($1) => {
-                return $1.toUpperCase()
-                      .replace('-', '')
-                      .replace('_', '')
-        })
-    }
 
   useEffect(() => {
     async function getMarkdown() {
       try {
         setIsLoading(true)
-        setMarkdown("")
-        let markdownFileName = params.topic
-        if (defaultTopic) {
-          markdownFileName = defaultTopic
-        }
-        markdownFileName = toCamel(markdownFileName)
-        const topicLanguage = language
-        const file = await import(
-          `../../docs/${topicLanguage}/${markdownFileName}.md`
-        )
+        const mdFileName = topic || 'hello_world'
+        const file = await import(`../../docs/${table.language}/${mdFileName}.md`)
         const response = await fetch(file.default)
-        let text = await response.text()
+        const text = await response.text()
         setIsLoading(false)
-        if (text === '') {
-          text = '# Nothing here yet! Come back again soon!'
-        }
-        setMarkdown(text)
-      } catch (error) {
-        console.error(error)
+        setMarkdown(text || '### Nothing here yet! Come back again soon!')
+      } catch {
+        setIsLoading(false)
+        setMarkdown('### Path Not found. Please try again.')
       }
     }
     getMarkdown()
-  }, [params, language, defaultTopic])
+  }, [table, topic])
 
   return (
     <Col
@@ -54,7 +35,11 @@ const Content = ({ language, defaultTopic }) => {
       xl='8'
       className='ml-md-auto py-3 pl-5 border-left'
       id='content'>
-      {isLoading ? <Loader/> : <HighlightedMarkdown>{markdown}</HighlightedMarkdown>}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
+      )}
     </Col>
   )
 }
