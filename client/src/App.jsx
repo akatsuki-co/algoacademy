@@ -1,57 +1,25 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Navigation from './components/partials/Navigation'
-import Cards from './components/cards/Cards'
-import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
-import Login from './components/auth/login'
-import Python from './pages/Python'
-import Go from './pages/Go'
-import Cpp from './pages/C++'
-import C from './pages/C'
-import Javascript from './pages/Javascript'
-import Contribute from './components/contribute/Contribute'
-import QuizHome from './pages/QuizHome'
+import pages from './pages'
+import shortid from 'shortid'
 
 import './App.css'
 
 const App = () => {
+  const allPages = pages.map(({ path, exact, components }) => {
+    return (
+      <Route path={path} exact={exact} key={shortid.generate()}>
+        {components}
+      </Route>
+    )
+  })
+
   return (
     <div className="App">
       <Navigation></Navigation>
-      <Switch>
-        <Route path="/" exact>
-          <Header></Header>
-          <Cards></Cards>
-        </Route>
-        <Route path="/python">
-          <Python />
-        </Route>
-        <Route path="/javascript">
-          <Javascript />
-        </Route>
-        <Route path="/go">
-          <Go />
-        </Route>
-        <Route path="/c++">
-          <Cpp />
-        </Route>
-        <Route path="/c">
-          <C />
-        </Route>
-        <Route path="/contribute">
-          <Contribute />
-        </Route>
-        <Route path="/quiz">
-          <QuizHome></QuizHome>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        <Route>
-          <h1 className="text-center py-5">Page not found</h1>
-        </Route>
-      </Switch>
+      <Switch>{allPages}</Switch>
       <Footer></Footer>
     </div>
   )

@@ -4,22 +4,20 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
-
 import fetchTable from '../utils/fetchTable'
 
 const Python = () => {
   const initialState = {
     sidebar: [],
     language: '',
-    }  
-      
+  }
   const [table, setTable] = useState(initialState)
 
   useEffect(() => {
-    const fetchT = async () => {
+    const loadContents = async () => {
       try {
-        const tempTable = await fetchTable('python')
-        const { sidebar, language } = tempTable.data[0]
+        const req = await fetchTable('python')
+        const { sidebar, language } = req.data[0]
         setTable(() => {
           return { sidebar, language }
         })
@@ -27,7 +25,7 @@ const Python = () => {
         console.log(err)
       }
     }
-    fetchT()
+    loadContents()
   }, [])
 
   return (

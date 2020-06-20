@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Progress from './Progress'
 import Question from './Question'
 import Answers from './Answers'
@@ -6,67 +7,66 @@ import Results from './Results'
 import QuizContext from '../../context/QuizContext'
 import {
   SET_ANSWERS,
-  SET_CURRENT_QUESTION,
   SET_NEXT_QUESTION,
   RESET_CURRENT_ANSWER,
   SET_ERROR,
-  SET_SHOW_RESULTS,
+  LOAD_QUESTIONS,
 } from '../../reducers/types.jsx'
 import quizReducer from '../../reducers/QuizReducer'
 import shuffle from '../../utils/shuffle'
+import compareAnswers from '../../utils/compareAnswers'
 
-import data from '../../data/ccp_quiz.json'
 import './styles.css'
 
 function Quiz() {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [isGameOver, setGameOver] = useState(false)
+  const params = useParams()
   const initialState = {
-    questions: data,
+    questions: [],
     currentQuestionIndex: 0,
-    currentQuestion: null,
     currentAnswer: [],
     answers: {},
-    showResults: false,
     error: '',
   }
   const [state, dispatch] = useReducer(quizReducer, initialState)
   const {
     questions,
     currentQuestionIndex,
-    currentQuestion,
     currentAnswer,
     answers,
-    showResults,
     error,
   } = state
 
+  useEffect(() => {
+    const loadQuestions = async () => {
+      try {
+        console.log(params)
+        const req = await fetch(`http://localhost:5000/api/v1/quizzes?topic=${params.topic}`)
+        const questionsArr = await req.json()
+        const shuffledQuestions = shuffle(questionsArr.data)
+        dispatch({
+          type: LOAD_QUESTIONS,
+          questions: shuffledQuestions,
+        })
+        setIsLoaded(true)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    loadQuestions()
+  }, [params])
+
   const renderError = () => {
     if (!error) return
-    return <div className="error">{error}</div>
-  }
-
-  const shuffleQuiz = () => {
-    shuffle(questions)
-    dispatch({
-      type: SET_CURRENT_QUESTION,
-      currentQuestion: questions[0],
-    })
-  }
-
-  const compareAnswers = (arr1, arr2) => {
-    if (arr1.length !== arr2.length) {
-      return false
-    }
-    for (let el of arr1) {
-      if (!arr2.includes(el)) return false
-    }
-    return true
+    return <div className='error'>{error}</div>
   }
 
   const next = () => {
     if (!currentAnswer.length)
       return dispatch({ type: SET_ERROR, error: 'Please select an option' })
     dispatch({ type: RESET_CURRENT_ANSWER })
-    if (!compareAnswers(currentQuestion.correct_answer, currentAnswer)) {
+    if (!compareAnswers(questions[currentQuestionIndex].correct_answer, currentAnswer)) {
       answers[currentQuestionIndex] = false
       return dispatch({
         type: SET_ERROR,
@@ -80,28 +80,24 @@ function Quiz() {
       return dispatch({
         type: SET_NEXT_QUESTION,
         currentQuestionIndex: currentQuestionIndex + 1,
-        currentQuestion: questions[currentQuestionIndex + 1],
       })
     }
-    dispatch({ type: SET_SHOW_RESULTS, showResults: true })
+    setGameOver(true)
   }
 
-  return showResults ? (
+  return (
     <QuizContext.Provider value={{ state, dispatch }}>
-      <Results />
-    </QuizContext.Provider>
-  ) : (
-    <QuizContext.Provider value={{ state, dispatch }}>
-      <div className="quiz gradient py-2">
-        {currentQuestion ? null : shuffleQuiz()}
+      {isGameOver ? <Results /> : isLoaded ? (
+      <div className='quiz gradient py-2'>
         <Progress total={questions.length} current={currentQuestionIndex + 1} />
         <Question />
         {renderError()}
         <Answers />
-        <button className="quiz-btn btn-primary" onClick={next}>
+        <button className='quiz-btn btn-primary' onClick={next}>
           Confirm and Continue
         </button>
       </div>
+      ) : null}
     </QuizContext.Provider>
   )
 }

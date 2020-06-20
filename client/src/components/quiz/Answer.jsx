@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import {
   SET_CURRENT_ANSWER,
   REMOVE_CURRENT_ANSWER,
@@ -10,7 +10,8 @@ import './styles.css'
 
 const Answer = ({ letter }) => {
   const { state, dispatch } = useContext(QuizContext)
-  const { currentAnswer, currentQuestion } = state
+  const { currentAnswer, questions, currentQuestionIndex } = state
+  const currentQuestion = questions[currentQuestionIndex]
 
   const handleClick = (e) => {
     if (!currentAnswer.includes(letter)) {
@@ -25,9 +26,8 @@ const Answer = ({ letter }) => {
     <button
       value={letter}
       className={currentAnswer.includes(letter) ? 'selected answer' : 'answer'}
-      onClick={handleClick}
-    >
-      <span className="letter">{letter}.</span>
+      onClick={handleClick}>
+      <span className='letter'>{letter}.</span>
       {currentQuestion.answers[letter]}
     </button>
   )

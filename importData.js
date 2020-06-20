@@ -17,8 +17,11 @@ mongoose
         console.log("Mongo is connected")
     })
 
-const questions = JSON.parse(
-    fs.readFileSync(`${__dirname}/client/src/data/quiz.json`, "utf-8")
+const ccp_questions = JSON.parse(
+    fs.readFileSync(`${__dirname}/client/src/data/ccp_quiz.json`, "utf-8")
+)
+const python_questions = JSON.parse(
+    fs.readFileSync(`${__dirname}/client/src/data/python_quiz.json`, "utf-8")
 )
 const table = JSON.parse(
     fs.readFileSync(`${__dirname}/client/src/data/tables.json`, "utf-8")
@@ -26,7 +29,8 @@ const table = JSON.parse(
 
 const importData = async () => {
     try {
-        await Quiz.create(questions)
+        await Quiz.create(ccp_questions)
+        await Quiz.create(python_questions)
         await Table.create(table)
         console.log("Successfully imported table and questions")
     } catch (err) {

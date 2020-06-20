@@ -1,51 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from '../components/sidebar/Sidebar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Content from '../components/content/Content'
 import { Switch, Route } from 'react-router-dom'
+import fetchTable from '../utils/fetchTable'
 
 const C = () => {
-  const tableOfContents = {
-    language: 'c',
-    sidebar: [
-      {
-        menu: 'Basics',
-        subMenu: [
-          'Hello World',
-          'Data Types',
-          'Looping',
-          'Arrays',
-          'Structures',
-          'Functions',
-          'Pointers',
-          'Bit Manipulation',
-        ],
-      },
-      {
-        menu: 'Data Structures',
-        subMenu: [
-          'Linked Lists',
-          'Stacks',
-          'Queues',
-          'Hash Tables',
-          'Sets',
-          'Binary Trees',
-          'Heaps',
-        ],
-      },
-      {
-        menu: 'Algorithms',
-        subMenu: ['Sorting', 'Searching'],
-      },
-    ],
+  const initialState = {
+    sidebar: [],
+    language: '',
   }
+  const [table, setTable] = useState(initialState)
+
+  useEffect(() => {
+    const loadContents = async () => {
+      try {
+        const req = await fetchTable('c')
+        const { sidebar, language } = req.data[0]
+        setTable(() => {
+          return { sidebar, language }
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    loadContents()
+  }, [])
 
   return (
     <section className="py-3">
       <Container>
         <Row>
-          <Sidebar data={tableOfContents}></Sidebar>
+          <Sidebar data={table}></Sidebar>
           <Switch>
             <Route
               path="/c/:topic"
