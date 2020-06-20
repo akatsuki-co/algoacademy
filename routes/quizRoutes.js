@@ -6,6 +6,7 @@ const {
     getQuiz,
     getQuizzes
 } = require("./../controllers/quizController")
+const { protect } = require('./../controllers/authController')
 
 const router = express.Router()
 
@@ -59,7 +60,7 @@ const router = express.Router()
 router
     .route("/")
     .get(getQuizzes)
-    .post(createQuiz)
+    .post(protect, createQuiz)
 
 /**
  * @swagger
@@ -126,7 +127,7 @@ router
 router
     .route("/:id")
     .get(getQuiz)
-    .patch(updateQuiz)
-    .delete(deleteQuiz)
+    .patch(protect, updateQuiz)
+    .delete(protect, deleteQuiz)
 
 module.exports = router
