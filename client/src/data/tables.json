@@ -1,180 +1,192 @@
-{
-  "status": "success",
-  "results": 4,
-  "data": [
+[
     {
-      "_id": "5ee8818c6b7c991a9af20e41",
-      "language": "python",
-      "sidebar": [
-        {
-          "subMenu": [
-            "Hello World",
-            "Data Types",
-            "Lists",
-            "Dictionaries",
-            "Comprehensions"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e42",
-          "menu": "Basics"
-        },
-        {
-          "subMenu": [
-            "Collections",
-            "Linked Lists",
-            "Stacks and Queues",
-            "Hash Tables",
-            "Sets",
-            "Trees",
-            "Heaps",
-            "Tries",
-            "Graphs"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e43",
-          "menu": "Data Structures"
-        },
-        {
-          "subMenu": [
-            "Sorting",
-            "Searching"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e44",
-          "menu": "Algorithms"
-        }
-      ],
-      "__v": 0
+        "language": "python",
+        "sidebar": [
+            {
+                "subMenu": [
+                    "Hello World",
+                    "Data Types",
+                    "Lists",
+                    "Dictionaries",
+                    "Comprehensions"
+                ],
+                "menu": "Basics"
+            },
+            {
+                "subMenu": [
+                    "Collections",
+                    "Linked Lists",
+                    "Stacks and Queues",
+                    "Hash Tables",
+                    "Sets",
+                    "Trees",
+                    "Heaps",
+                    "Tries",
+                    "Graphs"
+                ],
+                "menu": "Data Structures"
+            },
+            {
+                "subMenu": [
+                    "Sorting",
+                    "Searching"
+                ],
+                "menu": "Algorithms"
+            }
+        ]
     },
     {
-      "_id": "5ee8818c6b7c991a9af20e4d",
-      "language": "go",
-      "sidebar": [
-        {
-          "subMenu": [
-            "Hello World",
-            "Data Types",
-            "Variables",
-            "Loops",
-            "Pointers",
-            "Arrays",
-            "Slices",
-            "Maps",
-            "Structs",
-            "Interfaces",
-            "Goroutines and Channels"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e4e",
-          "menu": "Basics"
-        },
-        {
-          "subMenu": [
-            "Linked Lists",
-            "Stacks and Queues",
-            "Hash Tables",
-            "Sets",
-            "Trees",
-            "Heaps",
-            "Tries",
-            "Graphs"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e4f",
-          "menu": "Data Structures"
-        },
-        {
-          "subMenu": [
-            "Sorting",
-            "Searching"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e50",
-          "menu": "Algorithms"
-        }
-      ],
-      "__v": 0
+        "language": "go",
+        "sidebar": [
+            {
+                "subMenu": [
+                    "Hello World",
+                    "Data Types",
+                    "Variables",
+                    "Loops",
+                    "Pointers",
+                    "Arrays",
+                    "Slices",
+                    "Maps",
+                    "Structs",
+                    "Interfaces",
+                    "Goroutines and Channels"
+                ],
+                "menu": "Basics"
+            },
+            {
+                "subMenu": [
+                    "Linked Lists",
+                    "Stacks and Queues",
+                    "Hash Tables",
+                    "Sets",
+                    "Trees",
+                    "Heaps",
+                    "Tries",
+                    "Graphs"
+                ],
+                "menu": "Data Structures"
+            },
+            {
+                "subMenu": [
+                    "Sorting",
+                    "Searching"
+                ],
+                "menu": "Algorithms"
+            }
+        ]
     },
     {
-      "_id": "5ee8818c6b7c991a9af20e49",
-      "language": "c++",
-      "sidebar": [
-        {
-          "subMenu": [
-            "Hello World",
-            "Data Types",
-            "Functions",
-            "Structures",
-            "Arrays",
-            "Character Strings",
-            "Pointers",
-            "Bit Manipulation"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e4a",
-          "menu": "Basics"
-        },
-        {
-          "subMenu": [
-            "Linked Lists",
-            "Stacks and Queues",
-            "Hash Tables",
-            "Sets",
-            "Trees",
-            "Heaps",
-            "Tries",
-            "Graphs"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e4b",
-          "menu": "Data Structures"
-        },
-        {
-          "subMenu": [
-            "Sorting",
-            "Searching",
-            "Recursion",
-            "DFS/BFS"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e4c",
-          "menu": "Algorithms"
-        }
-      ],
-      "__v": 0
+        "language": "c++",
+        "sidebar": [
+            {
+                "subMenu": [
+                    "Hello World",
+                    "Data Types",
+                    "Functions",
+                    "Structures",
+                    "Arrays",
+                    "Character Strings",
+                    "Pointers",
+                    "Bit Manipulation"
+                ],
+                "menu": "Basics"
+            },
+            {
+                "subMenu": [
+                    "Linked Lists",
+                    "Stacks and Queues",
+                    "Hash Tables",
+                    "Sets",
+                    "Trees",
+                    "Heaps",
+                    "Tries",
+                    "Graphs"
+                ],
+                "menu": "Data Structures"
+            },
+            {
+                "subMenu": [
+                    "Sorting",
+                    "Searching",
+                    "Recursion",
+                    "DFS/BFS"
+                ],
+                "menu": "Algorithms"
+            }
+        ]
     },
     {
-      "_id": "5ee8818c6b7c991a9af20e45",
-      "language": "c",
-      "sidebar": [
-        {
-          "subMenu": [
-            "Hello World",
-            "Data Types",
-            "Looping",
-            "Arrays",
-            "Structures",
-            "Functions",
-            "Pointers",
-            "Bit Manipulation"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e46",
-          "menu": "Basics"
-        },
-        {
-          "subMenu": [
-            "Linked Lists",
-            "Stacks",
-            "Queues",
-            "Hash Tables",
-            "Sets",
-            "Binary Trees",
-            "Heaps"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e47",
-          "menu": "Data Structures"
-        },
-        {
-          "subMenu": [
-            "Sorting",
-            "Searching"
-          ],
-          "_id": "5ee8818c6b7c991a9af20e48",
-          "menu": "Algorithms"
-        }
-      ],
-      "__v": 0
+        "language": "c",
+        "sidebar": [
+            {
+                "subMenu": [
+                    "Hello World",
+                    "Data Types",
+                    "Looping",
+                    "Arrays",
+                    "Structures",
+                    "Functions",
+                    "Pointers",
+                    "Bit Manipulation"
+                ],
+                "menu": "Basics"
+            },
+            {
+                "subMenu": [
+                    "Linked Lists",
+                    "Stacks",
+                    "Queues",
+                    "Hash Tables",
+                    "Sets",
+                    "Binary Trees",
+                    "Heaps"
+                ],
+                "menu": "Data Structures"
+            },
+            {
+                "subMenu": [
+                    "Sorting",
+                    "Searching"
+                ],
+                "menu": "Algorithms"
+            }
+        ]
+    },
+    {
+        "language": "javascript",
+        "sidebar": [
+            {
+                "subMenu": [
+                    "Hello World",
+                    "Data Types",
+                    "Arrays",
+                    "Functions And Closures",
+                    "Higher Order Functions",
+                    "ES6 and Promises"
+                ],
+                "menu": "Basics"
+            },
+            {
+                "subMenu": [
+                    "Linked Lists",
+                    "Stacks and Queues",
+                    "Hash Tables",
+                    "Sets",
+                    "Binary Trees",
+                    "Heaps",
+                    "Tries",
+                    "Graphs"
+                ],
+                "menu": "Data Structures"
+            },
+            {
+                "subMenu": [
+                    "Sorting",
+                    "Searching"
+                ],
+                "menu": "Algorithms"
+            }
+        ]
     }
-  ]
-}
+]
