@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Progress from './Progress'
 import Question from './Question'
 import Answers from './Answers'
@@ -20,6 +21,7 @@ import './styles.css'
 function Quiz() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isGameOver, setGameOver] = useState(false)
+  const params = useParams()
   const initialState = {
     questions: [],
     currentQuestionIndex: 0,
@@ -39,7 +41,8 @@ function Quiz() {
   useEffect(() => {
     const loadQuestions = async () => {
       try {
-        const req = await fetch(`http://localhost:5001/api/v1/quizzes`)
+        console.log(params)
+        const req = await fetch(`http://localhost:5000/api/v1/quizzes?topic=${params.topic}`)
         const questionsArr = await req.json()
         const shuffledQuestions = shuffle(questionsArr.data)
         dispatch({
@@ -52,7 +55,7 @@ function Quiz() {
       }
     }
     loadQuestions()
-  }, [])
+  }, [params])
 
   const renderError = () => {
     if (!error) return

@@ -57,7 +57,7 @@ const QuizHome = () => {
     <section id="quizHome" className="py-5">
       <Container>
         <Switch>
-          <Route path="/quiz/:id" component={Quiz}></Route>
+          <Route path="/quiz/:topic" component={Quiz}></Route>
           <Route path="/quiz" component={Home}></Route>
         </Switch>
       </Container>
