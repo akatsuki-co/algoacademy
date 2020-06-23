@@ -1,0 +1,398 @@
+[
+  {
+    "question": "Which of the following can a developer use to interact with your AWS services? (Select TWO)",
+    "answers": {
+      "a": "AWS Organizations",
+      "b": "AWS Command Line Interface",
+      "c": "AWS Artifact",
+      "d": "AWS SDKs",
+      "e": "Elastic Network Interface"
+    },
+    "correct_answer": ["b", "d"],
+    "topic": "ccp",
+    "explanation": "The AWS Command Line Interface (AWS CLI) is an open-source tool that enables you to interact with AWS services using commands in your command-line shell. You can also use Software Development Kits (SDKs) to interact with your AWS services. SDKs take the complexity out of coding by providing language-specific APIs for AWS services to enable you to develop cloud applications much faster."
+  },
+  {
+    "question": "What service provides the lowest-cost storage option for retaining database backups which also allows occasional data retrieval in minutes?",
+    "answers": {
+      "a": "AWS S3",
+      "b": "AWS EFS",
+      "c": "AWS Glacier",
+      "d": "AWS EBS"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "Amazon S3 Glacier and S3 Glacier Deep Archive are designed to be the lowest-cost Amazon S3 storage classes, allowing you to archive large amounts of data at a very low cost."
+  },
+  {
+    "question": "For security audit, a company needs to download the compliance-related documents in AWS such as ISO certifications, Payment Card Industry (PCI), and Service Organization Control (SOC) reports. Which of the following should they use to retrieve these files?",
+    "answers": {
+      "a": "AWS Trusted Advisor",
+      "b": "AWS CloudTrail",
+      "c": "AWS Certificate Manager",
+      "d": "AWS Artifact"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Artifact is your go-to, central resource for compliance-related information that matters to you. It provides on-demand access to AWS’ security and compliance reports and select online agreements."
+  },
+  {
+    "question": "Among the following services, which is the most suitable one to use to store the results of I/O-intensive SQL database queries to improve application performance?",
+    "answers": {
+      "a": "AWS CloudFront",
+      "b": "AWS ElastiCache",
+      "c": "AWS DynamoDB Accelerator (DAX)",
+      "d": "AWS Greengrass"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon ElastiCache offers fully managed Redis and Memcached. Seamlessly deploy, run, and scale popular open source compatible in-memory data stores."
+  },
+  {
+    "question": "How can you apply and easily manage the common access permissions to a large number of IAM users in AWS?",
+    "answers": {
+      "a": "Attach the necessary policies or permissions required to a new IAM Group then afterwards, add the IAM Users to the IAM group.",
+      "b": "Attach the exact same IAM Policy to all of the IAM Users.",
+      "c": "Attach the IAM Policy to an IAM Role then afterwards, associate that role to all of the IAM Users.",
+      "d": "Apply permissions to multiple IAM Users by using a cross-account role.",
+      "e": ""
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "An IAM group is a collection of IAM users. Groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users. For example, you could have a group called Admins and give that group the types of permissions that administrators typically need. Any user in that group automatically has the permissions that are assigned to the group."
+  },
+  {
+    "question": "What are the things that you can implement to improve the security of your Identity and Access Management (IAM) users? (Select TWO)",
+    "answers": {
+      "a": "Enable Multi-Factor Authentication (MFA)",
+      "b": "Block incoming traffic via Security Groups.",
+      "c": "Enable AWS Mobile Push Notifications.",
+      "d": "Block incoming traffic via Network ACL.",
+      "e": "Configure a strong password policy for your users."
+    },
+    "correct_answer": ["a", "e"],
+    "topic": "ccp",
+    "explanation": "You can improve the security of your Identity and Access Management (IAM) users by applying the following IAM best practices: rotate credentials regularly, configure a strong password policy for your users, enable MFA."
+  },
+  {
+    "question": "Which AWS service allows your EC2 compute capacity to automatically scale based on the incoming traffic?",
+    "answers": {
+      "a": "AWS Auto Scaling",
+      "b": "AWS CloudTrail",
+      "c": "AWS Lightsail",
+      "d": "AWS Macie"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "AWS Auto Scaling enables you to configure automatic scaling for the AWS resources that are part of your application in a matter of minutes. The AWS Auto Scaling console provides a single user interface to use the automatic scaling features of multiple AWS services. You can configure automatic scaling for individual resources or for whole applications."
+  },
+  {
+    "question": "Users from different parts of the globe are complaining about the slow performance of the newly launched photo-sharing website in loading their high-resolution images. Which combination of AWS services should you use to serve the files with lowest possible latency? (Select TWO)",
+    "answers": {
+      "a": "AWS Elastic File System",
+      "b": "AWS CloudFront",
+      "c": "AWS S3",
+      "d": "AWS Storage Gateway",
+      "e": "AWS Glacier"
+    },
+    "correct_answer": ["b", "c"],
+    "topic": "ccp",
+    "explanation": " High-resolution images, videos, and other static files can be stored in Amazon S3. CloudFront speeds up content delivery by leveraging its global network of data centers, known as edge locations, to reduce delivery time by caching your content close to your end-users."
+  },
+  {
+    "question": "What should you provide to your developers to allow them to access your AWS services through the AWS CLI?",
+    "answers": {
+      "a": "SSH keys",
+      "b": "Access keys",
+      "c": "IAM username and passwords",
+      "d": "API keys"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "The AWS Access Key ID and AWS Secret Access Key are your AWS credentials. They are associated with an AWS Identity and Access Management (IAM) user or role that determines what permissions you have."
+  },
+  {
+    "question": "A company is using Amazon S3 to store their static media contents such as photos and videos. Which of the following should you use to provide specific users access to the bucket?",
+    "answers": {
+      "a": "Bucket policy",
+      "b": "NACL",
+      "c": "Security Group",
+      "d": "SSH key"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Bucket policy and user policy are two of the access policy options available for you to grant permission to your Amazon S3 resources. Both use JSON-based access policy language."
+  },
+  {
+    "question": "Which of the following below are the benefits of using Consolidated billing in AWS? (Select TWO)",
+    "answers": {
+      "a": "Consolidate all the bills from multiple AWS accounts for only $1 every month",
+      "b": "Share the volume pricing and Reserved Instance discounts by combining the usage across all the accounts in the organization,",
+      "c": "Allows one member account to pay the charges of all the master accounts.",
+      "d": "Consolidate together the billing and payment of both AWS accounts and AISPL accounts."
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "You can use the consolidated billing feature in AWS Organizations to consolidate billing and payment for multiple AWS accounts or multiple Amazon Internet Services Pvt. Ltd (AISPL) accounts."
+  },
+  {
+    "question": "A company which has a basic support plan needs resources to deploy, test, and improve their AWS environment. Which of the following can they use for free?",
+    "answers": {
+      "a": "AWS Support API for programmatic case management",
+      "b": "AWS online documentation, whitepapers, blogs and support forums",
+      "c": "Technical Account Manager consultation",
+      "d": "In-person classes with an accredited AWS instructor"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "The AWS Support API provides access to some of the features of the AWS Support Center. This API allows programmatic access to AWS Support Center features to create, manage, and close your support cases, and operationally manage your Trusted Advisor check requests and status. AWS provides this access for AWS Support customers who have a Business or Enterprise support plan."
+  },
+  {
+    "question": "Which of the following is the most cost-effective AWS Support Plan to use if you need access to AWS Support API for programmatic case management?",
+    "answers": {
+      "a": "Basic",
+      "b": "Enterprise",
+      "c": "Business",
+      "d": "Developer"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "Both Basic and Developer support plans are incorrect since these types do not have access to the AWS Support API. Business is the next cheapest option."
+  },
+  {
+    "question": "There is a requirement to launch a new database in AWS where the customer assumes the responsibility and management of the guest operating system, including updates and security patches. Which of the following services should the customer use?",
+    "answers": {
+      "a": "AWS Aurora",
+      "b": "AWS EC2",
+      "c": "AWS DynamoDB",
+      "d": "AWS DocumentDB"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Since you have more control over your EC2 instance, you can install any database that you prefer and manage its guest operating system, including the required updates and security patches. You can also choose an AMI with a pre-installed database (such as PostgreSQL or MySQL) in the Amazon EC2 Dashboard to save your time."
+  },
+  {
+    "question": "A company is planning to adopt a hybrid cloud architecture with AWS. Which of the following can they use to assist them in estimating their costs? (Select TWO)",
+    "answers": {
+      "a": "AWS Total Cost of Ownership (TCO) Calculator",
+      "b": "Consolidated Billing",
+      "c": "Cost Allocation tag",
+      "d": "AWS Simple Monthly Calendar",
+      "e": "AWS Cost Explorer"
+    },
+    "correct_answer": ["a", "d"],
+    "topic": "ccp",
+    "explanation": "To estimate the costs of migrating on-premises infrastructure to AWS, you can use the AWS Total Cost of Ownership (TCO) Calculator. AWS helps you reduce Total Cost of Ownership (TCO) by reducing the need to invest in large capital expenditures and providing a pay-as-you-go model that empowers you to invest in the capacity you need and use it only when the business requires it. The AWS Simple Monthly Calculator is an easy-to-use online tool that enables you to estimate the monthly cost of AWS services for your use case based on your expected usage. It is continuously updated with the latest pricing for all AWS services in all Regions."
+  },
+  {
+    "question": "A customer is planning to migrate some of their web applications that are hosted on-premises to AWS. Which of the following is a benefit of using AWS over virtualized data centers?",
+    "answers": {
+      "a": "Higher variable cost and lower upfront costs.",
+      "b": "Lower variable cost and lower upfront costs.",
+      "c": "Higher variable cost and higher upfront costs.",
+      "d": "Lower variable cost and higher upfront costs."
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS helps customers reduce large capital investments with lower variable costs. AWS also gives customers the opportunity to work on their own terms without long-term lock-in, reducing the risks from unplanned capacity and demand. AWS helps finance teams plan and forecast more effectively, while giving IT teams the capacity and resources they need, even during peak periods."
+  },
+  {
+    "question": "Which AWS services should you use to store rapidly changing data with low read and write latencies? (Select TWO)",
+    "answers": {
+      "a": "AWS AppStream 2.0",
+      "b": "AWS RDS",
+      "c": "AWS S3",
+      "d": "AWS EBS",
+      "e": "AWS Snowball"
+    },
+    "correct_answer": ["b", "d"],
+    "topic": "ccp",
+    "explanation": "Amazon S3 is incorrect because this service is optimal for storing numerous classes of information that are relatively static and not rapidly changing data just as what was mentioned in this scenario."
+  },
+  {
+    "question": "Which of the following allows you to set coverage targets and receive alerts when your utilization drops below the threshold you define?",
+    "answers": {
+      "a": "AWS CloudWatch Billing Alarm",
+      "b": "AWS Trusted Advisor",
+      "c": "AWS Cost Explorer",
+      "d": "AWS Budgets"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Budgets gives you the ability to set custom budgets that alert you when your costs or usage exceed (or are forecasted to exceed) your budgeted amount. You can also use AWS Budgets to set reservation utilization or coverage targets and receive alerts when your utilization drops below the threshold you define."
+  },
+  {
+    "question": "Which type of Elastic Load Balancer supports path-based routing, host-based routing, and bi-directional communication channels using WebSockets?",
+    "answers": {
+      "a": "Application Load Balancer",
+      "b": "Classic Load Balancer",
+      "c": "Both ALB and NLB",
+      "d": "Network Load Balancer"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Network Load Balancer and Classic Load Balancer are incorrect because they don't support path-based nor host-based routing."
+  },
+  {
+    "question": "Which of the following allows you to categorize and track your AWS costs on a detailed level?",
+    "answers": {
+      "a": "AWS Aurora Backtrack",
+      "b": "Consolidated Billing",
+      "c": "Cost allocation tags",
+      "d": "AWS Budgets"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. A key can have more than one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level."
+  },
+  {
+    "question": "In the Shared Responsibility Model, which of the following options below is a shared control between AWS and the customer?",
+    "answers": {
+      "a": "Physical and environmental controls of the AWS data centers",
+      "b": "Server-side data encryption",
+      "c": "Awareness and training",
+      "d": "Client-side encryption"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "AWS trains AWS employees, but a customer must train their own employees. Encryption falls under the responsibilities of the user. Physical and environmental controls is the sole responsibility of AWS."
+  },
+  {
+    "question": "Which service provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services?",
+    "answers": {
+      "a": "AWS CloudWatch",
+      "b": "AWS CloudTrail",
+      "c": "AWS Infrastructure Event Management",
+      "d": "AWS Config"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure."
+  },
+  {
+    "question": "What are the benefits of using Edge locations in AWS? (Select TWO)",
+    "answers": {
+      "a": "Improves application performance by delivering content closer to your users.",
+      "b": "Provides highly scalable object storage for your static content.",
+      "c": "Offers an easy-to-use edge computing device that is helpful for data migration.",
+      "d": "Provides caching which reduces the load on your origin servers.",
+      "e": "Seamlessly extends AWS to edge devices so they can act locally on the data they generate, while still using the cloud for management, analytics and durable storage."
+    },
+    "correct_answer": ["a", "d"],
+    "topic": "ccp",
+    "explanation": "Regional edge caches are CloudFront locations that are deployed globally, close to your viewers. They're located between your origin server and the points of presence (POPs) —global edge locations that serve content directly to viewers. As objects become less popular, individual POPs might remove those objects to make room for more popular content. Regional edge caches have a larger cache than an individual POP, so objects remain in the cache longer at the nearest regional edge cache location. This helps keep more of your content closer to your viewers, reducing the need for CloudFront to go back to your origin server, and improving overall performance for viewers."
+  },
+  {
+    "question": "You need to host a new Microsoft SQL Server database in AWS for an urgent project. Which AWS services should you use to meet this requirement? (Select TWO)",
+    "answers": {
+      "a": "AWS Redshift",
+      "b": "AWS Aurora Backtrack",
+      "c": "AWS EC2",
+      "d": "AWD RDS",
+      "e": "AWS Aurora"
+    },
+    "correct_answer": ["c", "d"],
+    "topic": "ccp",
+    "explanation": "SQL Server on Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS) gives you complete control over every setting, just like when it’s installed on-premises. Amazon Relational Database Service (Amazon RDS) is a fully managed service that takes care of all the maintenance, backups, and patching for you."
+  },
+  {
+    "question": "A company is planning to launch a new system in AWS but they do not have an employee who has an AWS-related expertise. Which of the following can help the company to design, architect, build, migrate, and manage their workloads and applications on AWS?",
+    "answers": {
+      "a": "Technical Account Manager",
+      "b": "AWS Marketplace",
+      "c": "AWS Partner Network Technology Partners",
+      "d": "AWS Partner Network Consulting Partners"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "The AWS Partner Network (APN) is focused on helping partners build successful AWS-based businesses to drive superb customer experiences. This is accomplished by developing a global ecosystem of Partners with specialties unique to each customer’s needs."
+  },
+  {
+    "question": "Which of the following are regarded as regional services in AWS? (Select TWO)",
+    "answers": {
+      "a": "AWS Route 53",
+      "b": "AWS Batch",
+      "c": "AWS EFS",
+      "d": "AWS Security Token Service",
+      "e": "AWS EC2"
+    },
+    "correct_answer": ["b", "c"],
+    "topic": "ccp",
+    "explanation": "AWS Batch is a regional service that simplifies running batch jobs across multiple Availability Zones within a region. You can create AWS Batch compute environments within a new or existing VPC. Amazon EFS is a regional service storing data within and across multiple Availability Zones (AZs) for high availability and durability. AWS Security Token Service and Amazon Route 53 are incorrect because these are considered as global services."
+  },
+  {
+    "question": "'Increase speed and ______' is one of the six advantages of Cloud Computing which refers to the reduction of acquisition time for making new compute resources available to your developers from weeks to just minutes.",
+    "answers": {
+      "a": "Agility",
+      "b": "Elasticity",
+      "c": "High Availability",
+      "d": "Reliability"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": " In a cloud computing environment, new IT resources are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes. This results in a dramatic increase in agility for the organization, since the cost and time it takes to experiment and develop is significantly lower."
+  },
+  {
+    "question": "In AWS Trusted Advisor, which of the following options are included among the five categories being considered to analyze your AWS environment and provide the best practice recommendations? (Select TWO)",
+    "answers": {
+      "a": "Fault tolerance",
+      "b": "Infrastructure",
+      "c": "Storage Capacity",
+      "d": "Instance Usage",
+      "e": "Performance"
+    },
+    "correct_answer": ["a", "e"],
+    "topic": "ccp",
+    "explanation": "All other options (Instance Usage, Infrastructure and Storage Capacity) are incorrect since these are not valid categories in Trusted Advisor."
+  }
+  {
+    "question": "Which of the following can you use to connect your on-premises data center and your cloud architecture in AWS? (Select TWO)",
+    "answers": {
+      "a": "VPC Peering",
+      "b": "NAT Gateway",
+      "c": "AWS Route 53",
+      "d": "VPC",
+      "e": "Egress-Only Internet Gateway"
+    },
+    "correct_answer": ["c", "d"],
+    "topic": "ccp",
+    "explanation": "NAT Gateway is incorrect because this just enables EC2 instances in a private subnet to connect to the Internet or other AWS services, but prevent the Internet from initiating a connection with those instances. Egress-Only Internet Gateway is incorrect because this works like a NAT Gateway but for IPv6 traffic only. VPC Peering is incorrect because this is just a networking connection between two VPCs, and not between your on-premises data center and VPC."
+  },
+  {
+    "question": "Which of the following Amazon EC2 instance purchasing options can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses?",
+    "answers": {
+      "a": "Dedicated Instance",
+      "b": "Dedicated Host",
+      "c": "Reserved Instance",
+      "d": "On-Demand Instance"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "An Amazon EC2 Dedicated Host is a physical server with EC2 instance capacity fully dedicated to your use. Dedicated Hosts can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. Dedicated Instances purchasing option is incorrect because although Dedicated instances also run on dedicated hardware, Dedicated Hosts provide further visibility and control by allowing you to place your instances on a specific, physical server."
+  },
+  {
+    "question": "A company has web servers running on Amazon EC2 instances that access a RESTful API hosted on their on-premises data center. What kind of architecture is the company using?",
+    "answers": {
+      "a": "Serverless architecture",
+      "b": "Platform as a service (PaaS)",
+      "c": "Hybrid architecture",
+      "d": "Software as a Service (SaaS)"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "Since the company has web servers running on Amazon EC2 instances that access a RESTful API hosted on their on-premises data center, they are considered to be using a hybrid cloud computing deployment model."
+  },
+  {
+    "question": "Which of the following characteristics correctly describes the Amazon Simple Storage Service? (Select TWO)",
+    "answers": {
+      "a": "A hybrid cloud storage service",
+      "b": "A highly durable storage infrastructure",
+      "c": "A durable, high throughput file system",
+      "d": "An object storage service",
+      "e": "A high-performance block storage service"
+    },
+    "correct_answer": ["b", "d"],
+    "topic": "ccp",
+    "explanation": "A hybrid cloud storage service is incorrect because this describes AWS Storage Gateway instead of Amazon S3. A durable, high throughput file system is incorrect because this describes the Amazon Elastic File System (EFS).  A high-performance block storage service is incorrect because this describes Amazon Elastic Block Storage (EBS)."
+  }
+]
