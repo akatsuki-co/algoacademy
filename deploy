@@ -1,11 +1,12 @@
 #!/bin/sh     
 ssh ubuntu@ip-172-31-37-49 <<EOF
+cd /algoacademy
 git pull
 npm install
-cd client/
+cd /client
 npm install
 npm run-script build
-cd ../
+cd ..
 sudo systemctl restart nginx
 sudo pm2 restart all
 exit      
