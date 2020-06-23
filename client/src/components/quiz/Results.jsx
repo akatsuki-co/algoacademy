@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import './styles.css'
 
 const Results = () => {
-  let { id } = useParams()
+  let { topic } = useParams()
   let history = useHistory()
   const { state } = useContext(QuizContext)
   const { answers } = state
@@ -16,7 +16,7 @@ const Results = () => {
       return a
     }, 0)
     const questionTotal = Object.keys(answers).length
-    window.sessionStorage.setItem(id, `${correctAnswers}/${questionTotal}`)
+    window.sessionStorage.setItem(topic, `${correctAnswers}/${questionTotal}`)
     return (
       <>
         <h2>Final Score</h2>
@@ -26,19 +26,19 @@ const Results = () => {
   }
 
   const restart = () => {
-    history.push(`/quiz/${id}`)
+    history.push(`/quiz/${topic}/7`)
   }
 
   const quizHome = () => {
     history.push('/quiz')
   }
   return (
-    <div className='quiz results gradient'>
+    <div className="quiz results gradient">
       {renderResultsData()}
-      <button className='quiz-btn btn-primary' onClick={quizHome}>
+      <button className="quiz-btn btn-primary" onClick={quizHome}>
         Go Back
       </button>
-      <button className='quiz-btn btn-primary' onClick={restart}>
+      <button className="quiz-btn btn-primary" onClick={restart}>
         Try Again
       </button>
     </div>
