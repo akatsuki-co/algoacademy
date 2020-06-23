@@ -1,5 +1,5 @@
 #!/bin/sh     
-ssh -tt ubuntu@ip-172-31-37-49
+ssh -tt ubuntu@ip-172-31-37-49 <<EOF
 cd /algoacademy
 pwd
 git pull origin master
@@ -10,3 +10,5 @@ npm run-script build
 cd ..
 sudo systemctl restart nginx
 sudo pm2 restart all
+exit
+EOF
