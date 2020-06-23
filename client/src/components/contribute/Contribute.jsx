@@ -26,6 +26,7 @@ const Contribute = () => {
         <Editor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
       </Row>
+	  <div>Test Maria</div>
     </div>
   )
 }

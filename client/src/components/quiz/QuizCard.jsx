@@ -6,7 +6,7 @@ import './styles.css'
 
 const QuizCard = ({ title, id, text, image, questions }) => {
   let progress = 'Progress: '
-  let quizResults = sessionStorage.getItem('python101')
+  let quizResults = sessionStorage.getItem(id)
   progress += quizResults || `0/${questions || 0}`
   return (
     <>

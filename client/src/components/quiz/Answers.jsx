@@ -7,8 +7,8 @@ import './styles.css'
 
 const Answers = () => {
   const { state } = useContext(QuizContext)
-  const { currentQuestion } = state
-  const letters = Object.keys(currentQuestion.answers)
+  const { questions, currentQuestionIndex } = state
+  const letters = Object.keys(questions[currentQuestionIndex].answers)
   return (
     <>
       {letters.map((el) => (

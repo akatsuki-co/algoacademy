@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
-import QuizCard from '../components/quiz/QuizCard'
+import QuizCard from './QuizCard'
 import Row from 'react-bootstrap/Row'
 import { Switch, Route } from 'react-router-dom'
-import Quiz from '../components/quiz/Quiz'
+import Quiz from './Quiz'
 import shortid from 'shortid'
 
 const QuizHome = () => {
@@ -57,7 +57,7 @@ const QuizHome = () => {
     <section id="quizHome" className="py-5">
       <Container>
         <Switch>
-          <Route path="/quiz/:id" component={Quiz}></Route>
+          <Route path="/quiz/:topic" component={Quiz}></Route>
           <Route path="/quiz" component={Home}></Route>
         </Switch>
       </Container>

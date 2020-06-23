@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import QuizContext from '../../context/QuizContext'
-import { useHistory } from 'react-router-dom'
-import { RESET_QUIZ } from '../../reducers/types.jsx'
+import { useHistory, useParams } from 'react-router-dom'
 
 import './styles.css'
 
 const Results = () => {
+  let { id } = useParams()
   let history = useHistory()
-  const { state, dispatch } = useContext(QuizContext)
+  const { state } = useContext(QuizContext)
   const { answers } = state
 
   const renderResultsData = () => {
@@ -16,10 +16,7 @@ const Results = () => {
       return a
     }, 0)
     const questionTotal = Object.keys(answers).length
-    window.sessionStorage.setItem(
-      'python101',
-      `${correctAnswers}/${questionTotal}`
-    )
+    window.sessionStorage.setItem(id, `${correctAnswers}/${questionTotal}`)
     return (
       <>
         <h2>Final Score</h2>
@@ -29,7 +26,7 @@ const Results = () => {
   }
 
   const restart = () => {
-    dispatch({ type: RESET_QUIZ })
+    history.push(`/quiz/${id}`)
   }
 
   const quizHome = () => {
