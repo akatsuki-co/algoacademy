@@ -1,6 +1,6 @@
 [
   {
-    "question": "Which of the below are components that can be configured in the VPC section of th AWS management console? (choose 2)?",
+    "question": "Which of the below are components that can be configured in the VPC section of th AWS management console? (Select TWO)?",
     "answers": {
       "a": "EBS volumes",
       "b": "Endpoints",
@@ -35,7 +35,7 @@
     "explanation": "Amazon S3 is an object-based storage system that stores objects that are comprised of key, value pairs. Amazon DynamoDB stores items, not objects, based on key, value pairs. Amazon EBS is a block-based storage system. Amazon EFS is a file-based storage system."
   },
   {
-    "question": "Which of the facts below are accurate in relation to AWS Regions? (choose 2)",
+    "question": "Which of the facts below are accurate in relation to AWS Regions? (Select TWO)",
     "answers": {
       "a": "Each region consists of a collection of VPCs",
       "b": "Regions are Content Delivery Network (CDN) endpoints for CloudFront",
@@ -48,7 +48,7 @@
     "explanation": "A region is not a collection of VPCs, it is composed of at least 2 AZs. VPCs exist within accounts on a per region basis. AZs (not regions) have direct, low-latency, high throughput and redundant network connections between each other. Edge locations (not regions) are Content Delivery Network (CDN) endpoints for CloudFront."
   },
   {
-    "question": "Which of the following would be good reasons to move from on-premises to the AWS Cloud? (choose 2)",
+    "question": "Which of the following would be good reasons to move from on-premises to the AWS Cloud? (Select TWO)",
     "answers": {
       "a": "Outsource all security responsibility",
       "b": "Gain access to free technical support services",
@@ -59,5 +59,31 @@
     "correct_answer": ["c", "d"],
     "topic": "ccp",
     "explanation": "AWS offers elastic computing with the ability to adjust workloads, monitor utilization and programmatically make changes. You can improve agility and elasticity through services such as Auto Scaling, ELB and highly scalable services such as S3 and Lambda. You do not get free technical services with AWS or end-to-end operational management of the entire infrastructure stack. You are still responsible for ensuring the security of your application, users and data."
+  },
+  {
+    "question": "Which of the following can a developer use to interact with your AWS services? (Select TWO)",
+    "answers": {
+      "a": "",
+      "b": "",
+      "c": "",
+      "d": "",
+      "e": ""
+    },
+    "correct_answer": [],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "",
+    "answers": {
+      "a": "",
+      "b": "",
+      "c": "",
+      "d": "",
+      "e": ""
+    },
+    "correct_answer": [],
+    "topic": "ccp",
+    "explanation": ""
   }
 ]
