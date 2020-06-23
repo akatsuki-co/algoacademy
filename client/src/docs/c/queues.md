@@ -44,7 +44,6 @@ Queue* create_queue()
     q->tail = NULL;
     return q;
 }
-
 ```
 
 ---
@@ -60,7 +59,6 @@ int is_empty(Queue *q)
 {
     return !q->head;
 }
-
 ```
 
 ---
@@ -84,7 +82,6 @@ void enqueue(Queue* q, int n)
     q->tail->next = new_node;
     q->tail = new_node;
 }
-
 ```
 
 ---
@@ -126,7 +123,6 @@ int peek(node *root)
         exit(1);
     return root->n;
 }
-
 ```
 
 ---
@@ -174,7 +170,6 @@ int peek(queue *q)
     shift_stacks(q);
     return peek(q->oldest);
 }
-
 ```
 
 ---
