@@ -1,6 +1,6 @@
 #!/bin/sh     
 ssh -tt ubuntu@ip-172-31-37-49 <<EOF
-cd /algoacademy
+cd algoacademy
 pwd
 git pull origin master
 npm install
