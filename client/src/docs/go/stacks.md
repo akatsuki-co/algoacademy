@@ -43,8 +43,8 @@ func (this *Stack) Is_Empty() bool {
 ---
 
 ```go
-func (this *Stack) Push(x int) {
-	this.items = append(this.items, x)
+func (this *Stack) Push(n int) {
+	this.items = append(this.items, n)
     this.size++
 }
 ```
@@ -67,7 +67,6 @@ func (this *Stack) Pop() int {
     this.size--
     return item
 }
-
 ```
 
 ---
@@ -78,6 +77,9 @@ func (this *Stack) Pop() int {
 
 ```go
 func (this *Stack) Peek() int {
+    if this.Is_Empty() {
+        panic("Stack is empty")
+    }
 	return this.items[this.size-1]
 }
 ```
