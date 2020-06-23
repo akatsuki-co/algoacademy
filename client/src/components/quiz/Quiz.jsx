@@ -41,7 +41,9 @@ function Quiz() {
   useEffect(() => {
     const loadQuestions = async () => {
       try {
-        const req = await fetch(`http://localhost:5000/api/v1/quizzes?topic=${params.topic}`)
+        const req = await fetch(
+          `http://localhost:5000/api/v1/quizzes?topic=${params.topic}`
+        )
         const questionsArr = await req.json()
         const shuffledQuestions = shuffle(questionsArr.data)
         dispatch({
@@ -58,14 +60,19 @@ function Quiz() {
 
   const renderError = () => {
     if (!error) return
-    return <div className='error'>{error}</div>
+    return <div className="error">{error}</div>
   }
 
   const next = () => {
     if (!currentAnswer.length)
       return dispatch({ type: SET_ERROR, error: 'Please select an option' })
     dispatch({ type: RESET_CURRENT_ANSWER })
-    if (!compareAnswers(questions[currentQuestionIndex].correct_answer, currentAnswer)) {
+    if (
+      !compareAnswers(
+        questions[currentQuestionIndex].correct_answer,
+        currentAnswer
+      )
+    ) {
       answers[currentQuestionIndex] = false
       return dispatch({
         type: SET_ERROR,
@@ -86,16 +93,21 @@ function Quiz() {
 
   return (
     <QuizContext.Provider value={{ state, dispatch }}>
-      {isGameOver ? <Results /> : isLoaded ? (
-      <div className='quiz gradient py-2'>
-        <Progress total={questions.length} current={currentQuestionIndex + 1} />
-        <Question />
-        {renderError()}
-        <Answers />
-        <button className='quiz-btn btn-primary' onClick={next}>
-          Confirm and Continue
-        </button>
-      </div>
+      {isGameOver ? (
+        <Results />
+      ) : isLoaded ? (
+        <div className="quiz gradient py-2">
+          <Progress
+            total={questions.length}
+            current={currentQuestionIndex + 1}
+          />
+          <Question />
+          {renderError()}
+          <Answers />
+          <button className="quiz-btn btn-primary" onClick={next}>
+            Confirm and Continue
+          </button>
+        </div>
       ) : null}
     </QuizContext.Provider>
   )
