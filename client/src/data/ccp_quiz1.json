@@ -344,7 +344,7 @@
     "correct_answer": ["a", "e"],
     "topic": "ccp",
     "explanation": "All other options (Instance Usage, Infrastructure and Storage Capacity) are incorrect since these are not valid categories in Trusted Advisor."
-  }
+  },
   {
     "question": "Which of the following can you use to connect your on-premises data center and your cloud architecture in AWS? (Select TWO)",
     "answers": {
@@ -394,5 +394,408 @@
     "correct_answer": ["b", "d"],
     "topic": "ccp",
     "explanation": "A hybrid cloud storage service is incorrect because this describes AWS Storage Gateway instead of Amazon S3. A durable, high throughput file system is incorrect because this describes the Amazon Elastic File System (EFS).  A high-performance block storage service is incorrect because this describes Amazon Elastic Block Storage (EBS)."
+  },
+  {
+    "question": "Which service should a company use to centrally manage policies and consolidate billing across multiple AWS accounts?",
+    "answers": {
+      "a": "AWS Config",
+      "b": "AWS Trusted Advisor",
+      "c": "AWS Budgets",
+      "d": "AWS Organizations"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS. Whether you are a growing startup or a large enterprise, Organizations helps you to centrally manage billing; control access, compliance, and security; and share resources across your AWS accounts."
+  },
+  {
+    "question": "Which of the following are the things that Amazon CloudWatch Logs can accomplish? (Select TWO)",
+    "answers": {
+      "a": "Record AWS Management Console actions and API calls.",
+      "b": "Create alarms that automatically stop, terminate, reboot, or recover your EC2 instances.",
+      "c": "Adjust the retention policy for each log group.",
+      "d": "Monitor application logs from EC2 instances.",
+      "e": "Store your log data at absolutely no charge."
+    },
+    "correct_answer": ["c", "d"],
+    "topic": "ccp",
+    "explanation": "By default, logs are kept indefinitely and never expire. You can adjust the retention policy for each log group, keeping the indefinite retention, or choosing retention periods between 10 years and one day."
+  },
+  {
+    "question": "Which of the following shares a collection of offerings to help you achieve specific business outcomes related to enterprise cloud adoption through paid engagements in several specialty practice areas?",
+    "answers": {
+      "a": "Concierge Support",
+      "b": "AWS Enterprise Support",
+      "c": "AWS Professional Services",
+      "d": "AWS TAM"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "AWS Professional Services shares a collection of offerings to help you achieve specific outcomes related to enterprise cloud adoption. Each offering delivers a set of activities, best practices, and documentation reflecting our experience supporting hundreds of customers in their journey to the AWS Cloud."
+  },
+  {
+    "question": "Which statement below is correct regarding the components of the AWS Global Infrastructure?",
+    "answers": {
+      "a": "An AZ contains edge locations.",
+      "b": "An AWS Region contains multiple AZs.",
+      "c": "An AZ contains multiple Regions.",
+      "d": "An edge location contains multiple AWS Regions"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which among the options below is a highly available and scalable cloud Domain Name System (DNS) web service in AWS?",
+    "answers": {
+      "a": "Active Directory Domain Service",
+      "b": "Route 53",
+      "c": "Rekognition",
+      "d": "Lightsail"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Rekognition is incorrect because this is just a service that makes it easier for you to add powerful visual analysis to your applications. Active Directory Domain Service is incorrect because this is just a core Windows service that provides the foundation for many enterprise-class Microsoft-based solutions. Lightsail is incorrect because this is just an easy-to-use cloud platform that offers everything you need to build an application or website, plus a cost-effective, monthly plan."
+  },
+  {
+    "question": "Which among the options below can you use to launch a new Amazon RDS database cluster to your VPC? (Select TWO)",
+    "answers": {
+      "a": "AWS CodePipeline",
+      "b": "AWS Systems Manager",
+      "c": "AWS CloudFormation",
+      "d": "AWS Management Console",
+      "e": "AWS Concierge"
+    },
+    "correct_answer": ["c", "d"],
+    "topic": "ccp",
+    "explanation": "You can launch a new RDS database cluster using the AWS Management Console, AWS CLI, and AWS CloudFormation."
+  },
+  {
+    "question": "Which service should you use if you need a scalable, fast, and flexible nonrelational database service?",
+    "answers": {
+      "a": "AWS DynamoDB",
+      "b": "AWS Redshift",
+      "c": "AWS S3",
+      "d": "AWS RDS"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. DynamoDB lets you offload the administrative burdens of operating and scaling a distributed database so that you don't have to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling."
+  },
+  {
+    "question": "Which of the following cloud architecture principles below is followed if you distribute your workloads across multiple Availability Zones in AWS as well as using Amazon RDS Multi-AZ?",
+    "answers": {
+      "a": "Think parallel",
+      "b": "Design for failure",
+      "c": "Implement elasticity",
+      "d": "Decouple your components"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Design for failure encourages you to be a pessimist when designing architectures in the cloud; assume things will fail. In other words, always design, implement, and deploy for automated recovery from failure."
+  },
+  {
+    "question": "Which of the following is capable of inspecting your AWS environment and makes recommendations for saving money, improving system performance and reliability, or closing security gaps?",
+    "answers": {
+      "a": "AWS Trusted Advisor",
+      "b": "AWS Cost Explorer",
+      "c": "AWS Inspector",
+      "d": "AWS Budgets"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "AWS Trusted Advisor is an online tool that provides you real-time guidance to help you provision your resources following AWS best practices. It inspects your AWS environment and makes recommendations for saving money, improving system performance and reliability, or closing security gaps."
+  },
+  {
+    "question": "Which of the following IAM identities is associated with the access keys that are used in managing your cloud resources via the AWS Command Line Interface (AWS CLI)?",
+    "answers": {
+      "a": "IAM Policy",
+      "b": "IAM User",
+      "c": "IAM Role",
+      "d": "IAM Group"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "IAM Role is incorrect because although you can use this IAM identity for AWS CLI, it is not associated with access keys just as what is clearly mentioned in the scenario. IAM Group is incorrect because this is just a collection of IAM users and is not used for the AWS CLI tool. IAM Policy is incorrect because this is actually not considered as one of the IAM identities and it is not associated with the access keys used for the AWS CLI."
+  },
+  {
+    "question": "A company is designing a new cloud architecture for its mission-critical application in AWS which must be highly-available. Which of the following is the recommended pattern to meet this requirement?",
+    "answers": {
+      "a": "Deploy an EC2 Spot Fleet with a diversified allocation strategy.",
+      "b": "Adopt a monolithic application architecture.",
+      "c": "Use multiple AZs to ensure the application can handle the failure of any single component.",
+      "d": "Make sure each component of the app has high bandwidth and low-latency network connectivity using ENIs."
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "At AWS, Availability Zones are the core of their infrastructure architecture and they form the foundation of AWS's and customers' reliability and operations. Availability Zones are designed for physical redundancy and provide resilience, enabling uninterrupted performance, even in the event of power outages, Internet downtime, floods, and other natural disasters."
+  },
+  {
+    "question": "In the VPC dashboard of your AWS Management Console, which of the following services or feature below can you manage? (Select TWO)",
+    "answers": {
+      "a": "Lambda",
+      "b": "Cloudfront",
+      "c": "Security Groups",
+      "d": "NACLs",
+      "e": "Route 53"
+    },
+    "correct_answer": ["c", "d"],
+    "topic": "ccp",
+    "explanation": "All of the other options (CloudFront, Lambda and Route 53) are all incorrect as these services have their own respective dashboards."
+  },
+  {
+    "question": "You need to launch a new EC2 Instance for a beta program which is scheduled to change its instance family, operating system and tenancy exactly 3 months after its trial period. Which type of Reserved Instance (RI) should you use?",
+    "answers": {
+      "a": "Standard RI",
+      "b": "Scheduled RI",
+      "c": "Convertible RI",
+      "d": "Zonal RI"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "For Convertible Reserved Instance (RI), it can be exchanged during the term for another Convertible Reserved Instance with new attributes including instance family, instance type, platform, scope, or tenancy. You can also opt for a 3-year term to avail of more discounts."
+  },
+  {
+    "question": "A company is currently using an On-Demand EC2 instance for their application which they plan to migrate to a Reserved EC2 Instance to save on cost. Which of the following is the most cost-effective option if the application being hosted would be used for more than 3 years?",
+    "answers": {
+      "a": "All Upfront, Standard RI pricing for a 3-year term",
+      "b": "All Upfront, Convertible RI pricing for a 1-year term",
+      "c": "No Upfront, Convertible RI pricing for a 3-year term",
+      "d": "No Upfront, Standard RI pricing for a 3-year term that is renewed every year"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "As a general rule, Standard RI provides more savings than Convertible RI, which means that the former is the cost-effective option. The All Upfront option provides you with the largest discount compared with the other types. Opting for a longer compute reservation, such as the 3-year term, gives us greater discount as opposed to a shorter 1-year renewable term."
+  },
+  {
+    "question": "Which AWS service should you use if you need to launch a highly scalable MySQL database?",
+    "answers": {
+      "a": "AWS ElastiCache",
+      "b": "AWS Aurora",
+      "c": "AWS Redshift",
+      "d": "AWS DynamoDB"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
+  },
+  {
+    "question": "Which of the following is true regarding Amazon Relational Database Service (Amazon RDS)? (Select TWO)",
+    "answers": {
+      "a": "Automatically scales the relational database based on the incoming workload",
+      "b": "Simplifies the management of time-consuming database admin tasks",
+      "c": "Makes it easy to set up, operate and scale a relational database",
+      "d": "Provides 99.9% reliability and durability",
+      "e": "It a is fully managed-relational database service"
+    },
+    "correct_answer": ["b", "c"],
+    "topic": "ccp",
+    "explanation": "RDS does not automatically scale. You can use Read Replicas or upgrade your database instance type for scaling but these are manual tasks and not done automatically. Since the customer still has some control over your RDS instance, this service is considered as a managed service and not a fully-managed service. 99.99999999999% reliability and durability is incorrect because this refers to S3."
+  },
+  {
+    "question": "Which of the following options below is solely the responsibility of the customer in accordance with the AWS shared responsibility model?",
+    "answers": {
+      "a": "Zone Security",
+      "b": "Patching of the host operating system",
+      "c": "Awareness & Training",
+      "d": "Configuration Management"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Service and Communications Protection and Zone Security require a customer to route within their specific security environments."
+  },
+  {
+    "question": "A company is in the process of choosing the most suitable AWS Region to migrate their applications. Which of the following factors should they consider? (Select TWO)",
+    "answers": {
+      "a": "Proximity to your end-users for on-site visits to your on-premises data center.",
+      "b": "Zone security",
+      "c": "Support country-specific data sovereignty compliance requirements.",
+      "d": "Potential volume discounts for the specific AWS Region.",
+      "e": "Enhance customer experiences by reducing latency to users."
+    },
+    "correct_answer": ["c", "e"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "In AWS, _______ is one of the advantages of Consolidated Billing.",
+    "answers": {
+      "a": "Consolidation of both AWS and AISPL accounts into one billing",
+      "b": "Go global in minutes",
+      "c": "The ability to have one member account pay the charges of all master accounts.",
+      "d": "Volume pricing"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "For billing purposes, AWS treats all the accounts in the organization as if they were one account. Some services, such as Amazon EC2 and Amazon S3, have volume pricing tiers across certain usage dimensions that give you lower prices the more you use the service. With consolidated billing, AWS combines the usage from all accounts to determine which volume pricing tiers to apply, giving you a lower overall price whenever possible."
+  },
+  {
+    "question": "Which of the following Cost Management Tools allows you to track your Amazon EC2 Reserved Instance (RI) usage and view the discounted RI rate that was charged to your resources?",
+    "answers": {
+      "a": "AWS Budgets",
+      "b": "AWS Cost and Usage Report",
+      "c": "AWS Systems Manager",
+      "d": "AWS Cost Explorer"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "One of the core benefits of the AWS Cost & Usage Report is the wealth of RI-related data that is made available to you. It can be customized to collect cost and usage data at the daily and monthly levels of detail and is updated at least once per day."
+  },
+  {
+    "question": "Which of the following provides you the most granular data about your AWS costs and usage and also load that information into Amazon Athena, Amazon Redshift, AWS QuickSight, or a tool of your choice?",
+    "answers": {
+      "a": "AWS Cost and Usage Report",
+      "b": "Consolidated Billing",
+      "c": "AWS Cost Explorer",
+      "d": "AWS Budgets"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is true regarding the Developer support plan in AWS? (Select TWO)",
+    "answers": {
+      "a": "Has access to the fill set of Trusted Advisor checks",
+      "b": "No access to the AWS Support API",
+      "c": "Recommended if you have business and/or mission critical workloads in AWS",
+      "d": "Limited access to the 7 Core Trusted Advisor checks",
+      "e": "Full access to the AWS Support API"
+    },
+    "correct_answer": ["b", "d"],
+    "topic": "ccp",
+    "explanation": "The Developer support plan is recommended if you are only experimenting or testing in AWS."
+  },
+  {
+    "question": "_________ is one of the components of AWS Global Infrastructure which consists of one or more discrete data centers each with redundant power, networking, and connectivity, and housed in separate facilities.",
+    "answers": {
+      "a": "VPC",
+      "b": "Edge location",
+      "c": "Availability Zone",
+      "d": "Region"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which service should you use if there is a need to launch a customized self-hosted database which requires a scheduled shutdown every night to save on cost?",
+    "answers": {
+      "a": "AWS DynamoDB",
+      "b": "AWS EC2 with an EBS volume",
+      "c": "AWS Redshift",
+      "d": "AWS EC2 with an Instance Store volume"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon EBS provides durable, block-level storage volumes that you can attach to a running instance. You can use Amazon EBS as a primary storage device for data that requires frequent and granular updates. For example, Amazon EBS is the recommended storage option when you run a database on an instance."
+  },
+  {
+    "question": "What is the minimum number of Availability Zones that you should set up for your Application Load Balancer in order to create a highly available architecture?",
+    "answers": {
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following best describes what CloudWatch is?",
+    "answers": {
+      "a": "A rules repository",
+      "b": "An automated security assessment service",
+      "c": "A metrics repository",
+      "d": "An audit service that records all API calls made to your AWS account"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "The option that says: an audit service that records all API calls made to your AWS account is incorrect because this describes CloudTrail and not CloudWatch. The option that says: a rules repository is incorrect because this is more related with AWS Config. The option that says: an automated security assessment service is incorrect because this description fits the Amazon Inspector service and not CloudWatch."
+  },
+  {
+    "question": "Which of the following is true on how AWS lessens the time to provision your IT resources?",
+    "answers": {
+      "a": "It provides an AI-powered IT ticketing platform for fulfilling resource requests.",
+      "b": "It provides various ways to programmatically provision IT resources.",
+      "c": "It provides express service to deliver your servers to your data centers first.",
+      "d": "It provides an automated system of requesting and fulfilling IT resources from third-party vendors."
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "With the cloud, businesses no longer need to plan for and procure servers and other IT infrastructure weeks or months in advance. Instead, they can instantly spin up hundreds or thousands of servers in minutes and deliver results faster. AWS provides you various ways and tools to programmatically provision IT resources such as AWS CLI, AWS API and the web-based AWS Management Console."
+  },
+  {
+    "question": "Which of the following is a key design principle when running an application in AWS?",
+    "answers": {
+      "a": "Loose coupling",
+      "b": "Semantic coupling",
+      "c": "Tight coupling",
+      "d": "Logical coupling"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "A way to reduce interdependencies in a system is to allow the various components to interact with each other only through specific, technology-agnostic interfaces, such as RESTful APIs. In that way, technical implementation detail is hidden so that teams can modify the underlying implementation without affecting other components. As long as those interfaces maintain backward compatibility, deployments of different components are decoupled."
+  },
+  {
+    "question": "Which of the following is a key financial benefit of migrating systems hosted on your on-premises data center to AWS?",
+    "answers": {
+      "a": "Opportunity to replace variable operational expenses (OPEX) with low upfront capital expenses (CAPEX)",
+      "b": "Opportunity to replace upfront capital expenses (CAPEX) with low variable operational expenses (OPEX)",
+      "c": "Opportunity to replace upfront operational expenses (OPEX) with low variable capital expenses (CAPEX)",
+      "d": "Opportunity to replace variable capital expenses (CAPEX) with low upfront operational expenses (OPEX)"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "On AWS, new services can be provisioned quickly, without the upfront capital expense. This allows enterprises, start-ups, small and medium-sized businesses, and customers in the public sector to access the building blocks they need to respond quickly to changing business requirements."
+  },
+  {
+    "question": "A company has hybrid cloud architecture where their on-premises data center interacts with their cloud resources in AWS. Which of the following services in AWS could you use to deploy a web application to servers running on-premises? (Select TWO)",
+    "answers": {
+      "a": "AWS Elastic Beanstalk",
+      "b": "AWS CloudFormation",
+      "c": "AWS OpsWorks",
+      "d": "AWS Batch",
+      "e": "AWS CodeDeploy"
+    },
+    "correct_answer": ["c", "e"],
+    "topic": "ccp",
+    "explanation": "AWS OpsWorks is a configuration management service that helps customers configure and operate applications, both on-premises and in the AWS Cloud, using Chef and Puppet. AWS CodeDeploy automates code deployments to any instance, including Amazon EC2 instances and instances running on-premises. AWS CodeDeploy makes it easier to rapidly release new features, avoids downtime during application deployment, and handles the complexity of updating applications."
+  },
+  {
+    "question": "Which Amazon EC2 instance purchasing option lets you take advantage of unused EC2 capacity in the AWS Cloud and provides up to a 90% discount compared to On-Demand prices?",
+    "answers": {
+      "a": "Convertible Reserved Instance",
+      "b": "Standard Reserved Instance",
+      "c": "Dedicated Host",
+      "d": "Spot Instance"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is true regarding Elastic Load Balancing?",
+    "answers": {
+      "a": "It translates domain names into numeric IP addresses that EC2 instances use to connect to each other.",
+      "b": "It is a virtual server that allows you to run your application in the AWS Cloud.",
+      "c": "It automatically increases or decreases the number of instances as the demand of your application changes.",
+      "d": "It distributes incoming application traffic across multiple targets, such as EC2 instances in multiple AZs."
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "Which of the following is an advantage of using managed services like RDS, ElastiCache, and CloudSearch in AWS?",
+    "answers": {
+      "a": "Frees up the customer from the task of choosing and optimizing the underlying instance type and size of the service.",
+      "b": "Simplifies all of your OS patching and backup activities to help keep your resources current and secure.",
+      "c": "Automatically scales the capacity without any customer intervention.",
+      "d": "Better performance than customer-managed services such as EC2 instances."
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups."
   }
 ]
