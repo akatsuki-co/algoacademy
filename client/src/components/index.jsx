@@ -5,6 +5,7 @@ import Cards from './cards/Cards'
 import Header from './partials/Header'
 import Contribute from './contribute/Contribute'
 import QuizHome from './quiz/QuizHome'
+import Login from './auth/login'
 import WithTableOfContents from './content/WithTableOfContents'
 import { Switch, Route } from 'react-router-dom'
 import shortid from 'shortid'
@@ -58,6 +59,11 @@ const pages = [
     path: '/quiz',
     exact: false,
     components: <QuizHome />,
+  },
+  {
+    path: '/login',
+    exact: false,
+    components: <Login />,
   },
   {
     path: '/',
