@@ -16,12 +16,14 @@ const Content = ({ table }) => {
       try {
         setIsLoading(true)
         const mdFileName = topic || 'hello_world'
-        const file = await import(`../../docs/${table.language}/${mdFileName}.md`)
+        const file = await import(
+          `../../docs/${table.language}/${mdFileName}.md`
+        )
         const response = await fetch(file.default)
         const text = await response.text()
         setIsLoading(false)
         setMarkdown(text || '### Nothing here yet! Come back again soon!')
-      } catch {
+      } catch (err) {
         setIsLoading(false)
         setMarkdown('### Path Not found. Please try again.')
       }
@@ -31,10 +33,11 @@ const Content = ({ table }) => {
 
   return (
     <Col
-      md='7'
-      xl='8'
-      className='ml-md-auto py-3 pl-5 border-left'
-      id='content'>
+      md="7"
+      xl="8"
+      className="ml-md-auto py-3 pl-5 border-left"
+      id="content"
+    >
       {isLoading ? (
         <Loader />
       ) : (

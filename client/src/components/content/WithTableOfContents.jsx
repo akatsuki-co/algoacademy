@@ -7,6 +7,7 @@ import fetchTable from '../../utils/fetchTable'
 import { Switch, Route } from 'react-router-dom'
 
 const WithTableOfContents = ({ path }) => {
+  const [isLoading, setIsLoading] = useState(true)
   const initialState = {
     sidebar: [],
     language: '',
@@ -20,6 +21,7 @@ const WithTableOfContents = ({ path }) => {
         setTable(() => {
           return { sidebar, language }
         })
+        setIsLoading(false)
       } catch (err) {
         console.log(err)
       }
@@ -27,8 +29,8 @@ const WithTableOfContents = ({ path }) => {
     loadContents()
   }, [path])
 
-  return (
-    <section className='py-3'>
+  return isLoading ? null : (
+    <section className="py-3">
       <Container>
         <Row>
           <Sidebar data={table}></Sidebar>
@@ -37,10 +39,7 @@ const WithTableOfContents = ({ path }) => {
               path={`/${table.language}/:topic`}
               render={() => <Content table={table} />}
             />
-            <Route
-              path='/'
-              render={() => <Content table={table}/>}
-            />
+            <Route path="/" render={() => <Content table={table} />} />
           </Switch>
         </Row>
       </Container>
