@@ -608,7 +608,7 @@
     "topic": "ccp",
     "explanation": "applications, and other IT resources via the internet with pay-as-you-go pricing which allows businesses to focus on their own strengths."
   },
-    {
+  {
     "question": "Which service will allow you to group together users who perform a similar function and apply function-specific privileges?",
     "answers": {
       "a": "Directory Service",
@@ -620,7 +620,7 @@
     "topic": "ccp",
     "explanation": "An IAM group is a collection of IAM users. Groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users."
   },
-    {
+  {
     "question": "Which of the following should you use if you need to provide temporary AWS credentials for users who have been authenticated via their social media logins as well as for guest users who do not require any authentication?",
     "answers": {
       "a": "AWS Single Sign-On",
@@ -631,7 +631,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "Amazon Cognito identity pools provide temporary AWS credentials for users who are guests (unauthenticated) and for users who have been authenticated and received a token. An identity pool is a store of user identity data specific to your account."
-  },  {
+  },
+  {
     "question": "Which of the following cloud best practices reinforces the use of the Service-Oriented Architecture (SOA) design principle?",
     "answers": {
       "a": "Design for failure",
@@ -642,7 +643,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "In Decouple your components, the key is to build components that do not have tight dependencies on each other, so that if one component were to die (fail), sleep (not respond) or remain busy (slow to respond) for some reason, the other components in the system are built so as to continue to work as if no failure is happening. The cloud reinforces the Service-Oriented Architecture (SOA) design principle that the more loosely coupled the components of the system, the bigger and better it scales."
-  },  {
+  },
+  {
     "question": "Which service would you use to speed up content delivery to your customers?",
     "answers": {
       "a": "Amazon CloudFront",
@@ -653,7 +655,8 @@
     "correct_answer": ["a"],
     "topic": "ccp",
     "explanation": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment. CloudFront is integrated with AWS – both physical locations that are directly connected to the AWS global infrastructure, as well as other AWS services."
-  },  {
+  },
+  {
     "question": "What is the most secure way to provide applications temporary access to your AWS resources?",
     "answers": {
       "a": "Create an IAM role and have the application assume the role",
@@ -664,7 +667,8 @@
     "correct_answer": ["a"],
     "topic": "ccp",
     "explanation": "AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources. An IAM role is an IAM identity that you can create in your account that has specific permissions."
-  },  {
+  },
+  {
     "question": "Which service allows you to add powerful visual analysis feature to your applications that enables you to search, verify, and organize millions of images?",
     "answers": {
       "a": "Amazon SageMaker",
@@ -675,7 +679,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "Amazon Rekognition makes it easy to add image and video analysis to your applications. You just provide an image or video to the Rekognition API, and the service can identify the objects, people, text, scenes, and activities, as well as detect any inappropriate content."
-  },  {
+  },
+  {
     "question": "Which of the following AWS Cost Management tools enable you to forecast future costs and usage of your AWS resources based on your past consumption?",
     "answers": {
       "a": "AWS Cost and Usage report",
@@ -686,7 +691,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "Cost Explorer is a tool that enables you to view and analyze your costs and usage. You can explore your usage and costs using the main graph, the Cost Explorer cost and usage reports, or the Cost Explorer RI reports."
-  },  {
+  },
+  {
     "question": "In compliance with the Sarbanes-Oxley Act (SOX) federal law, a US-based company is required to provide SOC 1 and SOC 2 reports of their cloud resources. Where are these AWS compliance documents located?",
     "answers": {
       "a": "AWS Certificate Manager",
@@ -697,7 +703,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "AWS Artifact is your go-to, central resource for compliance-related information that matters to you. It provides on-demand access to AWS’ security and compliance reports and select online agreements."
-  },  {
+  },
+  {
     "question": "Which of the following is the benefit of using Amazon Relational Database Service (Amazon RDS) over traditional database management?",
     "answers": {
       "a": "Lower administrative burden through automatic software patching and maintenance of the underlying operating system",
@@ -708,7 +715,8 @@
     "correct_answer": ["a"],
     "topic": "ccp",
     "explanation": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups."
-  },  {
+  },
+  {
     "question": "Which of the following allows you to create and deploy infrastructure-as-code templates in AWS?",
     "answers": {
       "a": "Systems Manager",
@@ -719,7 +727,8 @@
     "correct_answer": ["b"],
     "topic": "ccp",
     "explanation": "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment. CloudFormation allows you to use programming languages or a simple text file to model and provision, in an automated and secure manner, all the resources needed for your applications across all regions and accounts."
-  },  {
+  },
+  {
     "question": "Which of the following are defined as global services in AWS? (Select TWO)",
     "answers": {
       "a": "AWS Batch",
@@ -731,7 +740,8 @@
     "correct_answer": ["b", "e"],
     "topic": "ccp",
     "explanation": "CloudFront is a global service that delivers your content through a worldwide network of data centers called edge locations or points of presence (POPs). AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources."
-  },  {
+  },
+  {
     "question": "A new AWS customer needs to deploy up to 100 t3a.large EC2 instances on their recently launched VPC, which is way beyond the default service limit. What should they do before launching their instances?",
     "answers": {
       "a": "Use AWS Trusted Advisor to increase the default service limits for EC2 instances",
@@ -742,7 +752,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "AWS maintains service limits for each account to help guarantee the availability of AWS resources, as well as to minimize billing risks for new customers. Some service limits are raised automatically over time as you use AWS, though most AWS services require that you request limit increases manually."
-  },  {
+  },
+  {
     "question": "In the AWS Shared Responsibility Model, whose responsibility is it to patch the host operating system of an Amazon EC2 instance?",
     "answers": {
       "a": "Both AWS and the customer",
@@ -753,7 +764,8 @@
     "correct_answer": ["c"],
     "topic": "ccp",
     "explanation": "AWS is responsible for patching and fixing flaws within the infrastructure, but customers are responsible for patching their guest OS and applications."
-  },  {
+  },
+  {
     "question": "A website is experiencing varying levels of traffic throughout the day and is not fully consuming server capacity all the time. Which advantage does AWS Cloud provide over traditional data centers when it comes to handling traffic load?",
     "answers": {
       "a": "Durability",
@@ -764,7 +776,8 @@
     "correct_answer": ["d"],
     "topic": "ccp",
     "explanation": "Elasticity is the ability to acquire resources as you need them and release resources when you no longer need them. In the cloud, you want to do this automatically."
-  },  {
+  },
+  {
     "question": "In AWS, which of the following is a design principle that you should implement when designing your cloud architecture?",
     "answers": {
       "a": "Use multiple Availability Zones",

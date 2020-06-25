@@ -21,12 +21,14 @@ const Contribute = () => {
   const [markdown, setMarkdown] = useState(welcomeText)
 
   return (
-    <div className="container py-3">
+    <div className='container py-3'>
       <Row>
         <Editor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
       </Row>
-	  <div>Test Maria</div>
+      <Row className='justify-content-md-center'>
+        <button className='contribute-btn'>Submit</button>
+      </Row>
     </div>
   )
 }

@@ -15,3 +15,14 @@
   min-width: 440px;
   width: 100%;
 }
+
+.contribute-btn {
+  color: #4f4c4c;
+  background-color: #f4f4f4;
+  padding: 5px 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5%;
+}
