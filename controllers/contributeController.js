@@ -21,9 +21,9 @@ exports.contribute = catchAsync(async(req, res, next) => {
             })
         })
     const response = await githubResponse.json()
-    console.log(response)
-res.status(200).json({
-    status: "success",
-})
+    await res.status(200).json({
+        status: "success",
+        response: response
+    })
 })
 
