@@ -1,7 +1,8 @@
 export default async (language) => {
   try {
+    const host = process.env.REACT_APP_HOST
     const results = await fetch(
-      `http://localhost:5000/api/v1/table?language=${language}`
+      `${host}/api/v1/table?language=${language}`
     )
     const table = await results.json()
     return table
