@@ -20,8 +20,8 @@ jobs:
                   aws-region: us-east-2
                   instance-ids: ${{ secrets.INSTANCE_ID  }}
                   working-directory: /home/ubuntu/algoacademy
-                  command: ls -al
+                  command: ./deploy 
                   comment: Hello world!
 
-            - name: Get the outputs
-              run: echo "The Command id is ${{ steps.ssm.outputs.command-id  }}"
+            - name: See if this runs
+              run: echo "Hello World"
