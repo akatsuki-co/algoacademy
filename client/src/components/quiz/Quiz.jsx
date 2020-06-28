@@ -41,8 +41,9 @@ function Quiz() {
   useEffect(() => {
     const loadQuestions = async () => {
       try {
+        const host = process.env.REACT_APP_HOST
         const req = await fetch(
-          `http://localhost:5000/api/v1/quizzes?topic=${params.topic}`
+          `${host}/api/v1/quizzes?topic=${params.topic}`
         )
         const questionsArr = await req.json()
         const shuffledQuestions = shuffle(questionsArr.data)
