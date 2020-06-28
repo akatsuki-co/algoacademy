@@ -20,15 +20,5 @@ jobs:
                   aws-region: ap-east-2
                   instance-ids: ${{ secrets.INSTANCE_ID  }}
                   working-directory: /home/ubuntu/algoacademy
-
-            - name: deploy script
-              run: |
-                      curl https://gist.githubusercontent.com/cornflourblue/f0abd30f47d96d6ff127fe8a9e5bbd9f/raw/e3047c9dc3ce8b796e7354c92d2c47ce61981d2f/setup-nodejs-mongodb-production-server-on-ubuntu-1804.sh | sudo bash
-                      git pull origin master
-                      npm install
-                      cd client
-                      npm install
-                      npm run-script build
-                      cd ..
-                      sudo systemctl restart nginx
-                      sudo pm2 restart all
+                  command: .deploy
+                  comment: run deploy script
