@@ -22,3 +22,6 @@ jobs:
                   working-directory: /home/ubuntu/algoacademy
                   command: .deploy
                   comment: run deploy script
+
+            - name: Run deploy script
+              run: ./deploy
