@@ -29,6 +29,7 @@ const Contribute = () => {
       <Row className='justify-content-md-center'>
         <button className='contribute-btn'>Submit</button>
       </Row>
+        <div>Pretender</div>
     </div>
   )
 }
