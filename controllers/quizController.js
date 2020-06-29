@@ -4,7 +4,6 @@ const AppError = require('./../utils/appError')
 
 exports.deleteQuiz = catchAsync(async(req, res, next) => {
     const quiz = await Quiz.findByIdAndDelete(req.params.id)
-    console.log(quiz)
     if (!quiz) {
         return next(new AppError("No Quiz with that ID", 404))
     }
@@ -32,7 +31,6 @@ exports.updateQuiz = catchAsync(async(req, res, next) => {
 
 exports.createQuiz = catchAsync(async(req, res) => {
     const quiz = await Quiz.create(req.body)
-    console.log(req.body)
     if (!quiz) {
         return next(new AppError("Question was not created...", 404))
     }

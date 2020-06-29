@@ -16,7 +16,9 @@ const Content = ({ table }) => {
       try {
         setIsLoading(true)
         const mdFileName = topic || 'hello_world'
-        const file = await import(`../../docs/${table.language}/${mdFileName}.md`)
+        const file = await import(
+          `../../docs/${table.language}/${mdFileName}.md`
+        )
         const response = await fetch(file.default)
         const text = await response.text()
         setIsLoading(false)

@@ -11,6 +11,7 @@ const WithTableOfContents = ({ path }) => {
     sidebar: [],
     language: '',
   }
+  const [isLoading, setIsLoading] = useState(true)
   const [table, setTable] = useState(initialState)
   useEffect(() => {
     const loadContents = async () => {
@@ -20,6 +21,7 @@ const WithTableOfContents = ({ path }) => {
         setTable(() => {
           return { sidebar, language }
         })
+        setIsLoading(false)
       } catch (err) {
         console.log(err)
       }
@@ -27,7 +29,7 @@ const WithTableOfContents = ({ path }) => {
     loadContents()
   }, [path])
 
-  return (
+  return isLoading ? null : (
     <section className='py-3'>
       <Container>
         <Row>
@@ -37,10 +39,7 @@ const WithTableOfContents = ({ path }) => {
               path={`/${table.language}/:topic`}
               render={() => <Content table={table} />}
             />
-            <Route
-              path='/'
-              render={() => <Content table={table}/>}
-            />
+            <Route path='/' render={() => <Content table={table} />} />
           </Switch>
         </Row>
       </Container>
