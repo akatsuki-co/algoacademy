@@ -16,11 +16,12 @@ const Navigation = () => (
         </Link>
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse">
-          <Nav className="mr-auto">
+          <Nav className="ml-auto">
             <Nav.Link href="/quiz">Quiz</Nav.Link>
             <Nav.Link href="/contribute">Contribute</Nav.Link>
             <Nav.Link>Contact Us</Nav.Link>
-            <Nav.Link href="/login">Sign In</Nav.Link>
+            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/signUp">Sign Up</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
