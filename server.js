@@ -17,14 +17,14 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => {
-        console.log("Database is connected")
+        console.log("Database is connected.")
     })
     .catch((err) => {
-        console.log("Database connection was unsuccessfull")
+        console.log("Database connection was unsuccessful.")
         console.log(err)
         process.exit(1)
     })
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}`)
+    console.log(`Listening on port ${port}.`)
 })
