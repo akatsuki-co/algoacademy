@@ -34,7 +34,7 @@ const Navigation = () => {
               ) : (
                 <>
                   <Nav.Link href='/contribute'>Contribute</Nav.Link>
-                  <Nav.Link href='/logOut'>LogOut</Nav.Link>
+                  <Nav.Link href='/logOut'>Log Out</Nav.Link>
                 </>
               )}
             </Nav>
