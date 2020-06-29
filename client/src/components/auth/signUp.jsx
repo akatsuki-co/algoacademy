@@ -14,11 +14,7 @@ const Login = () => {
         <Form className='login-form '>
           <Form.Group controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter email'
-              onChange={handleUserName}
-            />
+            <Form.Control type='email' placeholder='Enter email' />
           </Form.Group>
           <Form.Group controlId='formBasicPassword'>
             <Form.Label>Password</Form.Label>
