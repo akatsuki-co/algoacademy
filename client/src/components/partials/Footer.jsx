@@ -22,11 +22,7 @@ const Footer = () => (
                 {' Tu Vo, '}
               </a>
               <a href="https://github.com/rmiyazaki6499" className="text-muted">
-                {' Ryuichi Miyazaki, '}
-              </a>
-              &amp;
-              <a href="https://github.com/bmuha1" className="text-muted">
-                {' Brent Muha '}
+                {' Ryuichi Miyazaki '}
               </a>
             </p>
           </div>

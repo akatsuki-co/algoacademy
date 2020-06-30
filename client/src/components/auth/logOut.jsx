@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import UserContext from '../../context/UserContext'
 import { useHistory } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
@@ -18,10 +17,10 @@ const LogOut = () => {
   })
   return (
     <>
-      <Row className='justify-content-md-center pt-5'>
+      <Row className="justify-content-md-center pt-5">
         <h3>You have successfully logged out.</h3>
       </Row>
-      <Row className='justify-content-md-center pt-2 pb-5'>
+      <Row className="justify-content-md-center pt-2 pb-5">
         <h4>You will be redirected shortly.</h4>
       </Row>
     </>

@@ -1,16 +1,18 @@
 import React, { useState, useContext } from 'react'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
+import Error from './Error'
 import { useHistory } from 'react-router-dom'
 import UserContext from '../../context/UserContext'
 import './styles.css'
 
-const Login = () => {
+const LogIn = () => {
   let history = useHistory()
   const { setActiveUser } = useContext(UserContext)
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
+    error: false,
   })
   const handleLogin = async (event, data) => {
     event.preventDefault()
@@ -35,8 +37,8 @@ const Login = () => {
         setCredentials({ ...credentials, error: true })
       }
       return responseData
-    } catch (err) {
-      console.log(err)
+    } catch {
+      setCredentials({ ...credentials, error: true })
     }
   }
 
@@ -45,33 +47,38 @@ const Login = () => {
   }
 
   return (
-    <div className='container py-5'>
-      <Row className='justify-content-md-center'>
+    <div className="container py-5">
+      <Row className="justify-content-md-center py-3">
+        <h3>Please sign in.</h3>
+      </Row>
+      {credentials.error ? <Error /> : null}
+      <Row className="justify-content-md-center">
         <Form
-          className='login-form'
-          onSubmit={(e) => handleLogin(e, credentials)}>
-          <Form.Group controlId='formBasicEmail'>
+          className="login-form"
+          onSubmit={(e) => handleLogin(e, credentials)}
+        >
+          <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              type='email'
-              placeholder='Enter email'
+              type="email"
+              placeholder="Enter email"
               onChange={(e) => {
                 handleFieldChange('email', e)
               }}
             />
           </Form.Group>
-          <Form.Group controlId='formBasicPassword'>
+          <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
-              type='password'
-              placeholder='Password'
+              type="password"
+              placeholder="Password"
               onChange={(e) => {
                 handleFieldChange('password', e)
               }}
             />
           </Form.Group>
-          <Row className='justify-content-md-center py-2'>
-            <button className='login-btn'>Submit</button>
+          <Row className="justify-content-md-center py-2">
+            <button className="login-btn">Submit</button>
           </Row>
         </Form>
       </Row>
@@ -79,4 +86,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LogIn
