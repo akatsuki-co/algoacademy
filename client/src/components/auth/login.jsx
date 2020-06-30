@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import UserContext from '../../context/UserContext'
 import './styles.css'
 
-const Login = () => {
+const LogIn = () => {
   let history = useHistory()
   const { setActiveUser } = useContext(UserContext)
   const [credentials, setCredentials] = useState({
@@ -86,4 +86,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LogIn
