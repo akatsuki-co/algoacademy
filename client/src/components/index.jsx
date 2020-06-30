@@ -5,9 +5,9 @@ import Cards from './cards/Cards'
 import Header from './partials/Header'
 import Contribute from './contribute/Contribute'
 import QuizHome from './quiz/QuizHome'
-import Login from './auth/login'
-import LogOut from './auth/logOut'
-import SignUp from './auth/signUp'
+import Login from './auth/LogIn'
+import LogOut from './auth/LogOut'
+import SignUp from './auth/SignUp'
 import WithTableOfContents from './content/WithTableOfContents'
 import { Switch, Route } from 'react-router-dom'
 import shortid from 'shortid'
@@ -26,32 +26,32 @@ const pages = [
   {
     path: '/python',
     exact: false,
-    components: <WithTableOfContents path='python' />,
+    components: <WithTableOfContents path="python" />,
   },
   {
     path: '/javascript',
     exact: false,
-    components: <WithTableOfContents path='javascript' />,
+    components: <WithTableOfContents path="javascript" />,
   },
   {
     path: '/go',
     exact: false,
-    components: <WithTableOfContents path='go' />,
+    components: <WithTableOfContents path="go" />,
   },
   {
     path: '/cpp',
     exact: false,
-    components: <WithTableOfContents path='cpp' />,
+    components: <WithTableOfContents path="cpp" />,
   },
   {
     path: '/c',
     exact: false,
-    components: <WithTableOfContents path='c' />,
+    components: <WithTableOfContents path="c" />,
   },
   {
     path: '/java',
     exact: false,
-    components: <WithTableOfContents path='java' />,
+    components: <WithTableOfContents path="java" />,
   },
   {
     path: '/contribute',
@@ -81,7 +81,7 @@ const pages = [
   {
     path: '/',
     exact: false,
-    components: () => <h2 className='text-center py-5'>Page not found</h2>,
+    components: () => <h2 className="text-center py-5">Page not found</h2>,
   },
 ]
 
