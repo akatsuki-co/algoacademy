@@ -5,7 +5,7 @@ import Cards from './cards/Cards'
 import Header from './partials/Header'
 import Contribute from './contribute/Contribute'
 import QuizHome from './quiz/QuizHome'
-import Login from './auth/LogIn'
+import LogIn from './auth/LogIn'
 import LogOut from './auth/LogOut'
 import SignUp from './auth/SignUp'
 import WithTableOfContents from './content/WithTableOfContents'
@@ -64,9 +64,9 @@ const pages = [
     components: <QuizHome />,
   },
   {
-    path: '/login',
+    path: '/logIn',
     exact: false,
-    components: <Login />,
+    components: <LogIn />,
   },
   {
     path: '/logOut',
