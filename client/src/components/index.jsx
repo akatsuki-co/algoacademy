@@ -8,6 +8,7 @@ import QuizHome from './quiz/QuizHome'
 import LogIn from './auth/LogIn'
 import LogOut from './auth/LogOut'
 import SignUp from './auth/SignUp'
+import Faq from './faq/Faq'
 import WithTableOfContents from './content/WithTableOfContents'
 import { Switch, Route } from 'react-router-dom'
 import shortid from 'shortid'
@@ -77,6 +78,11 @@ const pages = [
     path: '/signUp',
     exact: false,
     components: <SignUp />,
+  },
+  {
+    path: '/faq',
+    exact: false,
+    components: <Faq />,
   },
   {
     path: '/',
