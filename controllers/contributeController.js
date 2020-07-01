@@ -18,7 +18,7 @@ exports.contribute = catchAsync(async(req, res, next) => {
             headers: {"Authorization": "token " + process.env.GITHUB_TOKEN},
             method: "POST",
             body: JSON.stringify({
-                "title": `${date} ${topic} - ${username}`,
+                "title": `${date} ${username} - ${topic}`,
                 "body": markdown,
                 "labels": ["enhancement"]
             })
