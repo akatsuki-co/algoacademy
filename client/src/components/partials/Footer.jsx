@@ -19,7 +19,7 @@ const Footer = () => (
             <p>
               © 2020 By
               <a href="https://github.com/tuvo1106" className="text-muted">
-                {' Tu Vo, '}
+                {' Tu Vo and'}
               </a>
               <a href="https://github.com/rmiyazaki6499" className="text-muted">
                 {' Ryuichi Miyazaki '}
