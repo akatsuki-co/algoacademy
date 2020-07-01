@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Editor from './Editor'
 import Preview from './Preview'
+import { useHistory  } from 'react-router-dom'
 
 const welcomeText = `### Welcome to Algo Academy
 
@@ -20,7 +21,43 @@ print("hello world")
 `
 
 const Contribute = () => {
+  let history = useHistory()
   const [markdown, setMarkdown] = useState(welcomeText)
+  const [contribution, setContribution] = useState({
+    username: '',
+    topic: '',
+    markdown: markdown,
+  })
+  const handleContribute = async (event, data) => {
+    event.preventDefault()
+    const host = process.env.REACT_APP_HOST 
+    const settings = {
+      method: 'POST',
+      crossDomain: true,
+      withCredentials: true,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }
+    try {
+      const response = await fetch(`${host}/api/v1/contribute`, settings)
+      const responseData = await response.json()
+      if (responseData.status === 'success') {
+        history.push('/')
+      } else {
+        setContribution({ ...contribution, error: true })
+      }
+      return responseData
+    } catch {
+      setContribution({ ...contribution, error: true })
+    }
+  }
+
+  const handleFieldChange = (fieldname, event) => {
+    setContribution({ ...contribution, [fieldname]: event.target.value })
+  }
 
   return (
     <div className="container py-3">
@@ -28,13 +65,28 @@ const Contribute = () => {
         <Editor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
       </Row>
-      <Form className="py-3">
+      <Form
+          className="py-3"
+          onSubmit={(e) => handleContribute(e, contribution)}
+      >
         <Form.Row className="align-items-center justify-content-center">
           <Col xs="auto">
-            <Form.Control placeholder="Username" />
+            <Form.Control
+                placeholder="Username"
+                onChange={(e) => {
+                    handleFieldChange('username', e)
+                }}
+                required
+            />
           </Col>
           <Col xs="auto">
-            <Form.Control placeholder="e.g. Python, C++" />
+            <Form.Control
+                placeholder="e.g. Python, C++" 
+                onChange={(e) => {
+                    handleFieldChange('topic', e)
+                }}
+                required
+            />
           </Col>
           <Col xs="auto">
             <button className="contribute-btn">Submit</button>

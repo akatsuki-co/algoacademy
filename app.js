@@ -1,6 +1,7 @@
 const express = require("express")
 const path = require("path")
 const compression = require("compression")
+const cookieParser = require('cookie-parser')
 const cors = require("cors")
 const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
@@ -18,6 +19,9 @@ const app = express()
 
 // CORS
 app.use(cors())
+
+// Cookie Parser
+app.use(cookieParser())
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'client', 'build')))

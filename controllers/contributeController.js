@@ -4,9 +4,12 @@ const fs = require('fs')
 const fetch = require('node-fetch')
 
 exports.contribute = catchAsync(async(req, res, next) => {
-    const title = req.body["title"]
+    const username = req.body["username"].replace(/\s+/g, '_').toLowerCase()
+    const topic = req.body["topic"].replace(/\s+/g, '_').toLowerCase()
     const markdown = req.body["markdown"]
-    fs.writeFile(`./client/src/docs/contributions/${title}.md`, markdown, function (err) {
+    const today = new Date()
+    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+    fs.writeFile(`./client/src/docs/contributions/${date}_${username}-${topic}.md`, markdown, function (err) {
         if (err) throw err;
         console.log('File is created successfully.');
     })
@@ -15,8 +18,8 @@ exports.contribute = catchAsync(async(req, res, next) => {
             headers: {"Authorization": "token " + process.env.GITHUB_TOKEN},
             method: "POST",
             body: JSON.stringify({
-                "title": "Test",
-                "body": "Testing Github API at Tu's house",
+                "title": `${date} ${username} - ${topic}`,
+                "body": markdown,
                 "labels": ["enhancement"]
             })
         })

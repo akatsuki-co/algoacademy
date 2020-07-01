@@ -20,7 +20,7 @@ const SignUp = () => {
 
   const handleLogin = async (event, data) => {
     event.preventDefault()
-    const host = 'http://localhost:5000'
+    const host = process.env.REACT_APP_HOST 
     const settings = {
       method: 'POST',
       crossDomain: true,
