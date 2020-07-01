@@ -9,7 +9,7 @@ exports.contribute = catchAsync(async(req, res, next) => {
     const markdown = req.body["markdown"]
     const today = new Date()
     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
-    fs.writeFile(`./client/src/docs/contributions/${date}_${topic}-${username}.md`, markdown, function (err) {
+    fs.writeFile(`./client/src/docs/contributions/${date}_${username}-${topic}.md`, markdown, function (err) {
         if (err) throw err;
         console.log('File is created successfully.');
     })
