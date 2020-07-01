@@ -15,7 +15,7 @@ const SignUp = () => {
     email: '',
     password: '',
     passwordConfirm: '',
-    error: false,
+    error: '',
   })
 
   const handleLogin = async (event, data) => {
@@ -38,11 +38,11 @@ const SignUp = () => {
         setActiveUser(responseData.token)
         history.push('/')
       } else {
-        setCredentials({ ...credentials, error: true })
+        setCredentials({ ...credentials, error: responseData.error })
       }
       return responseData
-    } catch {
-      setCredentials({ ...credentials, error: true })
+    } catch(err) {
+      setCredentials({ ...credentials, error: err })
     }
   }
 
@@ -55,7 +55,7 @@ const SignUp = () => {
       <Row className="justify-content-md-center py-3">
         <h3>Don't have an account? Register below.</h3>
       </Row>
-      {credentials.error ? <Error /> : null}
+      {credentials.error ? <Error message={credentials.error}/> : null}
       <Row className="justify-content-md-center">
         <Form
           className="login-form "

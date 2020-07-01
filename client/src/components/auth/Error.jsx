@@ -3,10 +3,10 @@ import Row from 'react-bootstrap/Row'
 
 import './styles.css'
 
-const Error = () => {
+const Error = ({message}) => {
   return (
     <Row className="justify-content-md-center pb-3">
-      <h4 className="error">There was an error! Please try again.</h4>
+      <h4 className="error">{message}</h4>
     </Row>
   )
 }
