@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Editor from './Editor'
 import Preview from './Preview'
+import Error from '../auth/Error'
 import { useHistory  } from 'react-router-dom'
 
 const welcomeText = `### Welcome to Algo Academy
@@ -27,6 +28,7 @@ const Contribute = () => {
     username: '',
     topic: '',
     markdown: markdown,
+    error: ''
   })
   const handleContribute = async (event, data) => {
     event.preventDefault()
@@ -47,11 +49,11 @@ const Contribute = () => {
       if (responseData.status === 'success') {
         history.push('/')
       } else {
-        setContribution({ ...contribution, error: true })
+        setContribution({ ...contribution, error: responseData.error })
       }
       return responseData
-    } catch {
-      setContribution({ ...contribution, error: true })
+    } catch(err) {
+      setContribution({ ...contribution, error: err })
     }
   }
 
@@ -65,6 +67,7 @@ const Contribute = () => {
         <Editor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
       </Row>
+        {contribution.error ? <Error message={contribution.error} /> : null}
       <Form
           className="py-3"
           onSubmit={(e) => handleContribute(e, contribution)}

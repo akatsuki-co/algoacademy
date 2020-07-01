@@ -12,7 +12,7 @@ const LogIn = () => {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
-    error: false,
+    error: '',
   })
   const handleLogin = async (event, data) => {
     event.preventDefault()
@@ -34,11 +34,10 @@ const LogIn = () => {
         setActiveUser(responseData.token)
         history.push('/')
       } else {
-        setCredentials({ ...credentials, error: true })
+        setCredentials({ ...credentials, error: responseData.error })
       }
-      return responseData
     } catch {
-      setCredentials({ ...credentials, error: true })
+      setCredentials({ ...credentials, error: 'Server Error' })
     }
   }
 
@@ -51,7 +50,7 @@ const LogIn = () => {
       <Row className="justify-content-md-center py-3">
         <h3>Please sign in.</h3>
       </Row>
-      {credentials.error ? <Error /> : null}
+      {credentials.error ? <Error message={credentials.error} /> : null}
       <Row className="justify-content-md-center">
         <Form
           className="login-form"

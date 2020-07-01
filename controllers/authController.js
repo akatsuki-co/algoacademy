@@ -29,6 +29,12 @@ const createSendToken = (user, statusCode, req, res) => {
 }
 
 exports.signUp = catchAsync(async (req, res, next) => {
+  if (req.body.password !== req.body.passwordConfirm) {
+    return res.status(400).json({
+        status: 'error',
+        error: 'Passwords do not match'
+    })
+  }
   const user = await User.create({
     name: req.body.name,
     email: req.body.email,
@@ -42,12 +48,18 @@ exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body
   // check if email and password exist
   if (!email || !password) {
-    return next(new AppError('Please provide email and password!', 400))
+      return res.status(400).json({
+          status: 'error',
+          error: 'Please provide an email and password!'
+      })
   }
   // check if user exists && password is correct
   const user = await User.findOne({ email }).select('+password')
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError('Incorrect email or password', 401))
+      return res.status(401).json({
+          status: 'error',
+          error: 'Incorrect email or password'
+      })
   }
   // if everything is ok, send token to client
   createSendToken(user, 200, req, res)
@@ -72,24 +84,26 @@ exports.protect = catchAsync(async (req, res, next) => {
   } else if (req.cookies && req.cookies.jwt) {
     token = req.cookies.jwt
   } else {
-    return next(
-      new AppError('You are not logged in! Please log in to get access.', 401)
-    )
-  }
-  if (!token) {
-    return next(
-      new AppError('You are not logged in! Please log in to get access.', 401)
-    )
+      return res.status(401).json({
+          status: 'error',
+          error: 'You are not logged in! Please log in to get access.'
+      });
   }
   // validate token
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)
-
+  if (!decoded) {
+      return res.status(400).json({
+          status: 'error',
+          error: 'Authentication Token is no longer valid, please try logging in again.'
+      })
+  }
   // check if user still exists
   const freshUser = await User.findById(decoded.id)
   if (!freshUser) {
-    return next(
-      new AppError('The user belonging to this token no longer exists.', 401)
-    )
+      return res.status(401).json({
+          status: 'error',
+          error: 'The user belonging to this token no longer exists.'
+      })
   }
   // grant access to protected route
   req.user = freshUser
