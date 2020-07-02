@@ -1,56 +1,19 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Error from './Error'
-import { useHistory } from 'react-router-dom'
-import UserContext from '../../context/UserContext'
+import useForm from './../../hooks/useForm'
+
 import './styles.css'
 
 const LogIn = () => {
-  let history = useHistory()
-  const { setActiveUser } = useContext(UserContext)
-  const [credentials, setCredentials] = useState({
-    email: '',
-    password: '',
-    error: '',
-  })
-  const handleLogin = async (event, data) => {
-    event.preventDefault()
-    const host = process.env.REACT_APP_HOST 
-    const settings = {
-      method: 'POST',
-      crossDomain: true,
-      withCredentials: true,
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }
-    try {
-      const response = await fetch(`${host}/api/v1/auth/login`, settings)
-      const responseData = await response.json()
-      if (responseData.status === 'success') {
-        setActiveUser(responseData.token)
-        history.push('/')
-      } else {
-        setCredentials({ ...credentials, error: responseData.error })
-      }
-    } catch {
-      setCredentials({ ...credentials, error: 'Server Error' })
-    }
-  }
-
-  const handleFieldChange = (fieldname, event) => {
-    setCredentials({ ...credentials, [fieldname]: event.target.value })
-  }
-
+  const [credentials, handleLogin, handleFieldChange] = useForm('login')
   return (
     <div className="container py-5">
       <Row className="justify-content-md-center py-3">
         <h3>Please sign in.</h3>
       </Row>
-      {credentials.error ? <Error message={credentials.error} /> : null}
+      {credentials.error && <Error message={credentials.error} />}
       <Row className="justify-content-md-center">
         <Form
           className="login-form"

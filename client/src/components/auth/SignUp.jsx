@@ -1,61 +1,19 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Error from './Error'
-import { useHistory } from 'react-router-dom'
-import UserContext from '../../context/UserContext'
+import useForm from './../../hooks/useForm'
 
 import './styles.css'
 
 const SignUp = () => {
-  let history = useHistory()
-  const { setActiveUser } = useContext(UserContext)
-  const [credentials, setCredentials] = useState({
-    name: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
-    error: '',
-  })
-
-  const handleLogin = async (event, data) => {
-    event.preventDefault()
-    const host = process.env.REACT_APP_HOST 
-    const settings = {
-      method: 'POST',
-      crossDomain: true,
-      withCredentials: true,
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }
-    try {
-      const response = await fetch(`${host}/api/v1/auth/signup`, settings)
-      const responseData = await response.json()
-      if (responseData.status === 'success') {
-        setActiveUser(responseData.token)
-        history.push('/')
-      } else {
-        setCredentials({ ...credentials, error: responseData.error })
-      }
-      return responseData
-    } catch(err) {
-      setCredentials({ ...credentials, error: err })
-    }
-  }
-
-  const handleFieldChange = (fieldname, event) => {
-    setCredentials({ ...credentials, [fieldname]: event.target.value })
-  }
-
+  const [credentials, handleLogin, handleFieldChange] = useForm('signup')
   return (
     <div className="container py-5">
       <Row className="justify-content-md-center py-3">
         <h3>Don't have an account? Register below.</h3>
       </Row>
-      {credentials.error ? <Error message={credentials.error}/> : null}
+      {credentials.error && <Error message={credentials.error} />}
       <Row className="justify-content-md-center">
         <Form
           className="login-form "
@@ -91,6 +49,7 @@ const SignUp = () => {
               onChange={(e) => {
                 handleFieldChange('password', e)
               }}
+              minlength="8"
               required
             />
           </Form.Group>
@@ -102,6 +61,7 @@ const SignUp = () => {
               onChange={(e) => {
                 handleFieldChange('passwordConfirm', e)
               }}
+              minlength="8"
               required
             />
           </Form.Group>
