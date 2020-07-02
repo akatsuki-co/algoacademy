@@ -14,17 +14,16 @@ jobs:
             - name: See if this runs first
               run: echo "Hello"
 
-            - name: AWS SSM Send-Command
+            - name: AWS SSM Send Command
               uses: peterkimzz/aws-ssm-send-command@1.0.1
-              id: ssm
               with:
                   aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
                   aws-region: us-east-2
                   instance-ids: ${{ secrets.INSTANCE_ID  }}
+                  comment: Blue/Green Deployment executed by Github Actions
                   working-directory: /home/ubuntu/algoacademy
-                  command: ./deploy 
-                  comment: Deploy script again 
+                  command: /bin/sh deploy.sh
 
             - name: See if this runs
               run: echo "Hello World"
