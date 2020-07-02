@@ -11,6 +11,9 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
+            - name: See if this runs first
+              run: echo "Hello"
+
             - name: AWS SSM Send-Command
               uses: peterkimzz/aws-ssm-send-command@1.0.1
               id: ssm
