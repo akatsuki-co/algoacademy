@@ -11,9 +11,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: See if this runs first
-              run: echo "Hello"
-
             - name: AWS SSM Send Command
               uses: peterkimzz/aws-ssm-send-command@1.0.1
               with:
@@ -21,9 +18,6 @@ jobs:
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
                   aws-region: us-east-2
                   instance-ids: ${{ secrets.INSTANCE_ID  }}
-                  comment: Blue/Green Deployment executed by Github Actions
+                  comment: Deploy algoacademy master 
                   working-directory: /home/ubuntu/algoacademy
                   command: /bin/sh deploy.sh
-
-            - name: See if this runs
-              run: echo "Hello World"

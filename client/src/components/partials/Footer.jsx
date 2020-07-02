@@ -36,7 +36,7 @@ const Footer = () => (
               <FontAwesomeIcon icon={['fab', 'github']} color="gray" />
             </a>
 
-            <a href="https://instagram.com/">
+              <a href="https://www.youtube.com/watch?v=vpr2a1u1DuY">
               <FontAwesomeIcon icon={['fab', 'instagram']} color="gray" />
             </a>
           </div>
