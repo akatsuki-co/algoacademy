@@ -7,7 +7,6 @@ import fetchTable from '../../utils/fetchTable'
 import { Switch, Route } from 'react-router-dom'
 
 const WithTableOfContents = ({ path }) => {
-  const [isLoading, setIsLoading] = useState(true)
   const initialState = {
     sidebar: [],
     language: '',
