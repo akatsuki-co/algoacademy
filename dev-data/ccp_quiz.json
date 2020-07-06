@@ -2442,5 +2442,791 @@
     "correct_answer": ["b"],
     "topic": "ccp",
     "explanation": "To help you manage your instances, images, and other Amazon EC2 resources, you can optionally assign your own metadata to each resource in the form of tags. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. This is useful when you have many resources of the same type—you can quickly identify a specific resource based on the tags you've assigned to it."
+  },
+  {
+    "question": "Which of the following is one example of a security best practice in AWS?",
+    "answers": {
+      "a": "Always manually define permissions to each and every individual IAM user",
+      "b": "Create an IAM user with admin privilegfes instead of using root",
+      "c": "Enable MFA only on the root account",
+      "d": "Grant Most Privilege"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "As indicated in the Security Best Practices whitepaper, you should not use your root account to administer your account. You should instead create an IAM user with administration privileges that will be used as the administrator of your AWS account."
+  },
+  {
+    "question": "In implementing continuous integration and continuous delivery (CI/CD) in your cloud architecture, which service will make it easy for you to set up your entire development and continuous delivery toolchain for coding, building, testing, and deploying your application code?",
+    "answers": {
+      "a": "AWS CodeCommit",
+      "b": "AWS CodeBuild",
+      "c": "AWS CodeStar",
+      "d": "AWS Code Pipeline"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "AWS CodeStar makes it easy for you to set up your entire development and continuous delivery toolchain for coding, building, testing, and deploying your application code. To start a project, you can choose from a variety of AWS CodeStar templates for Amazon EC2, AWS Lambda, and AWS Elastic Beanstalk. "
+  },
+  {
+    "question": "You believe that your AWS root account may have been used without you knowing. What can you do to tighten the security on the root account?",
+    "answers": {
+      "a": "Configure MFA for your root account",
+      "b": "Configure the root account passowrd often",
+      "c": "Enable Cloudtrail to monitor for suspicious logins",
+      "d": "Disable root account credentials and use an IAM user with admin provileges instead"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password. It is actually one of the first few steps that you should perform after logging in to your newly created AWS account."
+  },
+  {
+    "question": "What is an advantage of cloud computing when it comes to equipment expenditures?",
+    "answers": {
+      "a": "You can easily scale and manage the number of resources running in your cloud environment",
+      "b": "AWS offers tools and services that help you monitor your budget consumption in the cloud",
+      "c": "AWS makes sure that physical devices are continuously secured and monitored",
+      "d": "AWS introduces cost reductions each year in their services"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS does their best to reduce the cost of their operations and infrastructures each year. This reduction in cost translates to the customer such that the customer also receives lower prices for using AWS resources."
+  },
+  {
+    "question": "Which of the following does the Enterprise support plan provide to customers in AWS? (Select TWO)",
+    "answers": {
+      "a": "5-minute response time support if your business-critical system goes down",
+      "b": "Proactive Technical Account Management",
+      "c": "Limited access to the 7 core Trusted Advisor checks",
+      "d": "Access to online self-paced labs",
+      "e": "15-minute response time support if your production system goes down"
+    },
+    "correct_answer": ["b", "d"],
+    "topic": "ccp",
+    "explanation": "With Enterprise Support, you get 24x7 technical support from high-quality engineers, tools and technology to automatically manage health of your environment, consultative architectural guidance delivered in the context of your applications and use-cases, and a designated Technical Account Manager (TAM) to coordinate access to proactive / preventative programs and AWS subject matter experts."
+  },
+  {
+    "question": "Which of the following actions does not affect costs when using Amazon S3?",
+    "answers": {
+      "a": "Making GET requests to your S3 objects",
+      "b": "Moving objects out of your S3 bucket to another bucket",
+      "c": "Choosing S3 Standard IA rather than One Zone IA",
+      "d": "Uploading objects into your S3 bucket"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "When you begin to estimate the cost of Amazon S3, consider the following: Storage - Costs vary with number and size of objects stored in your Amazon S3 buckets as well as type of storage. Requests - The number and type of requests. GET requests incur charges at different rates than other requests, such as PUT and COPY requests. Data transfer - The amount of data transferred out of the Amazon S3 region."
+  },
+  {
+    "question": "Where can the customer view his Reserved Instance usage for the past month?",
+    "answers": {
+      "a": "AWS Organizations",
+      "b": "AWS Billing Console",
+      "c": "Amazon S3",
+      "d": "Amazon EC2"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS provides a free reporting tool called Cost Explorer that enables you to analyze the cost and usage of your EC2 instances and the usage of your Reserved Instances. The Cost Explorer tool is found under the AWS Billing Console."
+  },
+  {
+    "question": "A company is planning to use AWS Cloud to augment the resources of their on-premises data center to better serve their customers around the world. How does a company benefit from using AWS?",
+    "answers": {
+      "a": "Replace low variable costs with upfront capital infrastructure expenses",
+      "b": "Replace high variable costs with upfront capital infrastructure expenses",
+      "c": "Benefit from massive discounts from the Amazon.com shopping website",
+      "d": "Benefit from massive economies of scale"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "One of six advantages of using Cloud Computing: Benefit from massive economies of scale - By using cloud computing, you can achieve a lower variable cost than you can get on your own. Because usage from hundreds of thousands of customers is aggregated in the cloud, providers such as AWS can achieve higher economies of scale, which translates into lower pay as-you-go prices."
+  },
+  {
+    "question": "What infrastructure does Amazon CloudFront utilize to speed up content delivery to customers?",
+    "answers": {
+      "a": "Direct Connect",
+      "b": "Availability Zones",
+      "c": "Edge Locations",
+      "d": "Fiber optic cables"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "Amazon CloudFront uses Edge Locations in every Region to speed up content delivery to customers. Edge locations cache copies of your content on their local storage."
+  },
+  {
+    "question": "You have a mission-critical server that is currently down in AWS, and you need to bring it back up within 15 minutes for service continuity. Which of the following support plans will allow you to contact technical support to immediately resolve this issue?",
+    "answers": {
+      "a": "Business",
+      "b": "Developer",
+      "c": "Basic",
+      "d": "Enterprise"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Enterprise support plan offers: less than 15 minutes response time for downed business-critical system support cases"
+  },
+  {
+    "question": "An engineer is having trouble migrating and configuring a licensed application she uses onto her EC2 instances. What alternative does she have to do to quickly get her applications up and running in AWS?",
+    "answers": {
+      "a": "Try to look for an AMI in the AWS Marketplace that provides a similar setup to her application",
+      "b": "She can simply use AWS Application Discovery Service to create an exact copy of the application in EC2",
+      "c": "Create a Docker image of the application and launch Docker in the EC2 instnaces",
+      "d": "Setup a VPN connection from her local network to her AWS VPC, which essentially means that her work is now running in the Cloud"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "AWS Marketplace is a curated digital catalog that makes it easy for customers to find, buy, deploy, and manage third-party software and services that customers need to build solutions and run their businesses. AWS Marketplace includes thousands of software listings from popular categories such as security, networking, storage, machine learning, business intelligence, database, and devOps."
+  },
+  {
+    "question": "Which compliance requirement has AWS achieved that allows handling of medical information?",
+    "answers": {
+      "a": "PCI DSS",
+      "b": "SOC 2",
+      "c": "SOC 1",
+      "d": "HIPPA"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "HIPAA (Health Insurance Portability and Accountability Act of 1996) is United States legislation that provides data privacy and security provisions for safeguarding medical information."
+  },
+  {
+    "question": "A customer has recently experienced an SQL injection attack on their web application’s database hosted in EC2. They submitted a complaint ticket to AWS. What should be the response from AWS?",
+    "answers": {
+      "a": "AWS should secure their infrastructure better to reduce these kinds of incidents",
+      "b": "AWS and the customer should contact a third party auditor to verify the incident",
+      "c": "AWS should not be liable for the damages since the customer shoiuld have properly patched the EC2 instance",
+      "d": "AWS should reiterate that the customer is responsible for the security of their applications in the Cloud"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "It is the customer's responsibility to secure their infrastructure through various available security services. Customers can use different network and firewall configurations such as Security Groups, Network ACLs, AWS WAF, AWS Shield Advanced, Client/Server-Side encryption, and many others."
+  },
+  {
+    "question": "Which of the following is not a standard design principle when designing systems in AWS?",
+    "answers": {
+      "a": "Disposable resources instead of fixed servers",
+      "b": "Loose coupling",
+      "c": "Design for failure",
+      "d": "Servers, not serices"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "There are various best practices that you can follow which can help you build an application in the cloud. The notable ones are: Design for failure, Decouple your components, Implement elasticity,  Think parallel"
+  },
+  {
+    "question": "Which cloud computing advantage describes how you can easily deploy your application in multiple AWS regions with just a few clicks?",
+    "answers": {
+      "a": "Stop guessing capacity",
+      "b": "Go global in minutes",
+      "c": "Stop spending money running and maintaining data centers",
+      "d": "Benefir from massive economies of scale"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Going global in minutes is a cloud advantage that discusses how you can easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost."
+  },
+  {
+    "question": "Which of the following do you need to programmatically interact with your AWS environment? (Select TWO)",
+    "answers": {
+      "a": "Access keys",
+      "b": "Account username and password",
+      "c": "AWS SDK",
+      "d": "AWS Lambda"
+    },
+    "correct_answer": ["a", "c"],
+    "topic": "ccp",
+    "explanation": "You use can AWS SDKs to programmatically interact with your AWS resources. Using access keys, which are unique identifiers for your IAM User, you can connect to your resources in a secure manner. The AWS Access Key ID and AWS Secret Access Key are your AWS credentials. They are associated with an AWS Identity and Access Management (IAM) user or role that determines what permissions you have."
+  },
+  {
+    "question": "A number of servers in your on-premises data center have been collecting dust over the past few years. What is the benefit of moving to the Cloud in this case?",
+    "answers": {
+      "a": "Physical servers are managed and maintained by AWS for you",
+      "b": "The ability to provision resources only when you need them",
+      "c": "The ability to pay for only what you use",
+      "d": "AWS has automated services for you"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "One of the best practices to perform in the Cloud is to have disposable resources instead of fixed servers. Therefore, you can easily provision resources when you need them and take them down when you don't in the Cloud, and this is the advantage you receive compared to having servers on-premises."
+  },
+  {
+    "question": "Which of the following is an example of IaaS in AWS?",
+    "answers": {
+      "a": "Amazon EC2",
+      "b": "AWS CloudFormation",
+      "c": "AWS IAM",
+      "d": "AWS Elastic Beanstalk"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Infrastructure as a Service provides you with the highest level of flexibility and management control over your IT resources and is most similar to existing IT resources that many IT departments and developers are familiar with today. Amazon EC2 is one of the IaaS solutions offered by AWS."
+  },
+  {
+    "question": "What tool can assist you in estimating your monthly AWS bill?",
+    "answers": {
+      "a": "AWS TCO Calculator",
+      "b": "AWS Free Monthly Calculator",
+      "c": "AWS Simple Monthly Calculator",
+      "d": "AWS IAM"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "To estimate a bill, use the AWS Simple Monthly Calculator. You can enter your planned resources by service, and the Simple Monthly Calculator provides an estimated cost per month. The AWS Simple Monthly Calculator is an easy-to-use online tool that enables you to estimate the monthly cost of AWS services for your use case based on your expected usage."
+  },
+  {
+    "question": "You have an Amazon Linux EC2 instance running for an hour and thirty minutes. How will AWS bill you in terms of usage?",
+    "answers": {
+      "a": "You will be billed for an hour and thirty minutes according to the per-second billing rule",
+      "b": "You will be billed for an hour and twenty-nine minutes according to the per second billing rule",
+      "c": "You will be billed for one hour and thirty minutes according to the hourly billing rule",
+      "d": "You will only be billed for an hour according to the hourly billing rule"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": ""
+  },
+  {
+    "question": "An employee is asking for access to your S3 buckets. What should be the level of access that you should provide to him?",
+    "answers": {
+      "a": "Give him read-only access",
+      "b": "Give him administrator access levels",
+      "c": "Give him S3 full access",
+      "d": "Ask what type of access he requires and only provide him those permissions"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "When you create IAM policies, follow the standard security advice of granting least privilege, or granting only the permissions required to perform a task. Determine what users (and roles) need to do and then craft policies that allow them to perform only those tasks."
+  },
+  {
+    "question": "What is the lowest support plan that allows an unlimited number of technical support cases to be opened?",
+    "answers": {
+      "a": "Enterprise",
+      "b": "Basic",
+      "c": "Business",
+      "d": "Developer"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "The cheapest support plan that offers technical support with unlimited amount of cases that can be opened is the Developer support plan. Additionally, it provides you access to the 7 core Trusted Advisor checks and the Personal Health Dashboard, where you get a personalized view of the health of AWS services, and alerts when your resources are impacted."
+  },
+  {
+    "question": "Which among the following is the most cost-effective and scalable choice for object storage?",
+    "answers": {
+      "a": "AWS Storage Gateway",
+      "b": "Amazon EFS",
+      "c": "Amazon S3",
+      "d": "Amazon EBS"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It is the most cost-effective choice for storing objects since this is its primary purpose. Another advantage you receive from Amazon S3 is volume discounts."
+  },
+  {
+    "question": "Which of the following services should you provision if your local data center requires additional storage space without having to migrate data?",
+    "answers": {
+      "a": "Amazon Data Pipeline",
+      "b": "AWS Direct Connect",
+      "c": "AWS Snowball",
+      "d": "AWS Storage Gateway"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. The gateway connects to AWS storage services, such as Amazon S3, Amazon S3 Glacier, Amazon S3 Glacier Deep Archive, Amazon EBS, and AWS Backup, providing storage for files, volumes, snapshots, and virtual tapes in AWS."
+  },
+  {
+    "question": "Which of the following is true regarding the AWS Cost and Usage report? (Select TWO)",
+    "answers": {
+      "a": "Allows you to load your cost and usage information into Amazon Athena, Amazon Redshift, and AWS QuickSight",
+      "b": "Lets you set custom cost and usage budgets that alert you when those thresholds are exceeded",
+      "c": "Helps you visualize, understand, and manage your AWS costs and usage over time vis an intuitive interface that enables you to quickly create custom reports",
+      "d": "Provides you with granular data about your AWS costs and usage",
+      "e": "Provides you a dashboard that lets you view the status of your month-to-date AWS expenditure and provides access to a number of other cost management products that can help you dig deeper into your AWS costs and usage"
+    },
+    "correct_answer": ["a", "d"],
+    "topic": "ccp",
+    "explanation": "The Cost and Usage Report is your one-stop-shop for accessing the most granular data about your AWS costs and usage. You can also load your cost and usage information into Amazon Athena, Amazon Redshift, AWS QuickSight, or a tool of your choice."
+  },
+  {
+    "question": "Which AWS well-architected pillar stresses the importance of selecting the most appropriate and right number of resource types for your requirements?",
+    "answers": {
+      "a": "Cost optimization",
+      "b": "Reliability",
+      "c": "Operational Excellence",
+      "d": "Performance Efficiency"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Cost Optimization focuses on avoiding un-needed costs. Key topics include understanding and controlling where money is being spent, selecting the most appropriate and right number of resource types, analyzing spend over time, and scaling to meet business needs without overspending."
+  },
+  {
+    "question": "A customer has a popular website which has millions of viewers from all over the world and has read-heavy database workloads. Which of the following is the best option to use to increase the read throughput on their database?",
+    "answers": {
+      "a": "Enable Amazon RDS Standby Replicas",
+      "b": "Enable Amazon RDS Read Replicas",
+      "c": "Enable Multi-AZ deployments",
+      "d": "Use SQS to queue up the requests"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon RDS Read Replicas provide enhanced performance and durability for database (DB) instances. This feature makes it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
+  },
+  {
+    "question": "Which of the following does AWS automatically handle for you? (Select TWO)",
+    "answers": {
+      "a": "Makes sure your data is safely kept and replicated between AZs",
+      "b": "Introduce updates and patches to EC2 hypervisors",
+      "c": "Secure AWS data centers from environmental hazards",
+      "d": "Introduce updates and patches to EC2 gues operating systems",
+      "e": "Automatically encrypt data passing through the AWS Global Network"
+    },
+    "correct_answer": ["b", "c"],
+    "topic": "ccp",
+    "explanation": "The responsibility shouldered by AWS is on the security of the cloud. This includes protecting data centers from environmental hazards, and ensuring that the latest security patches have been applied onto their hardware."
+  },
+  {
+    "question": "Which of the following AWS services are not considered to be region-specific services? (Select TWO)",
+    "answers": {
+      "a": "Amazon Route 53",
+      "b": "Amazon VPC",
+      "c": "AWS WAF",
+      "d": "AWS CloudTrail",
+      "e": "AWS Lambda"
+    },
+    "correct_answer": ["a", "c"],
+    "topic": "ccp",
+    "explanation": "A Global service means that it covers all of the AWS Regions across the globe, while a regional service means that a resource is only applicable to one specific region at a time. There are actually only a handful of services that are considered as global services such as IAM, STS Route 53, CloudFront and WAF."
+  },
+  {
+    "question": "Which AWS service allows me to patch my Windows EC2 instances without having to RDP into them?",
+    "answers": {
+      "a": "AWS CodeDeploy",
+      "b": "Amazon Simple Workflow",
+      "c": "AWS CloudFormation",
+      "d": "AWS Systems Manager"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "AWS Systems Manager Patch Manager automates the process of patching managed instances with both security-related and other types of updates. You can use Patch Manager to apply patches for both operating systems and applications."
+  },
+  {
+    "question": "Auto-Scaling based on demand is an implementation of which AWS cloud best practice?",
+    "answers": {
+      "a": "Design for failure",
+      "b": "Drive architectures using data",
+      "c": "Implement elasticity",
+      "d": "Design for perfection"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "To implement 'Elasticity', one has to first automate the deployment process and streamline the configuration and build process. Auto-scaling groups define the limits of allocating resources"
+  },
+  {
+    "question": "What is the primary benefit of creating a scalable system?",
+    "answers": {
+      "a": "Applications are able to handle varying loads of work",
+      "b": "Applications are not easily targeted by malicious attacks",
+      "c": "Applications are able to failover gracefully",
+      "d": "Application resources will cost less than usual"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Having a scalable system means that it can adapt to varying workloads as needed. This also enables you to save on costs since resources will only be created when they are needed."
+  },
+  {
+    "question": "Which of the following purchase options offers the most significant discount compared to On-Demand instance pricing to process steady-state workloads that will continuously be running for a year?",
+    "answers": {
+      "a": "Scheduled Reserved Instance",
+      "b": "Standard Reserved Instance",
+      "c": "Convertible Reserved Instance",
+      "d": "Dedicated Instance"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Standard Reserved Instances provide you with a significant discount (up to 75%) compared to On-Demand instance pricing and can be purchased for a 1-year or 3-year term. Scheduled RIs provide a larger discount however, these are not suitable if you have a steady-state workload running continuously for 1 to 3 years."
+  },
+  {
+    "question": "Which payment plan will give you the largest discount when purchasing EC2 reserved instances?",
+    "answers": {
+      "a": "Partial upfront payment for a 3-year term purchase",
+      "b": "Deferred payment for a 3-year term purchase",
+      "c": "All upfront payment for a 1-year term purchase",
+      "d": "All upfront payment for a 3-year purchase"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "Reserved Instances provide you with a significant discount (up to 75%) compared to On-Demand instance pricing. This option provides you with the largest discount compared to On-Demand instance pricing. Opting for a longer compute reservation, such as the 3-year term, gives us a greater discount as opposed to a shorter 1-year renewable term."
+  },
+  {
+    "question": "What are the benefits of using Amazon DynamoDB as your database? (Select TWO)",
+    "answers": {
+      "a": "You can store different kinds of unstructured data that would normally not be suitable for relational databases",
+      "b": "DynamoDB is helf healing, which means your data is scanned for errors and is repared continuously",
+      "c": "You can perform very complex queries and joins without deterioration in performance",
+      "d": "Database size scales automatically so you won't have to worry about capacity",
+      "e": "DynamoDB offers 11 9's in terms of durability, according to the SLA"
+    },
+    "correct_answer": ["a", "d"],
+    "topic": "ccp",
+    "explanation": "Amazon DynamoDB is a fast, scalable NoSQL managed database service. You can build applications with virtually unlimited throughput and storage. You can use DynamoDB to store structured documents, JSON data, key-value pairs and many more items that you would not be able to store on a relational database."
+  },
+  {
+    "question": "Which AWS service will allow you to serve your dynamic web content to users globally?",
+    "answers": {
+      "a": "AWS Elastic Load Balancer",
+      "b": "Amazon S3",
+      "c": "Amazon Route 53",
+      "d": "Amazon CloudFront"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment."
+  },
+  {
+    "question": "A MariaDB RDS database is known to have high memory consumption during peak hours which deteriorates the overall performance of your application. What cost-effective change can you introduce to resolve this issue if the database is handling write-intensive operations?",
+    "answers": {
+      "a": "Add read replicas to lessen the burden of read operations",
+      "b": "Distribute the workload by running multiple instances",
+      "c": "Switch to DynamoDB to enjoy millisecond latency",
+      "d": "Scale the instance vertically to a higher memory capacity"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "With Amazon EC2, you can stop an instance and resize it to an instance type that has more RAM, CPU, I/O, or networking capabilities. This way of scaling can eventually reach a limit, and it is not always a cost-efficient or highly available approach. However, it is very easy to implement and can be sufficient for many use cases especially in the short term."
+  },
+  {
+    "question": "Which service in AWS protects your resources from common DDoS attacks in a proactive manner?",
+    "answers": {
+      "a": "AWS WAF",
+      "b": "AWS Shield",
+      "c": "Amazon Inspector",
+      "d": "Security groups"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection."
+  },
+  {
+    "question": "How is expense shifted when moving from traditional servers to the Cloud?",
+    "answers": {
+      "a": "Operational expense is traded for variable expense",
+      "b": "Capital expense is traded for operational expense",
+      "c": "Capital expense is traded for variable expense",
+      "d": "Variable expense is traded for capital expense"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "One of the advantages of cloud computing is that instead of having to invest heavily in data centers and servers before you know how you’re going to use them, you can pay only when you consume computing resources, and pay only for how much you consume."
+  },
+  {
+    "question": "Which of the following is not a part of the AWS Global Infrastructure?",
+    "answers": {
+      "a": "Edge Locations",
+      "b": "Availability Zones",
+      "c": "Regions",
+      "d": "Placement Groups"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "The AWS Global Infrastructure is designed and built to deliver the most flexible, reliable, scalable, and secure cloud computing environment with the highest quality global network performance available today and consists of Regions, Availability Zones and Edge Locations"
+  },
+  {
+    "question": "Which AWS storage service offers faster disk read and write performance and provides temporary block-level storage for your instance?",
+    "answers": {
+      "a": "EBS Provisioned IOPS SSD",
+      "b": "EBS Throughout Optimized HDD",
+      "c": "Instance Store",
+      "d": "EFS"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "An instance store provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. Instance store is ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content, or for data that is replicated across a fleet of instances, such as a load-balanced pool of web servers."
+  },
+  {
+    "question": "Which of the following instances is it better to use IAM roles rather than IAM users? (Select TWO)",
+    "answers": {
+      "a": "When you want to provide AWS services permissions to do certain actions",
+      "b": "When you need a GUI to interact with your AWS environment",
+      "c": "When you need an administrator to handle the AWS account for you",
+      "d": "If you have employees who will constantly need access to your AWS resources",
+      "e": "When you have outside entities that need to perform specific actions in your AWS account"
+    },
+    "correct_answer": ["a", "e"],
+    "topic": "ccp",
+    "explanation": "If you need constant access to your AWS account, or a GUI such as the AWS Management Console, it is better to use IAM users instead since they provide long term credentials for logging in to your account. Entities such as account handlers and administrators should have their own IAM accounts instead as well to be more efficient in their work."
+  },
+  {
+    "question": "A customer is choosing the best AWS support plan which includes a dedicated Technical Account Manager. Which of the following should they choose?",
+    "answers": {
+      "a": "Developer",
+      "b": "Enterprise",
+      "c": "Business",
+      "d": "Basic"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Customers with an Enterprise support plan have access to a Technical account manager"
+  },
+  {
+    "question": "When is using Amazon RDS a better choice than using a local database?",
+    "answers": {
+      "a": "When you need a free Enterprise license for your Enterprise databases",
+      "b": "When you need full control of your SQL database",
+      "c": "When you need a fast network connection to your local web servers",
+      "d": "When you want to offload administration responsibilities from yourself"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups."
+  },
+  {
+    "question": "________ has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications based on five pillars: operational excellence, security, reliability, performance efficiency, and cost optimization.",
+    "answers": {
+      "a": "AWS Cloud Adoption Framework",
+      "b": "Well-Architected Framework",
+      "c": "AWS Serverless Application Model",
+      "d": "Scrum Development Process"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "The Well-Architected Framework has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications."
+  },
+  {
+    "question": "Which of the following responsibilities does the customer inherit from AWS?",
+    "answers": {
+      "a": "Awareness and Training",
+      "b": "Physical and Environmental Controls",
+      "c": "Patch Management",
+      "d": "Configuration Management"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS handles all the physical and environmental controls on their data centers, network cables, servers, and other equipment. These controls are duly inherited by the customer."
+  },
+  {
+    "question": "Which of the following is an example of having a highly available application in AWS?",
+    "answers": {
+      "a": "Running CloudFront for the static website in your S3 bucket",
+      "b": "Running spot instances for your EC2 workloads",
+      "c": "Running your RDS instance with multi-AZ enabled",
+      "d": "Using SQS to decouple messages between a sender and a receiver"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "Amazon RDS Multi-AZ deployments provide enhanced availability and durability for database instances. When you provision a Multi-AZ DB Instance, Amazon RDS automatically creates a primary DB Instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ)."
+  },
+  {
+    "question": "Due to a high number of visitors, many customers are timing out from your website which is running in an Auto Scaling group of EC2 instances behind an ELB. Upon checking, the Auto Scaling group has stopped adding new instances to your group. Which of the following Trusted Advisor categories will give you more insight on this issue? (Select TWO)",
+    "answers": {
+      "a": "Service Limits",
+      "b": "Fault Tolerance",
+      "c": "Security",
+      "d": "Cost Optimization"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "AWS Trusted Advisor is an online tool that provides you real-time guidance to help you provision your resources following AWS best practices. It inspects your AWS environment and makes recommendations for saving money, improving system performance and reliability, or closing security gaps."
+  },
+  {
+    "question": "You are in need of a database that is capable of self-healing and has a high throughput. Which of the following services fits these criteria?",
+    "answers": {
+      "a": "Amazon RDS",
+      "b": "Amazon Aurora",
+      "c": "Amazon Redshift",
+      "d": "Amazon DynamoDB"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Amazon Aurora is a relational database engine that combines the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. It is designed to transparently handle the loss of up to two copies of data without affecting database write availability and up to three copies without affecting read availability. Amazon Aurora storage is also self-healing."
+  },
+  {
+    "question": "A customer is using your S3-based service to store sprites of game characters. When players retrieve these sprites, they are temporarily stored on the player’s computer. If the S3 bucket is using a standard storage class, how can you further optimize cost?",
+    "answers": {
+      "a": "Have the customer directly upload the sprites to S3 Standard - Infrequent Access",
+      "b": "Add a lifecycle policy to move sprites to S3 Standard - Infrequent Access after the customer uploads them",
+      "c": "Add a lifecycle policy to move sprites to S3 Glacier after the customer uploads them",
+      "d": "Have the customer compress the sprites to reduce storage consumption"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "S3 Standard-IA is for data that is accessed less frequently, but requires rapid access when needed. S3 Standard-IA offers high durability, high throughput, and low latency of S3 Standard, with a low per GB storage price and per GB retrieval fee. Since sprites are rarely accessed (and after accessing them they are stored on the user's phone), using the S3 IA storage class is the best storage type to use."
+  },
+  {
+    "question": "Availability Zones are physically separated by a meaningful distance from any other AZ, although all are within 100 km or 60 miles of each other. What is the primary reason why Availability Zones are set up the way they are now?",
+    "answers": {
+      "a": "Price of the land is cheaper in those locations",
+      "b": "To keep them as far apart from each other in case of a disaster",
+      "c": "To maximize area coverage in a Region",
+      "d": "To achieve better network connectivity to users in the location"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "AWS has identified critical system components required to maintain the availability of their system and recover service in the event of outage. Critical system components are backed up across multiple, isolated locations known as Availability Zones. Each Availability Zone is engineered to operate independently with high reliability."
+  },
+  {
+    "question": "What is a good disaster recovery precaution if you are launching a dynamic web application with mission-critical workloads that need to be available all the time?",
+    "answers": {
+      "a": "Always keep backup data stored in two different S3 buckets",
+      "b": "Launch applications in two different AWS Regions to prevent downtime during regional outages",
+      "c": "Run applications in the cloud but keep all the data locally",
+      "d": "Launch applications in two different AZs to prevent downtime during regional outages"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "As Availability Zones are contained within a Region, deploying your instances in different Regions will minimize the impact of your infrastructure during regional outages."
+  },
+  {
+    "question": "You have a customized EC2 instance running your latest web application. How can you create an exact copy of this instance in another region?",
+    "answers": {
+      "a": "Create a golden AMI of the instance and copy it to the other region",
+      "b": "Create a load balancer with an auto scaling group that is linked between your two regions. Scale up to have another instance running in the other region",
+      "c": "There is no way to do this in AWS. You will have to perform the trnasfer manually",
+      "d": "Create backups of all your EBS volumes and copy them to another region"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "AMIs provide the information required to launch an Amazon EC2 instance, which is a virtual server in the AWS Cloud. A golden AMI is an AMI that contains the latest security patches, software, configuration, and software agents that you need to install for logging, security maintenance, and performance monitoring."
+  },
+  {
+    "question": "Where is the best place to archive logs and other infrequently accessed files for a long time with no strict retrieval time?",
+    "answers": {
+      "a": "Amazon Glacier",
+      "b": "Amazon S3 Standard-IA",
+      "c": "Amazon Storage Gateway",
+      "d": "Amazon EBS"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "Amazon Glacier is a secure, durable, and extremely low-cost Amazon S3 cloud storage classes for data archiving and long-term backup. This makes it feasible to retain all the data you want for use cases like data lakes, analytics, IoT, machine learning, compliance, and media asset archiving."
+  },
+  {
+    "question": "Which of the following RDS engines allows you to bring your own license (BYOL)?",
+    "answers": {
+      "a": "MS SQL",
+      "b": "Oracle",
+      "c": "PostreSQL",
+      "d": "All of the above"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "You can run Amazon RDS for Oracle under two different licensing models – “License Included” and “Bring-Your-Own-License (BYOL)”. The “BYOL” model is designed for customers who prefer to use existing Oracle database licenses or purchase new licenses directly from Oracle."
+  },
+  {
+    "question": "What cloud computing model deals with services such as EC2 instances?",
+    "answers": {
+      "a": "PaaS",
+      "b": "DBaaS",
+      "c": "SaaS",
+      "d": "IaaS"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "Amazon EC2 is considered IaaS because you have total control on what could be done within the instances. You are borrowing the server infrastructure of AWS to fulfill your business needs, and you are charged at a rate for this service."
+  },
+  {
+    "question": "What AWS service can monitor the compliance status of your AWS resources against a set of compliance guidelines?",
+    "answers": {
+      "a": "Amazon CloudWatch",
+      "b": "AWS IAM",
+      "c": "AWS Config",
+      "d": "AWS Artifact"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations."
+  },
+  {
+    "question": "Your local servers are in need of an upgrade to serve your consumers better. However, locally stored data cannot be migrated due to compliance requirements. Which model should you adopt for this scenario?",
+    "answers": {
+      "a": "Slowly migrate your web servers and data into AWS while keeping your budget in check",
+      "b": "Dispose all of your servers and migratre your data to AWS since it will be cheaper and more durable to store data in the cloud",
+      "c": "Utilize AWS web servers but keep your data locally. Setup a hybrid model in which the web servers in AWS will communicate with your local data store",
+      "d": "Do not perform any migration for now to save up some capital for a large scale migration in the future"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "The best approach for this scenario is to set up a hybrid environment, where you will use EC2 instances for your servers, while keeping data stored locally. By applying this type of set up, you can utilize faster servers at a low cost while still keeping compliance with your data."
+  },
+  {
+    "question": "What does AWS do when a storage device reaches the end of its lifespan?",
+    "answers": {
+      "a": "AWS archives the device in case customers request their data again",
+      "b": "AWS wipes the drives and sends it back to the manufacturer to procure a new one",
+      "c": "AWS simply wipes the device and disposes it",
+      "d": "AWS follows a strict decommissioning process as described in compliance procedures"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "When a storage device has reached the end of its useful life, AWS decommissions media using techniques detailed in NIST 800-88. Media that stored customer data is not removed from AWS control until it has been securely decommissioned."
+  },
+  {
+    "question": "What is the right arrangement of the AWS Global Infrastructure components according to their geographical coverage area size, in descending order?",
+    "answers": {
+      "a": "Regions, Edge Locations, Availability Zones",
+      "b": "Edge Locations, Availability Zones, Regions",
+      "c": "Availability Zones, Edge Locations, Regions",
+      "d": "Regions, Availability Zones, Edge Locations"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "http://www.infrastructure.aws/"
+  },
+  {
+    "question": "In the event of a disaster or an outage, AWS recommends that you spread your servers and databases at least in different _____?",
+    "answers": {
+      "a": "AWS Accounts",
+      "b": "Regions",
+      "c": "VPCs",
+      "d": "Availability Zones"
+    },
+    "correct_answer": ["d"],
+    "topic": "ccp",
+    "explanation": "To create a highly available system, AWS recommends that you launch your applications in more than one availability zone. This is to ensure that there is service continuity in case an AZ is struck by disaster or experiences an outage."
+  },
+  {
+    "question": "If you are tasked to create a lightweight Wordpress site in AWS without having to install the package on your own, which PaaS solution in AWS will allow you to do this easily?",
+    "answers": {
+      "a": "AWS CloudFormation",
+      "b": "Amazon Elastic Kubernetes Service",
+      "c": "Amazon Lightsail",
+      "d": "Amazon Elastic Beanstalk"
+    },
+    "correct_answer": ["c"],
+    "topic": "ccp",
+    "explanation": "AWS Lightsail includes everything you need to launch your project quickly – a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP – for a low, predictable monthly price."
+  },
+  {
+    "question": "Which service offers volume discounts when you enable Consolidated Billing?",
+    "answers": {
+      "a": "Amazon S3",
+      "b": "Amazon CloudFront",
+      "c": "Amazon SNS",
+      "d": "AWS CloudTrail"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "For billing purposes, AWS treats all the accounts in the organization as if they were one account. Some services, such as Amazon EC2 and Amazon S3, have volume pricing tiers across certain usage dimensions that give you lower prices the more you use the service. With consolidated billing, AWS combines the usage from all accounts to determine which volume pricing tiers to apply, giving you a lower overall price whenever possible."
+  },
+  {
+    "question": "As an AWS customer, what offering do you naturally inherit from AWS after you sign up?",
+    "answers": {
+      "a": "All the responsibilities in enforcing security and compliance policies of your organization",
+      "b": "All the best practices of AWS policies, architecture, and operational processes built to satisfy your requirements",
+      "c": "All the hardware and software that you provision in the AWS cloud",
+      "d": "All the data you store in the retrieve from AWS"
+    },
+    "correct_answer": ["b"],
+    "topic": "ccp",
+    "explanation": "Security at AWS is top priority. Today, AWS protects millions of active customers around the world, from large enterprises and government organizations, to start-ups and non-profits. AWS customers inherit all of the benefits of their security controls, including best practices for security policies, architecture, and operational processes validated against external assurance frameworks."
+  },
+  {
+    "question": "What type of EBS volume is recommended for most workloads and is also usable as a boot volume?",
+    "answers": {
+      "a": "General Purpose SSD",
+      "b": "Provisioned IOPS SSD",
+      "c": "Cold HDD",
+      "d": "Throughput Optimized HDD"
+    },
+    "correct_answer": ["a"],
+    "topic": "ccp",
+    "explanation": "General Purpose SSD (gp2) volumes offer cost-effective storage that is ideal for a broad range of workloads. These volumes deliver single-digit millisecond latencies and the ability to burst to 3,000 IOPS for extended periods of time."
   }
 ]

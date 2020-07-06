@@ -19,14 +19,10 @@ const Footer = () => (
             <p>
               © 2020 By
               <a href="https://github.com/tuvo1106" className="text-muted">
-                {' Tu Vo, '}
+                {' Tu Vo and'}
               </a>
               <a href="https://github.com/rmiyazaki6499" className="text-muted">
-                {' Ryuichi Miyazaki, '}
-              </a>
-              &amp;
-              <a href="https://github.com/bmuha1" className="text-muted">
-                {' Brent Muha '}
+                {' Ryuichi Miyazaki '}
               </a>
             </p>
           </div>
@@ -40,7 +36,7 @@ const Footer = () => (
               <FontAwesomeIcon icon={['fab', 'github']} color="gray" />
             </a>
 
-            <a href="https://instagram.com/">
+              <a href="https://www.youtube.com/watch?v=vpr2a1u1DuY">
               <FontAwesomeIcon icon={['fab', 'instagram']} color="gray" />
             </a>
           </div>

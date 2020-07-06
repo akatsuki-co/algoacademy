@@ -1,6 +1,7 @@
 const express = require("express")
 const path = require("path")
 const compression = require("compression")
+const cookieParser = require('cookie-parser')
 const cors = require("cors")
 const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
@@ -8,15 +9,19 @@ const swaggerJsDoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
 const bodyParser = require("body-parser")
 
+const authRouter = require("./routes/authRoutes")
+const contributeRouter = require("./routes/contributeRoutes")
 const quizRouter = require("./routes/quizRoutes")
 const tableRouter = require("./routes/tableRoutes")
-const authRouter = require("./routes/authRoutes")
 
 // Start app
 const app = express()
 
 // CORS
 app.use(cors())
+
+// Cookie Parser
+app.use(cookieParser())
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'client', 'build')))
@@ -59,6 +64,7 @@ const router = express.Router()
 // Mounting Routers - API endpoints
 app.use("/", router)
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/contribute", contributeRouter)
 app.use("/api/v1/quizzes", quizRouter)
 app.use("/api/v1/table", tableRouter)
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))

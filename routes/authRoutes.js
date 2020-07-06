@@ -4,13 +4,14 @@ const {
     createSendToken,
     signUp,
     login,
-    logout
+    logout,
+    protect
 } = require("./../controllers/authController")
 
 const router = express.Router()
 
 router.post("/signup", signUp)
 router.post("/login", login)
-router.get("/logout", logout)
+router.get("/logout",protect, logout)
 
 module.exports = router

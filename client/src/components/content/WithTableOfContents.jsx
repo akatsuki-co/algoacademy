@@ -12,6 +12,7 @@ const WithTableOfContents = ({ path }) => {
     sidebar: [],
     language: '',
   }
+  const [isLoading, setIsLoading] = useState(true)
   const [table, setTable] = useState(initialState)
   useEffect(() => {
     const loadContents = async () => {
@@ -30,7 +31,7 @@ const WithTableOfContents = ({ path }) => {
   }, [path])
 
   return isLoading ? null : (
-    <section className="py-3">
+    <section className='py-3'>
       <Container>
         <Row>
           <Sidebar data={table}></Sidebar>
@@ -39,7 +40,7 @@ const WithTableOfContents = ({ path }) => {
               path={`/${table.language}/:topic`}
               render={() => <Content table={table} />}
             />
-            <Route path="/" render={() => <Content table={table} />} />
+            <Route path='/' render={() => <Content table={table} />} />
           </Switch>
         </Row>
       </Container>
