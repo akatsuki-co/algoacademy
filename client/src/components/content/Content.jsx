@@ -23,7 +23,7 @@ const Content = ({ table }) => {
         const text = await response.text()
         setIsLoading(false)
         setMarkdown(text || '### Nothing here yet! Come back again soon!')
-      } catch {
+      } catch (err) {
         setIsLoading(false)
         setMarkdown('### Path Not found. Please try again.')
       }
@@ -33,10 +33,11 @@ const Content = ({ table }) => {
 
   return (
     <Col
-      md='7'
-      xl='8'
-      className='ml-md-auto py-3 pl-5 border-left'
-      id='content'>
+      md="7"
+      xl="8"
+      className="ml-md-auto py-3 pl-5 border-left"
+      id="content"
+    >
       {isLoading ? (
         <Loader />
       ) : (
