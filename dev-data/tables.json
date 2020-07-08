@@ -171,5 +171,38 @@
         "menu": "Algorithms"
       }
     ]
+  },
+  {
+    "language": "java",
+    "sidebar": [
+      {
+        "subMenu": [
+          "Hello World",
+          "Data Types",
+          "Functions",
+          "Structures",
+          "Arrays",
+          "Bit Manipulation"
+        ],
+        "menu": "Basics"
+      },
+      {
+        "subMenu": [
+          "Linked Lists",
+          "Stacks and Queues",
+          "Hash Tables",
+          "Sets",
+          "Trees",
+          "Heaps",
+          "Tries",
+          "Graphs"
+        ],
+        "menu": "Data Structures"
+      },
+      {
+        "subMenu": ["Sorting", "Searching"],
+        "menu": "Algorithms"
+      }
+    ]
   }
 ]
