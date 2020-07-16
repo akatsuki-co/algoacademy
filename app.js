@@ -3,12 +3,14 @@ const path = require("path")
 const compression = require("compression")
 const cookieParser = require('cookie-parser')
 const cors = require("cors")
-const { graphqlHTTP  } = require('express-graphql')
 const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
 const swaggerJsDoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
 const bodyParser = require("body-parser")
+
+const { graphqlHTTP  } = require('express-graphql')
+const { buildSchema } = require('graphql')
 
 const authRouter = require("./routes/authRoutes")
 const contributeRouter = require("./routes/contributeRoutes")
@@ -62,6 +64,16 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions)
 
 const router = express.Router()
 
+const schema = buildSchema(`
+    type Query {
+        message: String
+    }
+`)
+
+const root = {
+    message: () => 'Hello World!'
+}
+
 // Mounting Routers - API endpoints
 app.use("/", router)
 app.use("/api/v1/auth", authRouter)
@@ -69,6 +81,11 @@ app.use("/api/v1/contribute", contributeRouter)
 app.use("/api/v1/quizzes", quizRouter)
 app.use("/api/v1/table", tableRouter)
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+app.use("/api/v2/graphql", graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
+}))
 
 // all other routes
 app.get("*", (req, res) => {
