@@ -9,8 +9,12 @@ const swaggerJsDoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
 const bodyParser = require("body-parser")
 
+const mongoose = require('mongoose')
+
 const { graphqlHTTP  } = require('express-graphql')
-const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql')
+const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList } = require('graphql')
+
+const { tableSchema } = require('./models/Table')
 
 const authRouter = require("./routes/authRoutes")
 const contributeRouter = require("./routes/contributeRoutes")
@@ -31,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 // Body parser
 app.use(bodyParser.urlencoded({
-       extended: false
+    extended: false
 }));
 
 app.use(bodyParser.json());
@@ -64,21 +68,64 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions)
 
 const router = express.Router()
 
+require("dotenv").config()
+
+const port = process.env.PORT || 5000
+const db = process.env.DATABASE
+
+// Database
+mongoose
+    .connect(db, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        console.log("Database is connected.")
+    })
+    .catch((err) => {
+        console.log("Database connection was unsuccessful.")
+        console.log(err)
+        process.exit(1)
+    })
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}.`)
+})
+
+const TableType = new GraphQLObjectType({
+    name: "Table",
+    fields: {
+        id: { type: GraphQLID },
+        language: { type: GraphQLString },
+    }
+})
+
 // GraphQL Schema
 const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'Query',
         fields: () => ({
-            message: {
-                type: GraphQLString,
+            table: {
+                type: GraphQLList(TableType),
+                resolve: (root, args, context, info) => {
+                    return tableSchema.find().exec()
+                }
             }
         })
     })
 })
 
+const getTable = function(args) {
+    const language = args.language
+    return
+}
+
+
 // GraphQL Resolvers
 const resolvers = {
-    message: () => 'Hello World!'
+    table: getTable
 }
 
 // Mounting Routers - API endpoints
