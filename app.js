@@ -10,7 +10,7 @@ const swaggerUi = require("swagger-ui-express")
 const bodyParser = require("body-parser")
 
 const { graphqlHTTP  } = require('express-graphql')
-const { buildSchema } = require('graphql')
+const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql')
 
 const authRouter = require("./routes/authRoutes")
 const contributeRouter = require("./routes/contributeRoutes")
@@ -64,13 +64,20 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions)
 
 const router = express.Router()
 
-const schema = buildSchema(`
-    type Query {
-        message: String
-    }
-`)
+// GraphQL Schema
+const schema = new GraphQLSchema({
+    query: new GraphQLObjectType({
+        name: 'Query',
+        fields: () => ({
+            message: {
+                type: GraphQLString,
+            }
+        })
+    })
+})
 
-const root = {
+// GraphQL Resolvers
+const resolvers = {
     message: () => 'Hello World!'
 }
 
@@ -83,7 +90,7 @@ app.use("/api/v1/table", tableRouter)
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use("/api/v2/graphql", graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    rootValue: resolvers,
     graphiql: true
 }))
 
