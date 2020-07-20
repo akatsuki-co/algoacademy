@@ -62,7 +62,7 @@ const Contribute = () => {
           })
         })
         const response = await githubResponse.json()
-        history.push('/')
+        await history.push('/')
       } else {
         setContribution({ ...contribution, error: responseData.error })
       }
