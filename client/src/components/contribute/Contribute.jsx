@@ -33,7 +33,6 @@ const Contribute = () => {
   const handleContribute = async (event, data) => {
     event.preventDefault()
     const host = process.env.REACT_APP_HOST 
-    setContribution({ ...contribution, ['markdown']: markdown })
     const settings = {
       method: 'POST',
       crossDomain: true,
@@ -80,7 +79,12 @@ const Contribute = () => {
   return (
     <div className="container py-3">
       <Row>
-        <Editor markdown={markdown} setMarkdown={setMarkdown} />
+        <Editor
+            markdown={markdown}
+            setMarkdown={setMarkdown}
+            contribution={contribution}
+            setContribution={setContribution}
+        />
         <Preview markdown={markdown} />
       </Row>
         {contribution.error ? <Error message={contribution.error} /> : null}
