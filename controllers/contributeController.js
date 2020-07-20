@@ -13,20 +13,8 @@ exports.contribute = catchAsync(async(req, res, next) => {
         if (err) throw err;
         console.log('File is created successfully.');
     })
-    const githubResponse = await fetch("https://api.github.com/repos/akatsuki-co/algoacademy/issues",
-        {
-            headers: {"Authorization": "token " + process.env.GITHUB_TOKEN},
-            method: "POST",
-            body: JSON.stringify({
-                "title": `${date} ${username} - ${topic}`,
-                "body": markdown,
-                "labels": ["enhancement"]
-            })
-        })
-    const response = await githubResponse.json()
     await res.status(200).json({
-        status: "success",
-        response: response
+        status: "success"
     })
 })
 
