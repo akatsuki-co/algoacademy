@@ -33,6 +33,7 @@ const Contribute = () => {
   const handleContribute = async (event, data) => {
     event.preventDefault()
     const host = process.env.REACT_APP_HOST 
+    setContribution({ ...contribution, ['markdown']: markdown })
     const settings = {
       method: 'POST',
       crossDomain: true,
