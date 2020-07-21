@@ -1,7 +1,6 @@
 const catchAsync = require("./../utils/catchAsync")
 const AppError = require('./../utils/appError')
 const fs = require('fs')
-const fetch = require('node-fetch')
 
 exports.contribute = catchAsync(async(req, res, next) => {
     const username = req.body["username"].replace(/\s+/g, '_').toLowerCase()
