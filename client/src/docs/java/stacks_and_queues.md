@@ -59,7 +59,7 @@ public class MyStack<T> {
 
 ---
 
-A queue is a data structure where elements are inserted and removed based on a first-in first-out (LIFO) principle.
+A queue is a data structure where elements are inserted and removed based on a first-in first-out (FIFO) principle.
 
 - A helpful way to visualize a queue is to imagine people in a line at an amusement park. People who line up first gets served first.
 - In Java, ArrayLists or singly-linked lists can also be used to represent a stack.

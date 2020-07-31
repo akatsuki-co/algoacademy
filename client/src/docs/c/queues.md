@@ -2,7 +2,7 @@
 
 ---
 
-A queue is a data structure where elements are inserted and removed based on a first-in first-out (LIFO) principle.
+A queue is a data structure where elements are inserted and removed based on a first-in first-out (FIFO) principle.
 
 - A helpful way to visualize a queue is to imagine people in a line at an amusement park. People who line up first gets served first.
 - In C, a singly linked-list with two pointers that reference the head and tail of the list is used to represent a queue.
