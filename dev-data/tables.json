@@ -179,9 +179,10 @@
         "subMenu": [
           "Hello World",
           "Data Types",
+          "Strings",
+          "Arrays and ArrayLists",
           "Functions",
-          "Structures",
-          "Arrays",
+          "Classes",
           "Bit Manipulation"
         ],
         "menu": "Basics"
