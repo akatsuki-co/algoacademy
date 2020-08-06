@@ -4,7 +4,7 @@
 
 A hash table is a data structure that maps keys to values.
 
-In Java, Maps are typically used to represent hash tables. There are various types of Maps such as WeakHashMap, LinkedHashMap, EnumMap, and IdentityHashMap.
+In Java, Maps are used to represent hash tables. There are various types of Maps such as WeakHashMap, LinkedHashMap, EnumMap, and IdentityHashMap.
 
 ---
 
