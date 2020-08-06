@@ -12,7 +12,7 @@ In JS, objects are typically used to represent hash tables. ES6 also provides a 
 let obj = {}
 
 // Adding a key, value pair into a object
-obj["a"] = 98 // bracket notation
+obj['a'] = 98 // bracket notation
 obj.b = 99 // dot notation
 console.log(obj) // { a: 98, b: 99 }
 
@@ -21,9 +21,9 @@ delete obj.b
 console.log(obj) // { a: 98 }
 
 let arr = [
-  ["b", 99],
-  ["c", 100],
-  ["d", 101],
+  ['b', 99],
+  ['c', 100],
+  ['d', 101],
 ]
 arr.forEach(([k, v]) => (obj[k] = v))
 
@@ -43,6 +43,8 @@ d=101
 
 ## Maps
 
+- Maps preserve insertion order.
+
 ---
 
 ```js
@@ -50,22 +52,22 @@ d=101
 let map = new Map()
 
 // Adding a key, value pair into a Map
-map.set("a", 98)
+map.set('a', 98)
 console.log(map) // Map { 'a' => 98 }
 
 // The add method is chainable
-map.set("b", 99).set("c", 100).set("d", 101)
+map.set('b', 99).set('c', 100).set('d', 101)
 console.log(map) // Map { 'a' => 98, 'b' => 99, 'c' => 100, 'd' => 101 }
 
 // Check if map has an item
-console.log(map.has("a")) // true
-console.log(map.has("e")) // false
+console.log(map.has('a')) // true
+console.log(map.has('e')) // false
 
 // Get size of map
 console.log(map.size) // 4
 
 // Delete a key
-map.delete("d")
+map.delete('d')
 console.log(map) // Map { 'a' => 98, 'b' => 99, 'c' => 100 }
 
 // Delete all keys
@@ -74,9 +76,9 @@ console.log(map) // Map {}
 
 // Create a map from an iterable
 let map = new Map([
-  ["a", 98],
-  ["b", 99],
-  ["c", 100],
+  ['a', 98],
+  ['b', 99],
+  ['c', 100],
 ])
 console.log(map) // Map { 'a' => 98, 'b' => 99, 'c' => 100 }
 
@@ -98,8 +100,8 @@ c=100
 ---
 
 ```js
-let word = "alphabet"
-let counter = word.split("").reduce((obj, char) => {
+let word = 'alphabet'
+let counter = word.split('').reduce((obj, char) => {
   obj[char] = char in obj ? ++obj[char] : 1
   return obj
 }, {})
