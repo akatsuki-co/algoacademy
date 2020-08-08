@@ -38,6 +38,13 @@ class MapTest {
         System.out.println("There are " + counter.get('a') + " a's in this sentence.");
         // There are 4 a's in this sentence.
 
+        // getOrDefault
+        System.out.println("There are " + counter.get('v') + " v's in this sentence.");
+        // returns null if 'v' does not exist
+        // -> There are null v's in this sentence.
+        System.out.println("There are " + counter.getOrDefault('v', 0) + " v's in this sentence.");
+        // There are 0 v's in this sentence.
+
         // loop through Map using Java 8+
         counter.forEach((k, v) -> {
             System.out.println(k + ": " + v);
