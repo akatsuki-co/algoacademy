@@ -121,4 +121,50 @@ public class MyQueue<T> {
 
 ---
 
+There is also a builtin Queue collection in Java.
+
+---
+
+```java
+import java.util.Queue;
+import java.util.LinkedList;
+
+class QueueTest {
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<Integer>();
+
+        System.out.println(q.isEmpty()); // true
+
+        int[] arr = { 1, 2, 3, 4, 5 };
+        // Add element to back of queue
+        // Time complexity: O(1)
+        for (int i : arr)
+            q.add(i);
+        System.out.println(q); // [1, 2, 3, 4, 5]
+
+        // Contains
+        // Time complexity: O(n)
+        System.out.println(q.contains(2)); // true
+        System.out.println(q.contains(8)); // false
+
+        // Peek (returns element at front of queue)
+        // Time complexity: O(1)
+        System.out.println(q.peek()); // 1
+
+        // Poll (removes element at front of queue and returns it)
+        // Time complexity: O(1)
+        for (int i = 0; i < 2; i++)
+            System.out.print(q.poll() + " "); // 1 2
+        System.out.println(q); // [3, 4, 5]
+
+        // Loop through queue
+        q.forEach(i -> {
+            System.out.print(i + " "); // 3 4 5
+        });
+    }
+}
+```
+
+---
+
 _Author: Tu Vo_
