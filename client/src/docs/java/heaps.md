@@ -37,6 +37,7 @@ class PriorityQueueTest {
             // remove an element from queue
             // O(log(n)) time complexity
             System.out.println(pq.remove(11)); // true
+            System.out.println(pq.remove(100)); // false
 
             // poll - remove element at front of queue
             // O(log(n)) time complexity
@@ -61,7 +62,7 @@ class PriorityQueueTest {
 
 ---
 
-## Working with Objects and Custom Comparators
+## Working with Non-Primitives and Custom Comparators
 
 - You can pass into user-defined classes as a generic type for Priority Queues, as long as it implements a comparable.
 - In this example, we are polling students with highest grades first. In the event where two students have similar grades, we poll the student with the higher ID number.
