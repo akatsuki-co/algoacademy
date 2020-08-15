@@ -39,14 +39,10 @@
         "subMenu": [
           "Hello World",
           "Data Types",
-          "Variables",
           "Loops",
-          "Pointers",
           "Arrays and Slices",
           "Maps",
-          "Structs",
-          "Interfaces",
-          "Goroutines and Channels"
+          "Structs"
         ],
         "menu": "Basics"
       },
