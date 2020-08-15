@@ -169,6 +169,10 @@
       {
         "subMenu": ["Sorting", "Searching"],
         "menu": "Algorithms"
+      },
+      {
+        "subMenu": ["Builder"],
+        "menu": "Design Patterns"
       }
     ]
   },
