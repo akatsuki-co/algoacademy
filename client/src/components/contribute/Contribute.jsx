@@ -51,7 +51,7 @@ const Contribute = () => {
         const topic = contribution.topic.replace(/\s+/g, '_').toLowerCase()
         const today = new Date()
         const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
-        const githubResponse = await fetch("https://api.github.com/repos/akatsuki-co/algoacademy/issues",
+        await fetch("https://api.github.com/repos/akatsuki-co/algoacademy/issues",
         {
           headers: {"Authorization": "token " + process.env.REACT_APP_GITHUB_TOKEN},
           method: "POST",
@@ -61,7 +61,6 @@ const Contribute = () => {
             "labels": ["enhancement"]
           })
         })
-        const response = await githubResponse.json()
         await history.push('/')
       } else {
         setContribution({ ...contribution, error: responseData.error })
@@ -69,6 +68,7 @@ const Contribute = () => {
       return responseData
     } catch(err) {
       setContribution({ ...contribution, error: err })
+      console.log(err)
     }
   }
 
