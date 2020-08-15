@@ -61,7 +61,6 @@ const Contribute = () => {
             "labels": ["enhancement"]
           })
         })
-        const response = await githubResponse.json()
         await history.push('/')
       } else {
         setContribution({ ...contribution, error: responseData.error })
