@@ -14,7 +14,6 @@ const useForm = (url) => {
   const handleLogin = async (event) => {
     event.preventDefault()
     const host = process.env.REACT_APP_HOST
-    console.log(host)
     const settings = {
       method: 'POST',
       crossDomain: true,
