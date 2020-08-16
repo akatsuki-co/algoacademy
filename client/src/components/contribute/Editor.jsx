@@ -10,7 +10,7 @@ const Editor = ({ markdown, setMarkdown, contribution, setContribution }) => {
         <textarea
             onChange={(e) => {
                 setMarkdown(e.target.value)
-                setContribution({ ...contribution, ['markdown']: e.target.value })
+                setContribution({ ...contribution, 'markdown': e.target.value })
             }}
           value={markdown}
         />
