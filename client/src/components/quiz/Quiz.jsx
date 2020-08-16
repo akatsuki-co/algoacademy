@@ -42,11 +42,9 @@ function Quiz() {
     const loadQuestions = async () => {
       try {
         const host = process.env.REACT_APP_HOST
-        const req = await fetch(
-          `${host}/api/v1/quizzes?topic=${params.topic}`
-        )
+        const req = await fetch(`${host}/api/v1/quizzes?topic=${params.topic}`)
         const questionsArr = await req.json()
-        const shuffledQuestions = shuffle(questionsArr.data)
+        const shuffledQuestions = shuffle(questionsArr.data).slice(0, 25)
         dispatch({
           type: LOAD_QUESTIONS,
           questions: shuffledQuestions,
@@ -61,7 +59,7 @@ function Quiz() {
 
   const renderError = () => {
     if (!error) return
-    return <div className="error">{error}</div>
+    return <div className='error'>{error}</div>
   }
 
   const next = () => {
@@ -97,7 +95,7 @@ function Quiz() {
       {isGameOver ? (
         <Results />
       ) : isLoaded ? (
-        <div className="quiz gradient py-2">
+        <div className='quiz gradient py-2'>
           <Progress
             total={questions.length}
             current={currentQuestionIndex + 1}
@@ -105,7 +103,7 @@ function Quiz() {
           <Question />
           {renderError()}
           <Answers />
-          <button className="quiz-btn btn-primary" onClick={next}>
+          <button className='quiz-btn btn-primary' onClick={next}>
             Confirm and Continue
           </button>
         </div>
