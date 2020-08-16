@@ -22,7 +22,7 @@ const QuizHome = () => {
       quizText:
         'This quiz goes modern React design, hooks and state management.',
       quizImage: '/react.png',
-      totalQuestions: '40',
+      totalQuestions: '3',
     },
     {
       title: 'AWS Certified Cloud Practitioner',
@@ -30,14 +30,14 @@ const QuizHome = () => {
       quizText:
         'This quiz goes over AWS products, pricing, security and general cloud concepts.',
       quizImage: '/aws.png',
-      totalQuestions: '60',
+      totalQuestions: '25',
     },
   ]
   const Home = () => {
     return (
       <>
-        <h2 className="text-center">Test Your Knowledge!</h2>
-        <Row className="justify-content-md-center">
+        <h2 className='text-center'>Test Your Knowledge!</h2>
+        <Row className='justify-content-md-center'>
           {quizzes.map((el) => (
             <QuizCard
               title={el.title}
@@ -45,8 +45,7 @@ const QuizHome = () => {
               key={shortid.generate()}
               text={el.quizText}
               image={el.quizImage}
-              questions={el.totalQuestions}
-            ></QuizCard>
+              questions={el.totalQuestions}></QuizCard>
           ))}
         </Row>
       </>
@@ -54,11 +53,11 @@ const QuizHome = () => {
   }
 
   return (
-    <section id="quizHome" className="py-5">
+    <section id='quizHome' className='py-5'>
       <Container>
         <Switch>
-          <Route path="/quiz/:topic" component={Quiz}></Route>
-          <Route path="/quiz" component={Home}></Route>
+          <Route path='/quiz/:topic' component={Quiz}></Route>
+          <Route path='/quiz' component={Home}></Route>
         </Switch>
       </Container>
     </section>
