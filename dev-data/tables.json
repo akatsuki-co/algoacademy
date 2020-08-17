@@ -27,7 +27,7 @@
         "menu": "Data Structures"
       },
       {
-        "subMenu": ["Sorting", "Searching"],
+        "subMenu": ["Sorting", "Searching", "Dijkstra"],
         "menu": "Algorithms"
       }
     ]
