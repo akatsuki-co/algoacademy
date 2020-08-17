@@ -25,21 +25,14 @@ const Results = () => {
     )
   }
 
-  const restart = () => {
-    history.push(`/quiz/${topic}/7`)
-  }
-
   const quizHome = () => {
     history.push('/quiz')
   }
   return (
-    <div className="quiz results gradient">
+    <div className='quiz results gradient'>
       {renderResultsData()}
-      <button className="quiz-btn btn-primary" onClick={quizHome}>
+      <button className='quiz-btn btn-primary' onClick={quizHome}>
         Go Back
-      </button>
-      <button className="quiz-btn btn-primary" onClick={restart}>
-        Try Again
       </button>
     </div>
   )

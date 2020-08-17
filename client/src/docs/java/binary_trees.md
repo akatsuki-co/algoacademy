@@ -5,7 +5,7 @@
 A binary tree is a data structure that is composed of nodes that have at most two children. The top of the binary tree is referred to as the root.
 
 - Nodes can be also constructed with or without references to the parent, that is dependent on the user. Having a reference to the parent node makes tree traversal easier at the cost of extra space.
-- A leaf is a node that has no children (\*left and \*right point to null).
+- A leaf is a node that has no children (left and right point to null).
 
 ---
 
@@ -76,7 +76,7 @@ class TreeTest {
             //   2     3
             //  / \   / \
             // 4   5 6   7
-            var head = new TreeNode(1);
+            TreeNode head = new TreeNode(1);
             // add rest of nodes
             // ...
 
