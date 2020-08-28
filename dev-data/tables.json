@@ -167,7 +167,7 @@
         "menu": "Algorithms"
       },
       {
-        "subMenu": ["Builder"],
+        "subMenu": ["Builder", "Null Object"],
         "menu": "Design Patterns"
       }
     ]
