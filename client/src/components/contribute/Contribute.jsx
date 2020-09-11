@@ -53,7 +53,7 @@ const Contribute = () => {
         const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
         await fetch("https://api.github.com/repos/akatsuki-co/algoacademy/issues",
         {
-          headers: {"Authorization": "token " + process.env.REACT_APP_GITHUB_TOKEN},
+          headers: {"Authorization": `token${process.env.REACT_APP_GITHUB_TOKEN}`},
           method: "POST",
           body: JSON.stringify({
             "title": `${date} ${username} - ${topic}`,
