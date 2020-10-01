@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  algoacademy:
+    build: '.'
+    env_file:
+      - 'client/.env-public'
+      - '.env-public'
+    ports:
+      - '5000:5000'
