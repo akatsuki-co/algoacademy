@@ -27,7 +27,7 @@
         "menu": "Data Structures"
       },
       {
-        "subMenu": ["Sorting", "Searching"],
+        "subMenu": ["Sorting", "Searching", "Dijkstra", "Rabin Karp"],
         "menu": "Algorithms"
       }
     ]
@@ -39,14 +39,10 @@
         "subMenu": [
           "Hello World",
           "Data Types",
-          "Variables",
           "Loops",
-          "Pointers",
           "Arrays and Slices",
           "Maps",
-          "Structs",
-          "Interfaces",
-          "Goroutines and Channels"
+          "Structs"
         ],
         "menu": "Basics"
       },
@@ -169,6 +165,10 @@
       {
         "subMenu": ["Sorting", "Searching"],
         "menu": "Algorithms"
+      },
+      {
+        "subMenu": ["Builder", "Null Object", "Facade"],
+        "menu": "Design Patterns"
       }
     ]
   },
@@ -179,10 +179,11 @@
         "subMenu": [
           "Hello World",
           "Data Types",
+          "Strings",
+          "Arrays and ArrayLists",
           "Functions",
-          "Structures",
-          "Arrays",
-          "Bit Manipulation"
+          "Classes",
+          "Streams"
         ],
         "menu": "Basics"
       },
@@ -192,8 +193,9 @@
           "Stacks and Queues",
           "Hash Tables",
           "Sets",
-          "Trees",
+          "Binary Trees",
           "Heaps",
+          "Disjoint Sets",
           "Tries",
           "Graphs"
         ],

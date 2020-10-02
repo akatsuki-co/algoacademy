@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Content from './Content'
 import fetchTable from '../../utils/fetchTable'
 import { Switch, Route } from 'react-router-dom'
+import Loader from '../ui/Loader'
 
 const WithTableOfContents = ({ path }) => {
   const initialState = {
@@ -29,7 +30,9 @@ const WithTableOfContents = ({ path }) => {
     loadContents()
   }, [path])
 
-  return isLoading ? null : (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <section className='py-3'>
       <Container>
         <Row>

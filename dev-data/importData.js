@@ -25,12 +25,17 @@ const ccp_questions = JSON.parse(
 const python_questions = JSON.parse(
   fs.readFileSync(`${__dirname}/python_quiz.json`, 'utf-8')
 )
+const react_questions = JSON.parse(
+  fs.readFileSync(`${__dirname}/react_quiz.json`, 'utf-8')
+)
+
 const table = JSON.parse(fs.readFileSync(`${__dirname}/tables.json`, 'utf-8'))
 
 const importData = async () => {
   try {
     await Quiz.create(ccp_questions)
     await Quiz.create(python_questions)
+    await Quiz.create(react_questions)
     await Table.create(table)
     console.log('Successfully imported table and questions.')
   } catch (err) {

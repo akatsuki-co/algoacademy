@@ -68,7 +68,7 @@ console.log(stack) // Stack { stack: [ 1, 2 ], length: 2 }
 
 ---
 
-A queue is a data structure where elements are inserted and removed based on a first-in first-out (LIFO) principle.
+A queue is a data structure where elements are inserted and removed based on a first-in first-out (FIFO) principle.
 
 - A helpful way to visualize a queue is to imagine people in a line at an amusement park. People who line up first gets served first.
 - In JS, arrays can also be used to represent a queue. Enqueuing will utilize the push method while dequeueing will utilize shift. Alternatively, singly linked lists can also be used.

@@ -20,4 +20,4 @@ jobs:
                   instance-ids: ${{ secrets.INSTANCE_ID  }}
                   comment: Deploy algoacademy master 
                   working-directory: /home/ubuntu/algoacademy
-                  command: /bin/sh sudo ./deploy.sh
+                  command: sudo ./deploy.sh

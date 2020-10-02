@@ -47,13 +47,28 @@ const Contribute = () => {
       const response = await fetch(`${host}/api/v1/contribute`, settings)
       const responseData = await response.json()
       if (responseData.status === 'success') {
-        history.push('/')
+        const username = contribution.username.replace(/\s+/g, '_').toLowerCase()
+        const topic = contribution.topic.replace(/\s+/g, '_').toLowerCase()
+        const today = new Date()
+        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+        await fetch("https://api.github.com/repos/akatsuki-co/algoacademy/issues",
+        {
+          headers: {"Authorization": `token ${process.env.REACT_APP_GITHUB_TOKEN}`},
+          method: "POST",
+          body: JSON.stringify({
+            "title": `${date} ${username} - ${topic}`,
+            "body": markdown,
+            "labels": ["enhancement"]
+          })
+        })
+        await history.push('/')
       } else {
         setContribution({ ...contribution, error: responseData.error })
       }
       return responseData
     } catch(err) {
       setContribution({ ...contribution, error: err })
+      console.log(err)
     }
   }
 
@@ -64,7 +79,12 @@ const Contribute = () => {
   return (
     <div className="container py-3">
       <Row>
-        <Editor markdown={markdown} setMarkdown={setMarkdown} />
+        <Editor
+            markdown={markdown}
+            setMarkdown={setMarkdown}
+            contribution={contribution}
+            setContribution={setContribution}
+        />
         <Preview markdown={markdown} />
       </Row>
         {contribution.error ? <Error message={contribution.error} /> : null}

@@ -63,7 +63,7 @@ void insertion_sort(int *arr, int size)
     {
         key = arr[i];
         j = i - 1;
-        while (key < arr[j] && j >= 0)
+        while (j >= 0 && key < arr[j])
         {
             arr[j + 1] = arr[j];
             j--;
@@ -157,7 +157,6 @@ void shell_sort(int *arr, int size)
 - Time complexity: O(n + k) where n is the number of items and k is the number of possible values.
 - Space complexity: O(max(n)).
 - Will not work with negative values.
-
 
 ---
 
