@@ -40,7 +40,7 @@ class Rabin_Karp:
         t_hash = self.hash_string(self.text[:self.p_size])
         for i in range(self.t_size - self.p_size + 1):
             if p_hash == t_hash and self.check(i):
-                self.res.append(start)
+                self.res.append(i)
             if i < self.t_size - self.p_size:
                 # remove head
                 t_hash = (t_hash - self._hash *
@@ -64,7 +64,7 @@ class Rabin_Karp:
 
 rb = Rabin_Karp("31265441592653589793", "2653")
 print(rb.search())
-# [0]
+# [10]
 
 
 rb1 = Rabin_Karp("xxxxx", "xx")
