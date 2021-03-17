@@ -85,7 +85,7 @@ class Queue {
   }
 
   /**
-   * Adds an element to the front of a queue.
+   * Adds an element to the back of a queue.
    * Time complexity: O(1)
    */
   enqueue(value) {
