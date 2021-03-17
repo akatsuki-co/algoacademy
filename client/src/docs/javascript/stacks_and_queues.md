@@ -23,7 +23,7 @@ class Stack {
    * Time complexity: O(1)
    */
   push(value) {
-    this.stack.push(value)
+    this.stack.unshift(value)
     this.length++
   }
 
@@ -44,7 +44,7 @@ class Stack {
   }
 
   /**
-   * Peeks at the element at the top of the stack.
+   * Peeks at the element at the bottom of the stack.
    */
   peek() {
     return this.stack[this.length - 1]
