@@ -68,6 +68,8 @@ class SinglyLinkedList {
       }
       prev.next = curr.next
     }
+    
+    this.length--
   }
 }
 ```
