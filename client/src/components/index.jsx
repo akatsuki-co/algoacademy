@@ -27,32 +27,37 @@ const pages = [
   {
     path: '/python',
     exact: false,
-    components: <WithTableOfContents path="python" />,
+    components: <WithTableOfContents path='python' />,
   },
   {
     path: '/javascript',
     exact: false,
-    components: <WithTableOfContents path="javascript" />,
+    components: <WithTableOfContents path='javascript' />,
   },
   {
     path: '/go',
     exact: false,
-    components: <WithTableOfContents path="go" />,
+    components: <WithTableOfContents path='go' />,
   },
   {
     path: '/cpp',
     exact: false,
-    components: <WithTableOfContents path="cpp" />,
+    components: <WithTableOfContents path='cpp' />,
   },
   {
     path: '/c',
     exact: false,
-    components: <WithTableOfContents path="c" />,
+    components: <WithTableOfContents path='c' />,
   },
   {
     path: '/java',
     exact: false,
-    components: <WithTableOfContents path="java" />,
+    components: <WithTableOfContents path='java' />,
+  },
+  {
+    path: '/ruby',
+    exact: false,
+    components: <WithTableOfContents path='ruby' />,
   },
   {
     path: '/contribute',

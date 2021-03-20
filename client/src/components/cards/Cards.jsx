@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Card from './Card'
 
 const Cards = () => {
-  const languages = ['python', 'c', 'javascript', 'cpp', 'go', 'java']
+  const languages = ['python', 'c', 'javascript', 'ruby', 'go', 'java']
   return (
     <section id='cards' className='py-3'>
       <Container>

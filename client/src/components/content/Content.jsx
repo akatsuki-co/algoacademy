@@ -10,38 +10,45 @@ const Content = ({ table }) => {
   let { topic } = useParams()
   const [markdown, setMarkdown] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [is404, setIs404] = useState(false)
 
   useEffect(() => {
     async function getMarkdown() {
       try {
         setIsLoading(true)
+        setIs404(false)
         const mdFileName = topic || 'hello_world'
         const file = await import(
           `../../docs/${table.language}/${mdFileName}.md`
         )
         const response = await fetch(file.default)
         const text = await response.text()
+        console.log(text)
         setIsLoading(false)
         setMarkdown(text || '### Nothing here yet! Come back again soon!')
       } catch (err) {
         setIsLoading(false)
-        setMarkdown('### Path Not found. Please try again.')
+        setIs404(true)
+        // setMarkdown('### Path not found. Please try again.')
       }
     }
     getMarkdown()
-  }, [table, topic])
+  }, [table, topic, isLoading, is404])
 
   return (
     <Col
-      md="7"
-      xl="8"
-      className="ml-md-auto py-3 pl-5 border-left"
-      id="content"
-    >
+      md='7'
+      xl='8'
+      className='ml-md-auto py-3 pl-5 border-left'
+      id='content'>
       {isLoading ? (
         <Loader />
+      ) : is404 ? (
+        <img src='/404.png' className='img-fluid'></img>
       ) : (
-        <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
+        <div>
+          <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
+        </div>
       )}
     </Col>
   )

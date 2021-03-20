@@ -33,6 +33,32 @@
     ]
   },
   {
+    "language": "ruby",
+    "sidebar": [
+      {
+        "subMenu": ["Hello World", "Data Types", "Arrays", "Hashes"],
+        "menu": "Basics"
+      },
+      {
+        "subMenu": [
+          "Linked Lists",
+          "Stacks and Queues",
+          "Hash Tables",
+          "Sets",
+          "Binary Trees",
+          "Heaps",
+          "Tries",
+          "Graphs"
+        ],
+        "menu": "Data Structures"
+      },
+      {
+        "subMenu": ["Sorting", "Searching"],
+        "menu": "Algorithms"
+      }
+    ]
+  },
+  {
     "language": "go",
     "sidebar": [
       {
