@@ -23,7 +23,6 @@ const Content = ({ table }) => {
         )
         const response = await fetch(file.default)
         const text = await response.text()
-        console.log(text)
         setIsLoading(false)
         setMarkdown(text || '### Nothing here yet! Come back again soon!')
       } catch (err) {
@@ -46,9 +45,7 @@ const Content = ({ table }) => {
       ) : is404 ? (
         <img src='/404.png' className='img-fluid'></img>
       ) : (
-        <div>
           <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
-        </div>
       )}
     </Col>
   )
