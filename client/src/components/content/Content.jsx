@@ -28,7 +28,6 @@ const Content = ({ table }) => {
       } catch (err) {
         setIsLoading(false)
         setIs404(true)
-        // setMarkdown('### Path not found. Please try again.')
       }
     }
     getMarkdown()
