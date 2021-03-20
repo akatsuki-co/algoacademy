@@ -31,7 +31,7 @@ const Content = ({ table }) => {
       }
     }
     getMarkdown()
-  }, [table, topic, isLoading, is404])
+  }, [table, topic])
 
   return (
     <Col
@@ -44,7 +44,7 @@ const Content = ({ table }) => {
       ) : is404 ? (
         <img src='/404.png' className='img-fluid'></img>
       ) : (
-          <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
+        <HighlightedMarkdown>{markdown}</HighlightedMarkdown>
       )}
     </Col>
   )
