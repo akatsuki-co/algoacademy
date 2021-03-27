@@ -14,7 +14,9 @@ Quick facts about Ruby:
 ```ruby
 print "Hello World!"
 
-// Hello World!
+# Hello World!
 ```
 
 ---
+
+_Author: Tu Vo_
