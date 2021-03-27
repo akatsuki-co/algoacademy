@@ -113,11 +113,11 @@ Our data has 3 schemas:
 
 ## Setting up Algo Academy with Docker
 
-For those that are not interested in setting up the project manually or would simply not have to worry about downloading node.js and its dependencies, I have      created a Dockerfile and docker-compose.yml file to help create a container with everything you would need to run the **mern-app**.
+For those that are not interested in setting up the project manually or would simply not have to worry about downloading node.js and its dependencies, I have created a Dockerfile and docker-compose.yml file to help create a container with everything you would need to run the **mern-app**.
 
 ### Install Docker
 
-To make this as easy as possible, we will be using *Docker Compose* to creat our container.
+To make this as easy as possible, we will be using _Docker Compose_ to creat our container.
 
 - If you do not have Docker yet, start by downloading it if you are on a Mac or Windows:
   https://www.docker.com/products/docker-desktop
@@ -131,7 +131,7 @@ To make this as easy as possible, we will be using *Docker Compose* to creat our
 $ docker-compose --version
 docker-compose version 1.26.2, build eefe0d31
 ```
-  
+
 - Go into the project directory to build and run the container with:
 
 ```
@@ -140,9 +140,9 @@ $ docker-compose up --build
 ```
 
 **This may take a few moments**
-  
+
 Navigate to http://localhost:5000 to view the site on the local server.
-  
+
 ### Cleaning up the Container and Image
 
 - To stop the container from running, use `<Ctrl-C>` twice.
@@ -151,6 +151,7 @@ Navigate to http://localhost:5000 to view the site on the local server.
 ```
 $ docker-compose down
 ```
+
 - Then to clean up the container and image which we are no longer using use the command:
 
 ```
@@ -162,7 +163,7 @@ $ docker system prune -fa
 ```
 $ docker system df -v
 ```
-  
+
 ---
 
 ## Status
@@ -172,7 +173,7 @@ Check it out here: https://algoacademy.dev
 
 To-Dos:
 
-- Add more content to Go, C++ and Java
+- Add more content to Go, Ruby and Java
 - Add more content to quizzes
 
 ---
@@ -186,4 +187,5 @@ Created by:
 
 Special thanks to contributors:
 
+- [Tyler Zey](https://github.com/tylerzey)
 - Brent Muha
