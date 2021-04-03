@@ -36,7 +36,14 @@
     "language": "ruby",
     "sidebar": [
       {
-        "subMenu": ["Hello World", "Numbers", "Strings", "Arrays", "Hashes"],
+        "subMenu": [
+          "Hello World",
+          "Numbers",
+          "Strings",
+          "Arrays",
+          "Hashes",
+          "Classes"
+        ],
         "menu": "Basics"
       },
       {
