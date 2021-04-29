@@ -4,6 +4,8 @@ const Quiz = require('../models/Quiz')
 const Table = require('../models/Table')
 const dotenv = require('dotenv')
 
+const logger = require('../config/winston-config-stream')
+
 dotenv.config({ path: '../.env' })
 
 const db = process.env.DATABASE
@@ -16,7 +18,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log('Database is connected.')
+    logger.info('Database is connected.')
   })
 
 const ccp_questions = JSON.parse(
@@ -37,9 +39,9 @@ const importData = async () => {
     await Quiz.create(python_questions)
     await Quiz.create(react_questions)
     await Table.create(table)
-    console.log('Successfully imported table and questions.')
+    logger.info('Successfully imported table and questions.')
   } catch (err) {
-    console.log(err)
+    logger.error(err)
   }
 }
 
@@ -47,9 +49,9 @@ const deleteData = async () => {
   try {
     await Quiz.deleteMany()
     await Table.deleteMany()
-    console.log('Successfully deleted tables and questions.')
+    logger.info('Successfully deleted tables and questions.')
   } catch (err) {
-    console.log(err)
+    logger.error(err)
   }
 }
 
@@ -65,7 +67,7 @@ mongoose.connection.once('open', async () => {
       await importData()
     }
   } catch (err) {
-    console.log(err)
+    logger.info(err)
   }
   process.exit()
 })
